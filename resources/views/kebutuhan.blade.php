@@ -109,6 +109,7 @@
                         <li><a href="kebutuhan">Data Input Kebutuhan</a></li>
                         <li><a href="donatur">Data Input Donatur</a></li>
                         <li><a href="penyedia">Data Input Penyedia</a></li>
+                        <li><a href="donasinya">Data Donasi Kebutuhan</a></li>
                       </ul>
                     </li>
                     <li class="ripple"><a class="tree-toggle nav-header"><span class="fa fa-bar-chart"></span> Menu Admin  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
@@ -117,6 +118,7 @@
                         <li><a href="kebutuhan-admin">Data Input Kebutuhan</a></li>
                         <li><a href="donatur-admin">Data Input Donatur</a></li>
                         <li><a href="penyedia-admin">Data Input Penyedia</a></li>
+                        <li><a href="donasinya-admin">Data Donasi Kebutuhan</a></li>
                       </ul>
                     </li>
                 </div>
@@ -128,7 +130,7 @@
                <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
                     <div class="col-md-12">
-                        <h3 class="animated fadeInLeft">Data Input Kebutuhan</h3>
+                        <h3 class="animated fadeInLeft">Data Input Kebutuhan Rumah Sakit</h3>
                          <!-- Button trigger modal -->
                          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Tambahkan
@@ -146,12 +148,18 @@
                       <thead>
                         <tr>
                           <th>Nama Rumah Sakit</th>
-                          <th>APD</th>
-                          <th>Reagen RTPCR</th>
-                          <th>Viral Transfer Media</th>
-                          <th>Rapid Diagnostic Test</th>
-                          <th>Nasal Swab</th>
-                          <th>Ventilator</th>
+                          <th>Masker N95</th>
+                          <th>Masker Surgical</th>
+                          <th>Sarung Tangan (gloves)</th>
+                          <th>Coverall Jumpsuit (hazmat)</th>
+                          <th>Faceshield</th>
+                          <th>Kacamata Goggles</th>
+                          <th>Boot and Shoe Cover</th>
+                          <th>Handsanitizer</th>
+                          <th>Desinfektan</th>
+                          <th>Multivitamin</th>
+                          <th>Kantong Jenazah</th>
+                          <th>Skorlet</th>
                           <th>Tanggal</th>
                         </tr>
                       </thead>
@@ -159,12 +167,18 @@
                       <tbody>
                         <tr>
                           <td> {{$kebutuhan -> rs -> nama_rs}} </td>
-                          <td> {{$kebutuhan -> apd}} </td>
-                          <td> {{$kebutuhan -> reagen}} </td>
-                          <td> {{$kebutuhan -> viral}} </td>
-                          <td> {{$kebutuhan -> rapid}} </td>
-                          <td> {{$kebutuhan -> nasal}} </td>
-                          <td> {{$kebutuhan -> ventilator}} </td>
+                          <td> {{$kebutuhan -> masker_n95}} </td>
+                          <td> {{$kebutuhan -> masker_surgical}} </td>
+                          <td> {{$kebutuhan -> sarung_tangan}} </td>
+                          <td> {{$kebutuhan -> coverall_jumpsuit}} </td>
+                          <td> {{$kebutuhan -> faceshield}} </td>
+                          <td> {{$kebutuhan -> kacamata_goggles}} </td>
+                          <td> {{$kebutuhan -> boot_and_shoe_cover}} </td>
+                          <td> {{$kebutuhan -> handsanitizer}} </td>
+                          <td> {{$kebutuhan -> desinfektan}} </td>
+                          <td> {{$kebutuhan -> multivitamin}} </td>
+                          <td> {{$kebutuhan -> kantong_jenazah}} </td>
+                          <td> {{$kebutuhan -> Skorlet}} </td>
                           <td> {{$kebutuhan -> created_at}}</td>
                         </tr>
                       </tbody>
@@ -200,6 +214,7 @@
                         <li><a href="kebutuhan">Data Input Kebutuhan</a></li>
                         <li><a href="donatur">Data Input Donatur</a></li>
                         <li><a href="penyedia">Data Input Penyedia</a></li>
+                        <li><a href="donasinya">Data Donasi Kebutuhan</a></li>
                       </ul>
                     </li>
                     <li class="ripple"><a class="tree-toggle nav-header"><span class="fa fa-bar-chart"></span> Menu Admin  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
@@ -208,6 +223,7 @@
                         <li><a href="kebutuhan-admin">Data Input Kebutuhan</a></li>
                         <li><a href="donatur-admin">Data Input Donatur</a></li>
                         <li><a href="penyedia-admin">Data Input Penyedia</a></li>
+                        <li><a href="donasinya-admin">Data Donasi Kebutuhan</a></li>
                       </ul>
                     </li>
                   </ul>

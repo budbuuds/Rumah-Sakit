@@ -110,6 +110,7 @@
                         <li><a href="kebutuhan-admin">Data Input Kebutuhan</a></li>
                         <li><a href="donatur-admin">Data Input Donatur</a></li>
                         <li><a href="penyedia-admin">Data Input Penyedia</a></li>
+                        <li><a href="donasinya-admin">Data Donasi Kebutuhan</a></li>
                       </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -138,7 +139,7 @@
                <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
                     <div class="col-md-12">
-                        <h3 class="animated fadeInLeft">Data Input Kebutuhan</h3>
+                        <h3 class="animated fadeInLeft">Daftar Donatur</h3>
                          <!-- Button trigger modal -->
                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Tambahkan
@@ -155,29 +156,43 @@
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                       <thead>
                         <tr>
+                          <th>Tanggal</th>
                           <th>Nama Rumah Sakit</th>
                           <th>Nama Donatur</th>
-                          <th>APD</th>
-                          <th>Reagen RTPCR</th>
-                          <th>Viral Transfer Media</th>
-                          <th>Rapid Diagnostic Test</th>
-                          <th>Nasal Swab</th>
-                          <th>Ventilator</th>
-                          <th>Tanggal</th>
+                          <th>Tunai</th>
+                          <th>Masker N95</th>
+                          <th>Masker Surgical</th>
+                          <th>Sarung Tangan (gloves)</th>
+                          <th>Coverall Jumpsuit (hazmat)</th>
+                          <th>Faceshield</th>
+                          <th>Kacamata Goggles</th>
+                          <th>Boot and Shoe Cover</th>
+                          <th>Handsanitizer</th>
+                          <th>Desinfektan</th>
+                          <th>Multivitamin</th>
+                          <th>Kantong Jenazah</th>
+                          <th>Skorlet</th>
                         </tr>
                       </thead>
                       @foreach($data_donatur as $donatur)
                       <tbody>
                         <tr>
+                          <td> {{$donatur -> created_at}} </td>
                           <td> {{$donatur -> rs -> nama_rs}} </td>
                           <td> {{$donatur -> nama_donatur}} </td>
-                          <td> {{$donatur -> apd}} </td>
-                          <td> {{$donatur -> reagen}} </td>
-                          <td> {{$donatur -> viral}} </td>
-                          <td> {{$donatur -> rapid}} </td>
-                          <td> {{$donatur -> nasal}} </td>
-                          <td> {{$donatur -> ventilator}} </td>
-                          <td> {{$donatur -> created_at}}</td>
+                          <td> {{$donatur -> tunai}} </td>
+                          <td> {{$donatur -> masker_n95}}</td>
+                          <td> {{$donatur -> masker_surgical}}</td>
+                          <td> {{$donatur -> sarung_tangan}}</td>
+                          <td> {{$donatur -> coverall_jumpsuit}}</td>
+                          <td> {{$donatur -> faceshield}}</td>
+                          <td> {{$donatur -> kacamata_goggles}}</td>
+                          <td> {{$donatur -> boot_and_shoe_cover}}</td>
+                          <td> {{$donatur -> handsanitizer}}</td>
+                          <td> {{$donatur -> desinfektan}}</td>
+                          <td> {{$donatur -> multivitamin}}</td>
+                          <td> {{$donatur -> kantong_jenazah}}</td>
+                          <td> {{$donatur -> Skorlet}}</td>
                         </tr>
                       </tbody>
                       @endforeach
@@ -310,24 +325,46 @@
     <input name="nama_donatur" class="form-control" type="text" placeholder="Default input">
   </div>
   <div>
-    <label for="exampleFormControlTextarea1">APD</label>
-    <input name="apd" class="form-control" type="number" placeholder="Default input">
+    <label for="exampleFormControlTextarea1">Tunai</label>
+    <input name="tunai" class="form-control" type="number" placeholder="Default input">
   </div>
   <div>
-    <label for="exampleFormControlTextarea1">Reagen RTPCR</label>
-    <input name="reagen" class="form-control" type="number" placeholder="Default input">
+    <label for="exampleFormControlTextarea1">Masker N95</label>
+    <input name="masker_n95" class="form-control" type="number" placeholder="Default input">
+  </div>
+  <div>
+    <label for="exampleFormControlTextarea1">Masker Surgical</label>
+    <input name="masker_surgical" class="form-control" type="number" placeholder="Default input">
   </div><div>
-    <label for="exampleFormControlTextarea1">Viral Transfer Media</label>
-    <input name="viral" class="form-control" type="number" placeholder="Default input">
+    <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
+    <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input">
   </div><div>
-    <label for="exampleFormControlTextarea1">Rapid Diagnostic Test</label>
-    <input name="rapid" class="form-control" type="number" placeholder="Default input">
+    <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
+    <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input">
   </div><div>
-    <label for="exampleFormControlTextarea1">Nasal Swab</label>
-    <input name="nasal" class="form-control" type="number" placeholder="Default input">
+    <label for="exampleFormControlTextarea1">Faceshield</label>
+    <input name="faceshield" class="form-control" type="number" placeholder="Default input">
   </div><div>
-    <label for="exampleFormControlTextarea1">Ventilator</label>
-    <input name="ventilator" class="form-control" type="number" placeholder="Default input">
+    <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
+    <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
+    <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Handsanitizer</label>
+    <input name="handsanitizer" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Desinfektan</label>
+    <input name="desinfektan" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Multivitamin</label>
+    <input name="multivitamin" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
+    <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Skorlet</label>
+    <input name="Skorlet" class="form-control" type="number" placeholder="Default input">
   </div>
 
         </div>

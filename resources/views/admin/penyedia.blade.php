@@ -123,6 +123,7 @@ if (!$kon){
                         <li><a href="kebutuhan-admin">Data Input Kebutuhan</a></li>
                         <li><a href="donatur-admin">Data Input Donatur</a></li>
                         <li><a href="penyedia-admin">Data Input Penyedia</a></li>
+                        <li><a href="donasinya-admin">Data Donasi Kebutuhan</a></li>
                       </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -151,7 +152,7 @@ if (!$kon){
                <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
                     <div class="col-md-12">
-                        <h3 class="animated fadeInLeft">Data Input Kebutuhan</h3>
+                        <h3 class="animated fadeInLeft">Daftar Penyedia</h3>
                          <!-- Button trigger modal -->
                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Tambahkan
@@ -171,12 +172,18 @@ if (!$kon){
                           <th>Nama Penyedia</th>
                           <th>Alamat</th>
                           <th>Kontak</th>
-                          <th>APD</th>
-                          <th>Reagen RTPCR</th>
-                          <th>Viral Transfer Media</th>
-                          <th>Rapid Diagnostic Test</th>
-                          <th>Nasal Swab</th>
-                          <th>Ventilator</th>
+                          <th>Masker N95</th>
+                          <th>Masker Surgical</th>
+                          <th>Sarung Tangan (gloves)</th>
+                          <th>Coverall Jumpsuit (hazmat)</th>
+                          <th>Faceshield</th>
+                          <th>Kacamata Goggles</th>
+                          <th>Boot and Shoe Cover</th>
+                          <th>Handsanitizer</th>
+                          <th>Desinfektan</th>
+                          <th>Multivitamin</th>
+                          <th>Kantong Jenazah</th>
+                          <th>Skorlet</th>
                         </tr>
                       </thead>
                       @foreach($data_penyedia as $penyedia)
@@ -185,12 +192,18 @@ if (!$kon){
                           <td> {{$penyedia -> nama_penyedia}} </td>
                           <td> {{$penyedia -> alamat_penyedia}} </td>
                           <td> {{$penyedia -> kontak}} </td>
-                          <td> {{$penyedia -> apd}} </td>
-                          <td> {{$penyedia -> reagen}} </td>
-                          <td> {{$penyedia -> viral}} </td>
-                          <td> {{$penyedia -> rapid}} </td>
-                          <td> {{$penyedia -> nasal}} </td>
-                          <td> {{$penyedia -> ventilator}} </td>
+                          <td> {{$penyedia -> masker_n95}} </td>
+                          <td> {{$penyedia -> masker_surgical}} </td>
+                          <td> {{$penyedia -> sarung_tangan}} </td>
+                          <td> {{$penyedia -> coverall_jumpsuit}} </td>
+                          <td> {{$penyedia -> faceshield}} </td>
+                          <td> {{$penyedia -> kacamata_goggles}} </td>
+                          <td> {{$penyedia -> boot_and_shoe_cover}} </td>
+                          <td> {{$penyedia -> handsanitizer}} </td>
+                          <td> {{$penyedia -> desinfektan}} </td>
+                          <td> {{$penyedia -> multivitamin}} </td>
+                          <td> {{$penyedia -> kantong_jenazah}} </td>
+                          <td> {{$penyedia -> Skorlet}} </td>
                         </tr>
                       </tbody>
                       @endforeach
@@ -280,24 +293,42 @@ if (!$kon){
     <input name="kontak" class="form-control" type="text" placeholder="Default input">
   </div>
   <div>
-    <label for="exampleFormControlTextarea1">APD</label>
-    <input name="apd" class="form-control" type="number" placeholder="Default input">
+    <label for="exampleFormControlTextarea1">Masker N95</label>
+    <input name="masker_n95" class="form-control" type="number" placeholder="Default input">
   </div>
   <div>
-    <label for="exampleFormControlTextarea1">Reagen RTPCR</label>
-    <input name="reagen" class="form-control" type="number" placeholder="Default input">
+    <label for="exampleFormControlTextarea1">Masker Surgical</label>
+    <input name="masker_surgical" class="form-control" type="number" placeholder="Default input">
   </div><div>
-    <label for="exampleFormControlTextarea1">Viral Transfer Media</label>
-    <input name="viral" class="form-control" type="number" placeholder="Default input">
+    <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
+    <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input">
   </div><div>
-    <label for="exampleFormControlTextarea1">Rapid Diagnostic Test</label>
-    <input name="rapid" class="form-control" type="number" placeholder="Default input">
+    <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
+    <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input">
   </div><div>
-    <label for="exampleFormControlTextarea1">Nasal Swab</label>
-    <input name="nasal" class="form-control" type="number" placeholder="Default input">
+    <label for="exampleFormControlTextarea1">Faceshield</label>
+    <input name="faceshield" class="form-control" type="number" placeholder="Default input">
   </div><div>
-    <label for="exampleFormControlTextarea1">Ventilator</label>
-    <input name="ventilator" class="form-control" type="number" placeholder="Default input">
+    <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
+    <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
+    <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Handsanitizer</label>
+    <input name="handsanitizer" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Desinfektan</label>
+    <input name="desinfektan" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Multivitamin</label>
+    <input name="multivitamin" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
+    <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Skorlet</label>
+    <input name="Skorlet" class="form-control" type="number" placeholder="Default input">
   </div>
 
         </div>

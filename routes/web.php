@@ -23,6 +23,7 @@ Route::get('/rumahsakit', 'HomeController@rumahsakit')->name('rumahsakit');
 Route::get('/kebutuhan', 'HomeController@kebutuhan')->name('kebutuhan');
 Route::get('/donatur', 'HomeController@donatur')->name('donatur');
 Route::get('/penyedia', 'HomeController@penyedia')->name('penyedia');
+Route::get('/donasinya', 'HomeController@donasinya')->name('donasinya');
 
 // ADMIN
 Route::get('/rumahsakit-admin', 'RumahSakitController@index')->name('rumahsakit');
@@ -32,3 +33,5 @@ Route::get('/donatur-admin', 'RumahSakitController@donatur')->name('donatur');
 Route::post('/donatur-admin/create', 'RumahSakitController@create2');
 Route::get('/penyedia-admin', 'RumahSakitController@penyedia')->name('penyedia');
 Route::post('/penyedia-admin/create', 'RumahSakitController@create3');
+Route::get('/donasinya-admin', 'RumahSakitController@donasinya')->name('donasinya');
+Route::post('/donasinya-admin/create', 'RumahSakitController@create_d');

@@ -50,4 +50,10 @@ class HomeController extends Controller
         $data_penyedia = \App\penyedia::all();
         return view('penyedia',['data_penyedia' => $data_penyedia]);
     }
+
+    public function donasinya()
+    {
+        $data_donasinya = \App\donasinya::all();
+        return view('donasinya',['data_donasinya' => $data_donasinya]);
+    }
 }

@@ -110,6 +110,7 @@
                         <li><a href="kebutuhan">Data Input Kebutuhan</a></li>
                         <li><a href="donatur">Data Input Donatur</a></li>
                         <li><a href="penyedia">Data Input Penyedia</a></li>
+                        <li><a href="donasinya">Data Donasi Kebutuhan</a></li>
                       </ul>
                     </li>
                     <li class="ripple"><a class="tree-toggle nav-header"><span class="fa fa-bar-chart"></span> Menu Admin  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
@@ -118,6 +119,7 @@
                         <li><a href="kebutuhan-admin">Data Input Kebutuhan</a></li>
                         <li><a href="donatur-admin">Data Input Donatur</a></li>
                         <li><a href="penyedia-admin">Data Input Penyedia</a></li>
+                        <li><a href="donasinya-admin">Data Donasi Kebutuhan</a></li>
                       </ul>
                     </li>
                 </div>
@@ -129,10 +131,10 @@
                <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
                     <div class="col-md-12">
-                        <h3 class="animated fadeInLeft">Data Tables</h3>
-                        <p class="animated fadeInDown">
+                        <h3 class="animated fadeInLeft">Data Rumah Sakit</h3>
+                        <!-- <p class="animated fadeInDown">
                           Table <span class="fa-angle-right fa"></span> Data Tables
-                        </p>
+                        </p> -->
                     </div>
                   </div>
               </div>
@@ -145,14 +147,20 @@
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>Nama Rumah Sakit</th>
+                        <th>Nama Rumah Sakit</th>
                           <th>Alamat</th>
-                          <th>APD</th>
-                          <th>Reagen RTPCR</th>
-                          <th>Viral Transfer Media</th>
-                          <th>Rapid Diagnostic Test</th>
-                          <th>Nasal Swab</th>
-                          <th>Ventilator</th>
+                          <th>Masker N95</th>
+                          <th>Masker Surgical</th>
+                          <th>Sarung Tangan (gloves)</th>
+                          <th>Coverall Jumpsuit (hazmat)</th>
+                          <th>Faceshield</th>
+                          <th>Kacamata Goggles</th>
+                          <th>Boot and Shoe Cover</th>
+                          <th>Handsanitizer</th>
+                          <th>Desinfektan</th>
+                          <th>Multivitamin</th>
+                          <th>Kantong Jenazah</th>
+                          <th>Skorlet</th>
                         </tr>
                       </thead>
                       @foreach($data_rs as $rs)
@@ -160,12 +168,18 @@
                         <tr>
                           <td> {{$rs -> nama_rs}} </td>
                           <td> {{$rs -> Alamat}} </td>
-                          <td> {{$rs -> apd}} </td>
-                          <td> {{$rs -> reagen}} </td>
-                          <td> {{$rs -> viral}} </td>
-                          <td> {{$rs -> rapid}} </td>
-                          <td> {{$rs -> nasal}} </td>
-                          <td> {{$rs -> ventilator}} </td>
+                          <td> {{$rs -> masker_n95}} </td>
+                          <td> {{$rs -> masker_surgical}} </td>
+                          <td> {{$rs -> sarung_tangan}} </td>
+                          <td> {{$rs -> coverall_jumpsuit}} </td>
+                          <td> {{$rs -> faceshield}} </td>
+                          <td> {{$rs -> kacamata_goggles}} </td>
+                          <td> {{$rs -> boot_and_shoe_cover}} </td>
+                          <td> {{$rs -> handsanitizer}} </td>
+                          <td> {{$rs -> desinfektan}} </td>
+                          <td> {{$rs -> multivitamin}} </td>
+                          <td> {{$rs -> kantong_jenazah}} </td>
+                          <td> {{$rs -> Skorlet}} </td>
                         </tr>
                       </tbody>
                       @endforeach
@@ -200,6 +214,7 @@
                         <li><a href="kebutuhan">Data Input Kebutuhan</a></li>
                         <li><a href="donatur">Data Input Donatur</a></li>
                         <li><a href="penyedia">Data Input Penyedia</a></li>
+                        <li><a href="donasinya">Data Donasi Kebutuhan</a></li>
                       </ul>
                     </li>
                     <li class="ripple"><a class="tree-toggle nav-header"><span class="fa fa-key"></span> Menu Admin  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
@@ -208,6 +223,7 @@
                         <li><a href="kebutuhan-admin">Data Input Kebutuhan</a></li>
                         <li><a href="donatur-admin">Data Input Donatur</a></li>
                         <li><a href="penyedia-admin">Data Input Penyedia</a></li>
+                        <li><a href="donasinya-admin">Data Donasi Kebutuhan</a></li>
                       </ul>
                     </li>
                   </ul>

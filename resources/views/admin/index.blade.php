@@ -19,7 +19,7 @@
         <link rel="stylesheet" type="text/css" href="{{ url('backend/asset/css/plugins/fullcalendar.min.css') }}"/>
         <link href="{{ url('backend/asset/css/style.css') }}" rel="stylesheet">
         <!-- end: Css -->
-
+ 
         <link rel="shortcut icon" href="{{ url('backend/asset/img/emeral.png') }}">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -110,6 +110,7 @@
                         <li><a href="kebutuhan-admin">Data Input Kebutuhan</a></li>
                         <li><a href="donatur-admin">Data Input Donatur</a></li>
                         <li><a href="penyedia-admin">Data Input Penyedia</a></li>
+                        <li><a href="donasinya-admin">Data Donasi Kebutuhan</a></li>
                       </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -148,7 +149,7 @@
               <div class="col-md-12 top-20 padding-0">
                 <div class="col-md-12">
                   <div class="panel">
-                    <div class="panel-heading"><h3>Data Tables</h3></div>
+                    <div class="panel-heading"><h3>Data Rumah Sakit</h3></div>
                     <div class="panel-body">
                       <div class="responsive-table">
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
@@ -156,12 +157,18 @@
                         <tr>
                           <th>Nama Rumah Sakit</th>
                           <th>Alamat</th>
-                          <th>APD</th>
-                          <th>Reagen RTPCR</th>
-                          <th>Viral Transfer Media</th>
-                          <th>Rapid Diagnostic Test</th>
-                          <th>Nasal Swab</th>
-                          <th>Ventilator</th>
+                          <th>Masker N95</th>
+                          <th>Masker Surgical</th>
+                          <th>Sarung Tangan (gloves)</th>
+                          <th>Coverall Jumpsuit (hazmat)</th>
+                          <th>Faceshield</th>
+                          <th>Kacamata Goggles</th>
+                          <th>Boot and Shoe Cover</th>
+                          <th>Handsanitizer</th>
+                          <th>Desinfektan</th>
+                          <th>Multivitamin</th>
+                          <th>Kantong Jenazah</th>
+                          <th>Skorlet</th>
                         </tr>
                       </thead>
                       @foreach($data_rs as $rs)
@@ -169,12 +176,18 @@
                         <tr>
                           <td> {{$rs -> nama_rs}} </td>
                           <td> {{$rs -> Alamat}} </td>
-                          <td> {{$rs -> apd}} </td>
-                          <td> {{$rs -> reagen}} </td>
-                          <td> {{$rs -> viral}} </td>
-                          <td> {{$rs -> rapid}} </td>
-                          <td> {{$rs -> nasal}} </td>
-                          <td> {{$rs -> ventilator}} </td>
+                          <td> {{$rs -> masker_n95}} </td>
+                          <td> {{$rs -> masker_surgical}} </td>
+                          <td> {{$rs -> sarung_tangan}} </td>
+                          <td> {{$rs -> coverall_jumpsuit}} </td>
+                          <td> {{$rs -> faceshield}} </td>
+                          <td> {{$rs -> kacamata_goggles}} </td>
+                          <td> {{$rs -> boot_and_shoe_cover}} </td>
+                          <td> {{$rs -> handsanitizer}} </td>
+                          <td> {{$rs -> desinfektan}} </td>
+                          <td> {{$rs -> multivitamin}} </td>
+                          <td> {{$rs -> kantong_jenazah}} </td>
+                          <td> {{$rs -> Skorlet}} </td>
                         </tr>
                       </tbody>
                       @endforeach

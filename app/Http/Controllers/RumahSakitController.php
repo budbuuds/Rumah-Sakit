@@ -58,4 +58,27 @@ class RumahSakitController extends Controller
         \App\penyedia::create($request->all());
         return redirect('/penyedia-admin');
     }
+
+    public function donasinya(Request $request)
+    {
+        $data_donasinya = \App\donasinya::all();
+        return view('admin.donasinya',['data_donasinya' => $data_donasinya]);
+    }
+
+    public function create_d(Request $request)
+    {
+        $donasinya = \App\donasinya::create($request->all());
+        if($request->hasFile('file_bukti')){
+            $request->file('file_bukti')->move('images/',$request->file('file_bukti')->getClientOriginalName());
+            $donasinya->file_bukti = $request->file('file_bukti')->getClientOriginalName();
+            $donasinya->save();
+        }
+        return redirect('/donasinya-admin');
+    }
+
+    // public function create_d(Request $request)
+    // {
+    //     \App\donasinya::create($request->all());
+    //     return redirect('/donasinya-admin');
+    // }
 }
