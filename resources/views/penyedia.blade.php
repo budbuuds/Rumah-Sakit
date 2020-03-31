@@ -1,16 +1,3 @@
-<?php
-
-$host="localhost";
-$user="root";
-$password="";
-$db="rumah_sakit";
-
-$kon = mysqli_connect($host,$user,$password,$db);
-if (!$kon){
-	  die("Koneksi gagal:".mysqli_connect_error());
-}
-?>
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>

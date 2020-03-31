@@ -147,39 +147,78 @@
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>Nama Rumah Sakit</th>
-                          <th>Masker N95</th>
-                          <th>Masker Surgical</th>
-                          <th>Sarung Tangan (gloves)</th>
-                          <th>Coverall Jumpsuit (hazmat)</th>
-                          <th>Faceshield</th>
-                          <th>Kacamata Goggles</th>
-                          <th>Boot and Shoe Cover</th>
-                          <th>Handsanitizer</th>
-                          <th>Desinfektan</th>
-                          <th>Multivitamin</th>
-                          <th>Kantong Jenazah</th>
-                          <th>Skorlet</th>
-                          <th>Tanggal</th>
+                        <th rowspan="2">Nama Rumah Sakit</th>
+                          <th colspan="2">Masker N95</th>
+                          <th colspan="2">Masker Surgical</th>
+                          <th colspan="2">Sarung Tangan (gloves)</th>
+                          <th colspan="2">Coverall Jumpsuit (hazmat)</th>
+                          <th colspan="2">Faceshield</th>
+                          <th colspan="2">Kacamata Goggles</th>
+                          <th colspan="2">Boot and Shoe Cover</th>
+                          <th colspan="2">Handsanitizer</th>
+                          <th colspan="2">Desinfektan</th>
+                          <th colspan="2">Multivitamin</th>
+                          <th colspan="2">Kantong Jenazah</th>
+                          <th colspan="2">Skorlet</th>
+                          <th rowspan="2">Tanggal</th>
                         </tr>
-                      </thead>
+                        <tr>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          
+                        </tr>
+                      </tbody>
                       @foreach($data_kebutuhan as $kebutuhan)
                       <tbody>
-                        <tr>
+                      <tr>
                           <td> {{$kebutuhan -> rs -> nama_rs}} </td>
                           <td> {{$kebutuhan -> masker_n95}} </td>
+                          <td> {{$kebutuhan -> status_masker_n95}} </td>
                           <td> {{$kebutuhan -> masker_surgical}} </td>
+                          <td> {{$kebutuhan -> status_masker_surgical}} </td>
                           <td> {{$kebutuhan -> sarung_tangan}} </td>
+                          <td> {{$kebutuhan -> status_sarung_tangan}} </td>
                           <td> {{$kebutuhan -> coverall_jumpsuit}} </td>
+                          <td> {{$kebutuhan -> status_coverall_jumpsuit}} </td>
                           <td> {{$kebutuhan -> faceshield}} </td>
+                          <td> {{$kebutuhan -> status_faceshield}} </td>
                           <td> {{$kebutuhan -> kacamata_goggles}} </td>
+                          <td> {{$kebutuhan -> status_kacamata_goggles}} </td>
                           <td> {{$kebutuhan -> boot_and_shoe_cover}} </td>
+                          <td> {{$kebutuhan -> status_boot_and_shoe_cover}} </td>
                           <td> {{$kebutuhan -> handsanitizer}} </td>
+                          <td> {{$kebutuhan -> status_handsanitizer}} </td>
                           <td> {{$kebutuhan -> desinfektan}} </td>
+                          <td> {{$kebutuhan -> status_desinfektan}} </td>
                           <td> {{$kebutuhan -> multivitamin}} </td>
+                          <td> {{$kebutuhan -> status_multivitamin}} </td>
                           <td> {{$kebutuhan -> kantong_jenazah}} </td>
+                          <td> {{$kebutuhan -> status_kantong_jenazah}} </td>
                           <td> {{$kebutuhan -> Skorlet}} </td>
-                          <td> {{$kebutuhan -> created_at}}</td>
+                          <td> {{$kebutuhan -> status_Skorlet}} </td>
+                          <td> {{$kebutuhan -> created_at}}</td>>
                         </tr>
                       </tbody>
                       @endforeach
