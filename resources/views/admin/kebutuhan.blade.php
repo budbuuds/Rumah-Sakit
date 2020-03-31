@@ -1,16 +1,3 @@
-<?php
-
-$host="localhost";
-$user="root";
-$password="";
-$db="rumah_sakit";
-
-$kon = mysqli_connect($host,$user,$password,$db);
-if (!$kon){
-	  die("Koneksi gagal:".mysqli_connect_error());
-}
-?>
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -169,39 +156,78 @@ if (!$kon){
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>Nama Rumah Sakit</th>
-                          <th>Masker N95</th>
-                          <th>Masker Surgical</th>
-                          <th>Sarung Tangan (gloves)</th>
-                          <th>Coverall Jumpsuit (hazmat)</th>
-                          <th>Faceshield</th>
-                          <th>Kacamata Goggles</th>
-                          <th>Boot and Shoe Cover</th>
-                          <th>Handsanitizer</th>
-                          <th>Desinfektan</th>
-                          <th>Multivitamin</th>
-                          <th>Kantong Jenazah</th>
-                          <th>Skorlet</th>
-                          <th>Tanggal</th>
+                          <th rowspan="2">Nama Rumah Sakit</th>
+                          <th colspan="2">Masker N95</th>
+                          <th colspan="2">Masker Surgical</th>
+                          <th colspan="2">Sarung Tangan (gloves)</th>
+                          <th colspan="2">Coverall Jumpsuit (hazmat)</th>
+                          <th colspan="2">Faceshield</th>
+                          <th colspan="2">Kacamata Goggles</th>
+                          <th colspan="2">Boot and Shoe Cover</th>
+                          <th colspan="2">Handsanitizer</th>
+                          <th colspan="2">Desinfektan</th>
+                          <th colspan="2">Multivitamin</th>
+                          <th colspan="2">Kantong Jenazah</th>
+                          <th colspan="2">Skorlet</th>
+                          <th rowspan="2">Tanggal</th>
                         </tr>
-                      </thead>
+                        <tr>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          <th>stock</th>
+                          <th>status</th>
+                          
+                        </tr>
+                      </tbody>
                       @foreach($data_kebutuhan as $kebutuhan)
                       <tbody>
                       <tr>
                           <td> {{$kebutuhan -> rs -> nama_rs}} </td>
                           <td> {{$kebutuhan -> masker_n95}} </td>
+                          <td> {{$kebutuhan -> status_masker_n95}} </td>
                           <td> {{$kebutuhan -> masker_surgical}} </td>
+                          <td> {{$kebutuhan -> status_masker_surgical}} </td>
                           <td> {{$kebutuhan -> sarung_tangan}} </td>
+                          <td> {{$kebutuhan -> status_sarung_tangan}} </td>
                           <td> {{$kebutuhan -> coverall_jumpsuit}} </td>
+                          <td> {{$kebutuhan -> status_coverall_jumpsuit}} </td>
                           <td> {{$kebutuhan -> faceshield}} </td>
+                          <td> {{$kebutuhan -> status_faceshield}} </td>
                           <td> {{$kebutuhan -> kacamata_goggles}} </td>
+                          <td> {{$kebutuhan -> status_kacamata_goggles}} </td>
                           <td> {{$kebutuhan -> boot_and_shoe_cover}} </td>
+                          <td> {{$kebutuhan -> status_boot_and_shoe_cover}} </td>
                           <td> {{$kebutuhan -> handsanitizer}} </td>
+                          <td> {{$kebutuhan -> status_handsanitizer}} </td>
                           <td> {{$kebutuhan -> desinfektan}} </td>
+                          <td> {{$kebutuhan -> status_desinfektan}} </td>
                           <td> {{$kebutuhan -> multivitamin}} </td>
+                          <td> {{$kebutuhan -> status_multivitamin}} </td>
                           <td> {{$kebutuhan -> kantong_jenazah}} </td>
+                          <td> {{$kebutuhan -> status_kantong_jenazah}} </td>
                           <td> {{$kebutuhan -> Skorlet}} </td>
-                          <td> {{$kebutuhan -> created_at}}</td>
+                          <td> {{$kebutuhan -> status_Skorlet}} </td>
+                          <td> {{$kebutuhan -> created_at}}</td>>
                         </tr>
                       </tbody>
                       @endforeach
@@ -332,40 +358,147 @@ if (!$kon){
     <label for="exampleFormControlTextarea1">Masker N95</label>
     <input name="masker_n95" class="form-control" type="number" placeholder="Default input">
   </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Status Masker N95</label>
+    <select name="status_masker_n95" class="form-control" id="exampleFormControlSelect1">
+      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
+      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
+      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
+    </select>
+  </div>
   <div>
     <label for="exampleFormControlTextarea1">Masker Surgical</label>
     <input name="masker_surgical" class="form-control" type="number" placeholder="Default input">
-  </div><div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Status Masker Surgical</label>
+    <select name="status_masker_surgical" class="form-control" id="exampleFormControlSelect1">
+      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
+      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
+      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
+    </select>
+  </div>
+  <div>
     <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
     <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input">
-  </div><div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Status Sarung tangan (gloves)</label>
+    <select name="status_sarung_tangan" class="form-control" id="exampleFormControlSelect1">
+      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
+      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
+      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
+    </select>
+  </div>
+  <div>
     <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
     <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input">
-  </div><div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Status Coverall Jumpsuit</label>
+    <select name="status_coverall_jumpsuit" class="form-control" id="exampleFormControlSelect1">
+      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
+      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
+      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
+    </select>
+  </div>
+  <div>
     <label for="exampleFormControlTextarea1">Faceshield</label>
     <input name="faceshield" class="form-control" type="number" placeholder="Default input">
-  </div><div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Status Faceshield</label>
+    <select name="status_faceshield" class="form-control" id="exampleFormControlSelect1">
+      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
+      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
+      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
+    </select>
+  </div>
+  <div>
     <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
     <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input">
-  </div><div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Status Kacamata Goggles</label>
+    <select name="status_kacamata_goggles" class="form-control" id="exampleFormControlSelect1">
+      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
+      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
+      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
+    </select>
+  </div>
+  <div>
     <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
     <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input">
-  </div><div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Status Boot and Shoe Cover</label>
+    <select name="status_boot_and_shoe_cover" class="form-control" id="exampleFormControlSelect1">
+      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
+      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
+      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
+    </select>
+  </div>
+  <div>
     <label for="exampleFormControlTextarea1">Handsanitizer</label>
     <input name="handsanitizer" class="form-control" type="number" placeholder="Default input">
-  </div><div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Status Handsanitizer</label>
+    <select name="status_handsanitizer" class="form-control" id="exampleFormControlSelect1">
+      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
+      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
+      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
+    </select>
+  </div>
+  <div>
     <label for="exampleFormControlTextarea1">Desinfektan</label>
     <input name="desinfektan" class="form-control" type="number" placeholder="Default input">
-  </div><div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Status Desinfektan</label>
+    <select name="status_desinfektan" class="form-control" id="exampleFormControlSelect1">
+      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
+      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
+      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
+    </select>
+  </div>
+  <div>
     <label for="exampleFormControlTextarea1">Multivitamin</label>
     <input name="multivitamin" class="form-control" type="number" placeholder="Default input">
-  </div><div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Status Multivitamin</label>
+    <select name="status_multivitamin" class="form-control" id="exampleFormControlSelect1">
+      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
+      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
+      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
+    </select>
+  </div>
+  <div>
     <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
     <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input">
-  </div><div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Status Kantong Jenazah</label>
+    <select name="status_kantong_jenazah" class="form-control" id="exampleFormControlSelect1">
+      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
+      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
+      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
+    </select>
+  </div>
+  <div>
     <label for="exampleFormControlTextarea1">Skorlet</label>
     <input name="Skorlet" class="form-control" type="number" placeholder="Default input">
   </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Status Skorlet</label>
+    <select name="status_Skorlet" class="form-control" id="exampleFormControlSelect1">
+      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
+      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
+      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
+    </select>
+  </div>
+
 
         </div>
         <div class="modal-footer">
