@@ -306,52 +306,12 @@
         {{csrf_field()}}
 <div class="form-group">
     <label for="exampleFormControlSelect1">Rumah Sakit</label>
-    <select name="rs_id" class="form-control" id="exampleFormControlSelect1">
-      <option value="1">RSU Painan</option>
-      <option value="2">RSU Muara Labuh</option>
-      <option value="3">RSU Prof Dr M A Hanafi</option>
-      <option value="4">RSU Pariaman</option>
-      <option value="5">RSU Lubuk Basung</option>
-      <option value="6">RSU Suliki</option>
-      <option value="7">RSU Lubuk Sikaping</option>
-      <option value="8">RS Islam Ibnu Sina</option>
-      <option value="9">RSU Dr M Jamil</option>
-      <option value="10">RS Dr Reksodiwiryo</option>
-      <option value="11">RS Yos Sudarso</option>
-      <option value="12">RSB An-Nisa</option>
-      <option value="13">RS Islam Ibnu Sina</option>
-      <option value="14">RS Restu Ibu</option>
-      <option value="15">RS Aisyiah Muhammadiyah</option>
-      <option value="16">RS Polda Sumbar</option>
-      <option value="17">RSB Sari</option>
-      <option value="18">RS Jiwa Puti Bungsu</option>
-      <option value="19">RSB Bunda Padang</option>
-      <option value="20">RS Selaguri</option>
-      <option value="21">RS Mata Oculer</option>
-      <option value="22">RS PT Semen Padang</option>
-      <option value="23">RS Jiwa Padang</option>
-      <option value="24">RS Jantung Sumbar</option>
-      <option value="25">RS Mata Perintis</option>
-      <option value="26">RSB Lenggogeni</option>
-      <option value="27">RS Mata Sitawa</option>
-      <option value="28">RSK Bedah Ropanasuri</option>
-      <option value="29">RS Selasih</option>
-      <option value="30">RSU Padang</option>
-      <option value="31">RSB Ananda</option>
-      <option value="32">RSU Asri</option>
-      <option value="33">RSU Solok</option>
-      <option value="34">RSU Sawah Lunto</option>
-      <option value="35">RSU Sungai Dareh</option>
-      <option value="36">RSU Padang Panjang</option>
-      <option value="37">RS Ibnu Sina Pd Panjang</option>
-      <option value="38">RSU Dr Achmad Mochtar</option>
-      <option value="39">RS Rem 032 Bukittinggi</option>
-      <option value="40">RSU Pusat Bukittinggi</option>
-      <option value="41">RS Ibnu Sina Bukittinggi</option>
-      <option value="42">RSU Madina</option>
-      <option value="43">RSU Dr Adnaan WD</option>
-      <option value="44">RSU Ibnu Sina Payakumbuh</option>
-      
+    <select class="form-control m-bot15" name="rs_id">
+
+      @foreach ($rs_array as $array)
+        <option value="{{$array->id}}">{{$array->nama_rs}}</option>
+      @endforeach
+
     </select>
   </div>
   <div>

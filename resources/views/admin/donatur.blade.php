@@ -273,7 +273,16 @@
         {{csrf_field()}}
 <div class="form-group">
     <label for="exampleFormControlSelect1">Rumah Sakit</label>
-    <select name="rs_id" class="form-control" id="exampleFormControlSelect1">
+
+    <select class="form-control m-bot15" name="rs_id">
+
+      @foreach ($rs_array as $array)
+        <option value="{{$array->id}}">{{$array->nama_rs}}</option>
+      @endforeach
+
+    </select>
+
+    <!-- <select name="rs_id" class="form-control" id="exampleFormControlSelect1">
     <option value="1">RSU Painan</option>
       <option value="2">RSU Muara Labuh</option>
       <option value="3">RSU Prof Dr M A Hanafi</option>
@@ -318,7 +327,7 @@
       <option value="42">RSU Madina</option>
       <option value="43">RSU Dr Adnaan WD</option>
       <option value="44">RSU Ibnu Sina Payakumbuh</option>
-    </select>
+    </select> -->
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Nama Donatur</label>
