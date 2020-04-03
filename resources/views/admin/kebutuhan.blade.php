@@ -227,7 +227,7 @@
                           <td> {{$kebutuhan -> status_kantong_jenazah}} </td>
                           <td> {{$kebutuhan -> Skorlet}} </td>
                           <td> {{$kebutuhan -> status_Skorlet}} </td>
-                          <td> {{$kebutuhan -> created_at}}</td>>
+                          <td> {{$kebutuhan -> created_at}}</td>
                         </tr>
                       </tbody>
                       @endforeach
