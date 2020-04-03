@@ -158,7 +158,7 @@
                           <th>Kota / Kabupaten</th>
                           <th>Nama Rumah Sakit</th>
                           <th>Alamat</th>
-                          <th>Contact Person</th>
+                          <!-- <th>Contact Person</th> -->
                           <th>Masker N95</th>
                           <th>Masker Surgical</th>
                           <th>Sarung Tangan (gloves)</th>
@@ -182,7 +182,7 @@
 
                           <td> {{$rs -> alamat}} </td>
   
-                          <td> {{$rs -> cp}}</td>
+                          <!-- <td> {{$rs -> cp}}</td> -->
                                                     
                           <td> {{$rs -> r_masker_n95}} </td>
                           
