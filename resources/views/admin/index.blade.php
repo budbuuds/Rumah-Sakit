@@ -154,9 +154,11 @@
                       <div class="responsive-table">
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                       <thead>
-                        <tr>
+                       <tr>
+                          <th>Kota / Kabupaten</th>
                           <th>Nama Rumah Sakit</th>
                           <th>Alamat</th>
+                          <th>Contact Person</th>
                           <th>Masker N95</th>
                           <th>Masker Surgical</th>
                           <th>Sarung Tangan (gloves)</th>
@@ -174,20 +176,38 @@
                       @foreach($data_rs as $rs)
                       <tbody>
                         <tr>
+                          <td> {{$rs -> daerah -> kota}} </td>
+
                           <td> {{$rs -> nama_rs}} </td>
-                          <td> {{$rs -> Alamat}} </td>
-                          <td> {{$rs -> masker_n95}} </td>
-                          <td> {{$rs -> masker_surgical}} </td>
-                          <td> {{$rs -> sarung_tangan}} </td>
-                          <td> {{$rs -> coverall_jumpsuit}} </td>
-                          <td> {{$rs -> faceshield}} </td>
-                          <td> {{$rs -> kacamata_goggles}} </td>
-                          <td> {{$rs -> boot_and_shoe_cover}} </td>
-                          <td> {{$rs -> handsanitizer}} </td>
-                          <td> {{$rs -> desinfektan}} </td>
-                          <td> {{$rs -> multivitamin}} </td>
-                          <td> {{$rs -> kantong_jenazah}} </td>
-                          <td> {{$rs -> Skorlet}} </td>
+
+                          <td> {{$rs -> alamat}} </td>
+  
+                          <td> {{$rs -> cp}}</td>
+                                                    
+                          <td> {{$rs -> r_masker_n95}} </td>
+                          
+                          <td> {{$rs -> r_masker_surgical}} </td>
+                          
+                          <td> {{$rs -> r_sarung_tangan}} </td>
+                          
+                          <td> {{$rs -> r_coverall_jumpsuit}} </td>
+                          
+                          <td> {{$rs -> r_faceshield}} </td>
+                          
+                          <td> {{$rs -> r_kacamata_goggles}} </td>
+                          
+                          <td> {{$rs -> r_boot_and_shoe_cover}} </td>
+                          
+                          <td> {{$rs -> r_handsanitizer}} </td>
+                          
+                          <td> {{$rs -> r_desinfektan}} </td>
+                          
+                          <td> {{$rs -> r_multivitamin}} </td>
+                          
+                          <td> {{$rs -> r_kantong_jenazah}} </td>
+                          
+                          <td> {{$rs -> r_Skorlet}} </td>
+                          
                         </tr>
                       </tbody>
                       @endforeach

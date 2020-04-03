@@ -146,8 +146,8 @@
                       <div class="responsive-table">
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                       <thead>
-                        <tr>
-                        <th rowspan="2">Nama Rumah Sakit</th>
+                      <tr>
+                          <th rowspan="2">Nama Rumah Sakit</th>
                           <th colspan="2">Masker N95</th>
                           <th colspan="2">Masker Surgical</th>
                           <th colspan="2">Sarung Tangan (gloves)</th>
@@ -189,11 +189,11 @@
                           <th>status</th>
                           
                         </tr>
-                      </tbody>
+                      </thead>
                       @foreach($data_kebutuhan as $kebutuhan)
                       <tbody>
                       <tr>
-                          <td> {{$kebutuhan -> rs -> nama_rs}} </td>
+                          <td> {{$kebutuhan -> rs_1 -> nama_rs}} </td>
                           <td> {{$kebutuhan -> masker_n95}} </td>
                           <td> {{$kebutuhan -> status_masker_n95}} </td>
                           <td> {{$kebutuhan -> masker_surgical}} </td>
@@ -218,7 +218,7 @@
                           <td> {{$kebutuhan -> status_kantong_jenazah}} </td>
                           <td> {{$kebutuhan -> Skorlet}} </td>
                           <td> {{$kebutuhan -> status_Skorlet}} </td>
-                          <td> {{$kebutuhan -> created_at}}</td>>
+                          <td> {{$kebutuhan -> created_at}}</td>
                         </tr>
                       </tbody>
                       @endforeach

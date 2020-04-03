@@ -72,7 +72,7 @@
               <ul class="nav navbar-nav navbar-right user-nav">
                 <li class="user-name"><span>Peduli Rumah Sakit</span></li>
                   <li class="dropdown avatar-dropdown">
-                   <!-- <img src="{{ url('backend/asset/img/avatar.jpg') }}" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/> -->
+                   <img src="{{ url('backend/asset/img/avatar.jpg') }}" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                    <ul class="dropdown-menu user-dropdown">
                      <!-- <li><a href="#"><span class="fa fa-user"></span> My Profile</a></li>
                      <li><a href="#"><span class="fa fa-calendar"></span> My Calendar</a></li>
@@ -122,6 +122,7 @@
                         <li><a href="donasinya-admin">Data Donasi Kebutuhan</a></li>
                       </ul>
                     </li>
+                    
                 </div>
             </div>
           <!-- end: Left Menu -->
@@ -131,10 +132,11 @@
                <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
                     <div class="col-md-12">
-                        <h3 class="animated fadeInLeft">Data Rumah Sakit</h3>
-                        <!-- <p class="animated fadeInDown">
-                          Table <span class="fa-angle-right fa"></span> Data Tables
-                        </p> -->
+                        <h3 class="animated fadeInLeft">Data Penyaluran Donasi Kebutuhan</h3>
+                         <!-- Button trigger modal -->
+                         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Tambahkan
+                            </button> -->
                     </div>
                   </div>
               </div>
@@ -147,59 +149,15 @@
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>Kota / Kabupaten</th>
-                          <th>Nama Rumah Sakit</th>
-                          <th>Alamat</th>
-                          <th>Contact Person</th>
-                          <th>Masker N95</th>
-                          <th>Masker Surgical</th>
-                          <th>Sarung Tangan (gloves)</th>
-                          <th>Coverall Jumpsuit (hazmat)</th>
-                          <th>Faceshield</th>
-                          <th>Kacamata Goggles</th>
-                          <th>Boot and Shoe Cover</th>
-                          <th>Handsanitizer</th>
-                          <th>Desinfektan</th>
-                          <th>Multivitamin</th>
-                          <th>Kantong Jenazah</th>
-                          <th>Skorlet</th>
+                            <th>KELOMPOK</th>
+                            <th>JUMLAH</th>
                         </tr>
                       </thead>
-                      @foreach($data_rs as $rs)
+                      @foreach($data_pasien as $pasien)
                       <tbody>
                         <tr>
-                          <td> {{$rs -> daerah -> kota}} </td>
-
-                          <td> {{$rs -> nama_rs}} </td>
-
-                          <td> {{$rs -> alamat}} </td>
-  
-                          <td> {{$rs -> cp}}</td>
-                                                    
-                          <td> {{$rs -> r_masker_n95}} </td>
-                          
-                          <td> {{$rs -> r_masker_surgical}} </td>
-                          
-                          <td> {{$rs -> r_sarung_tangan}} </td>
-                          
-                          <td> {{$rs -> r_coverall_jumpsuit}} </td>
-                          
-                          <td> {{$rs -> r_faceshield}} </td>
-                          
-                          <td> {{$rs -> r_kacamata_goggles}} </td>
-                          
-                          <td> {{$rs -> r_boot_and_shoe_cover}} </td>
-                          
-                          <td> {{$rs -> r_handsanitizer}} </td>
-                          
-                          <td> {{$rs -> r_desinfektan}} </td>
-                          
-                          <td> {{$rs -> r_multivitamin}} </td>
-                          
-                          <td> {{$rs -> r_kantong_jenazah}} </td>
-                          
-                          <td> {{$rs -> r_Skorlet}} </td>
-                          
+                            <td> {{$pasien -> kelompok}} </td>
+                            <td> {{$pasien -> jumlah}} </td>
                         </tr>
                       </tbody>
                       @endforeach
@@ -224,11 +182,7 @@
         <div class="mimin-mobile-menu-list">
             <div class="col-md-12 sub-mimin-mobile-menu-list animated fadeInLeft">
                 <ul class="nav nav-list">
-                    <li class="ripple">
-                      <a class="tree-toggle nav-header">
-                        <span class="fa fa-bar-chart"></span>Info Data
-                        <span class="fa-angle-right fa right-arrow text-right"></span>
-                      </a>
+                <li class="ripple"><a class="tree-toggle nav-header"><span class="fa fa-bar-chart"></span> Info Data  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
                       <ul class="nav nav-list tree">
                         <li><a href="rumahsakit">Data Rumah Sakit</a></li>
                         <li><a href="kebutuhan">Data Input Kebutuhan</a></li>
@@ -237,13 +191,36 @@
                         <li><a href="donasinya">Data Donasi Kebutuhan</a></li>
                       </ul>
                     </li>
-                    <li class="ripple"><a class="tree-toggle nav-header"><span class="fa fa-key"></span> Menu Admin  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
+                    <li class="ripple">
+                      <a class="tree-toggle nav-header">
+                        <span class="fa fa-bar-chart"></span>Info Data
+                        <span class="fa-angle-right fa right-arrow text-right"></span>
+                      </a>
                       <ul class="nav nav-list tree">
                         <li><a href="rumahsakit-admin">Data Rumah Sakit</a></li>
                         <li><a href="kebutuhan-admin">Data Input Kebutuhan</a></li>
                         <li><a href="donatur-admin">Data Input Donatur</a></li>
                         <li><a href="penyedia-admin">Data Input Penyedia</a></li>
                         <li><a href="donasinya-admin">Data Donasi Kebutuhan</a></li>
+                      </ul>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                             <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li> -->
                       </ul>
                     </li>
                   </ul>
@@ -254,6 +231,95 @@
         <span class="fa fa-bars"></span>
       </button>
        <!-- end: Mobile -->
+
+         <!-- Modal -->
+         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+        <div class="modal-body">
+    <form action="/donasinya-admin/create" method="POST" enctype="multipart/form-data">
+    <!-- <form action="/lensamasuk/store" method="POST"> -->
+        {{csrf_field()}}
+<div class="form-group">
+    <label for="exampleFormControlSelect1">Rumah Sakit Tujuan</label>
+    <select name="rs_id" class="form-control" id="exampleFormControlSelect1">
+        <option value="1">RSU Painan</option>
+        <option value="2">RSU Muara Labuh</option>
+        <option value="3">RSU Prof Dr M A Hanafi</option>
+        <option value="4">RSU Pariaman</option>
+        <option value="5">RSU Lubuk Basung</option>
+        <option value="6">RSU Suliki</option>
+        <option value="7">RSU Lubuk Sikaping</option>
+        <option value="8">RS Islam Ibnu Sina</option>
+        <option value="9">RSU Dr M Jamil</option>
+        <option value="10">RS Dr Reksodiwiryo</option>
+        <option value="11">RS Yos Sudarso</option>
+        <option value="12">RSB An-Nisa</option>
+        <option value="13">RS Islam Ibnu Sina</option>
+        <option value="14">RS Restu Ibu</option>
+        <option value="15">RS Aisyiah Muhammadiyah</option>
+        <option value="16">RS Polda Sumbar</option>
+        <option value="17">RSB Sari</option>
+        <option value="18">RS Jiwa Puti Bungsu</option>
+        <option value="19">RSB Bunda Padang</option>
+        <option value="20">RS Selaguri</option>
+        <option value="21">RS Mata Oculer</option>
+        <option value="22">RS PT Semen Padang</option>
+        <option value="23">RS Jiwa Padang</option>
+        <option value="24">RS Jantung Sumbar</option>
+        <option value="25">RS Mata Perintis</option>
+        <option value="26">RSB Lenggogeni</option>
+        <option value="27">RS Mata Sitawa</option>
+        <option value="28">RSK Bedah Ropanasuri</option>
+        <option value="29">RS Selasih</option>
+        <option value="30">RSU Padang</option>
+        <option value="31">RSB Ananda</option>
+        <option value="32">RSU Asri</option>
+        <option value="33">RSU Solok</option>
+        <option value="34">RSU Sawah Lunto</option>
+        <option value="35">RSU Sungai Dareh</option>
+        <option value="36">RSU Padang Panjang</option>
+        <option value="37">RS Ibnu Sina Pd Panjang</option>
+        <option value="38">RSU Dr Achmad Mochtar</option>
+        <option value="39">RS Rem 032 Bukittinggi</option>
+        <option value="40">RSU Pusat Bukittinggi</option>
+        <option value="41">RS Ibnu Sina Bukittinggi</option>
+        <option value="42">RSU Madina</option>
+        <option value="43">RSU Dr Adnaan WD</option>
+        <option value="44">RSU Ibnu Sina Payakumbuh</option>
+        </select>
+  </div>
+  <div>
+    <label for="exampleFormControlTextarea1">Tanggal Sampai</label>
+    <input name="tanggal" class="form-control" type="date" placeholder="Default input">
+  </div>
+  <div>
+    <label for="exampleFormControlTextarea1">Nama Donatur</label>
+    <input name="donaturnya" class="form-control" type="text" placeholder="Default input">
+  </div>
+  <div>
+    <label for="exampleFormControlTextarea1">Barang Donasi</label>
+    <input name="barangnya" class="form-control" type="text" placeholder="Default input">
+  </div>
+  <div>
+    <label for="exampleFormControlTextarea1">Bukti Donasi</label>
+    <input name="file_bukti" class="form-control" type="file" required>
+  </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+        </div>
+        </div>
+    </div>
+    </div>
 
 <!-- start: Javascript -->
 <script src="{{ url('backend/asset/js/jquery.min.js')}}"></script>

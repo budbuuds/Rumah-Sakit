@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class rs extends Model
+class rs_1 extends Model
 {
-    protected $table = 'rs';
+    protected $table = 'rs_1';
     protected $fillable = 
     [
         'id','nama_rs', 'alamat', 'cp', 
@@ -14,10 +14,10 @@ class rs extends Model
         'd_masker_n95', 'd_masker_surgical', 'd_sarung_tangan', 'd_coverall_jumpsuit', 'd_faceshield', 'd_kacamata_goggles', 'd_boot_and_shoe_cover', 'd_handsanitizer', 'd_desinfektan', 'd_multivitamin', 'd_kantong_jenazah', 'd_Skorlet',
         'created_at', 'updated_at'
     ];
-
-    public function donatur()
+ 
+    public function kebutuhan()
     {
-        return $this->hasMany(donatur::class);
+        return $this->hasMany(kebutuhan::class);
     }
 
     public function daerah()

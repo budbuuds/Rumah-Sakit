@@ -23,6 +23,18 @@ class RumahSakitController extends Controller
         return view('admin.index',['data_rs' => $data_rs]);
     }
 
+    public function daerah(Request $request)
+    {
+        $data_daerah = \App\daerah::all();
+        return view('admin.daerah',['data_daerah' => $data_daerah]);
+    }
+
+    public function pasien(Request $request)
+    {
+        $data_pasien = \App\pasien::all();
+        return view('admin.pasien',['data_pasien' => $data_pasien]);
+    }
+
     public function kebutuhan(Request $request)
     {
         $data_kebutuhan = \App\kebutuhan::all();
@@ -40,6 +52,13 @@ class RumahSakitController extends Controller
         $data_donatur = \App\donatur::all();
         return view('admin.donatur',['data_donatur' => $data_donatur]);
     }
+
+    // public function donatur(Request $request)
+    // {
+    //     $data_donatur = \App\donatur::all();
+    //     $roles = rs::lists('nama_rs', 'id');
+    //     return view('admin.donatur',['data_donatur' => $data_donatur],compact('roles', 'selectedRole'));
+    // }
 
     public function create2(Request $request)
     {    

@@ -202,7 +202,7 @@
                       @foreach($data_kebutuhan as $kebutuhan)
                       <tbody>
                       <tr>
-                          <td> {{$kebutuhan -> rs -> nama_rs}} </td>
+                          <td> {{$kebutuhan -> rs_1 -> nama_rs}} </td>
                           <td> {{$kebutuhan -> masker_n95}} </td>
                           <td> {{$kebutuhan -> status_masker_n95}} </td>
                           <td> {{$kebutuhan -> masker_surgical}} </td>
@@ -306,7 +306,7 @@
         {{csrf_field()}}
 <div class="form-group">
     <label for="exampleFormControlSelect1">Rumah Sakit</label>
-    <select class="form-control m-bot15" name="rs_id">
+    <select class="form-control m-bot15" name="rs_1_id">
 
       @foreach ($rs_array as $array)
         <option value="{{$array->id}}">{{$array->nama_rs}}</option>
