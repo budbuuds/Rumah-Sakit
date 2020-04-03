@@ -23,8 +23,8 @@ class HomeController extends Controller
     //  */
     public function index()
     {
-        $data_rs = \App\rs::all();
-        return view('welcome',['data_rs' => $data_rs]);
+        $data_rs_1 = \App\rs_1::all();
+        return view('welcome',['data_rs_1' => $data_rs_1]);
     }
 
     public function daerah1(Request $request)
@@ -149,8 +149,8 @@ class HomeController extends Controller
 
     public function rumahsakit()
     {
-        $data_rs = \App\rs::all();
-        return view('welcome',['data_rs' => $data_rs]);
+        $data_rs_1 = \App\rs_1::all();
+        return view('welcome',['data_rs_1' => $data_rs_1]);
     }
 
     public function kebutuhan()

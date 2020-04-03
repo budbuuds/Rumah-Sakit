@@ -173,7 +173,7 @@
                           <th>Skorlet</th>
                         </tr>
                       </thead>
-                      @foreach($data_rs as $rs)
+                      @foreach($data_rs_1 as $rs)
                       <tbody>
                         <tr>
                           <td> {{$rs -> daerah -> kota}} </td>

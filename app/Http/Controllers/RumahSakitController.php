@@ -19,8 +19,8 @@ class RumahSakitController extends Controller
     
     public function index(Request $request)
     {
-        $data_rs = \App\rs::all();
-        return view('admin.index',['data_rs' => $data_rs]);
+        $data_rs_1 = \App\rs_1::all();
+        return view('admin.index',['data_rs_1' => $data_rs_1]);
     }
 
     public function daerah(Request $request)
