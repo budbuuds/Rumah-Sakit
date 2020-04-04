@@ -24,6 +24,7 @@ Route::get('/kebutuhan', 'HomeController@kebutuhan')->name('kebutuhan');
 Route::get('/donatur', 'HomeController@donatur')->name('donatur');
 Route::get('/penyedia', 'HomeController@penyedia')->name('penyedia');
 Route::get('/donasinya', 'HomeController@donasinya')->name('donasinya');
+Route::get('/landingpage', 'HomeController@landingpage')->name('landingpage');
 
 // ADMIN
 Route::get('/rumahsakit-admin', 'RumahSakitController@index')->name('rumahsakit');
@@ -35,3 +36,4 @@ Route::get('/penyedia-admin', 'RumahSakitController@penyedia')->name('penyedia')
 Route::post('/penyedia-admin/create', 'RumahSakitController@create3');
 Route::get('/donasinya-admin', 'RumahSakitController@donasinya')->name('donasinya');
 Route::post('/donasinya-admin/create', 'RumahSakitController@create_d');
+// https://rogerdudler.github.io/git-guide/index.id.html

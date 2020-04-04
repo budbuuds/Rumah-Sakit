@@ -26,6 +26,11 @@ class HomeController extends Controller
         $data_rs = \App\rs::all();
         return view('welcome',['data_rs' => $data_rs]);
     }
+    public function landingpage()
+    {
+        $data_rs = \App\rs::all();  
+        return view('index');
+    }
 
     public function rumahsakit()
     {
