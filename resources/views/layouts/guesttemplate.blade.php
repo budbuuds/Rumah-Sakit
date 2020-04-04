@@ -7,7 +7,7 @@
         <meta name="keyword" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
-    
+     
         <!-- start: Css -->
         <link rel="stylesheet" type="text/css" href=" {{ url('backend/asset/css/bootstrap.min.css') }}">
 

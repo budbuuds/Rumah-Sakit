@@ -62,7 +62,7 @@
                   <img src="{{ url('backend/asset/img/pict/graphapd.png') }}">
                   <button type="button" class="tombol donaturbtn">MORE</button>
                 </div>
-              </div>
+              </div> 
             </div>
 
             <div class="col-lg-4 mb-4">
