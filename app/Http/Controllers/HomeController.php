@@ -146,6 +146,11 @@ class HomeController extends Controller
         $data_pasien = \App\pasien::all();
         return view('pasien',['data_pasien' => $data_pasien]);
     }
+    public function landingpage()
+    {
+        $data_rs = \App\rs::all();  
+        return view('index');
+    }
 
     public function rumahsakit()
     {

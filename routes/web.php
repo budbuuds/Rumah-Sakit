@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
 Auth::routes();
 
 // GUEST
@@ -24,6 +23,7 @@ Route::get('/kebutuhan', 'HomeController@kebutuhan')->name('kebutuhan');
 Route::get('/donatur', 'HomeController@donatur')->name('donatur');
 Route::get('/penyedia', 'HomeController@penyedia')->name('penyedia');
 Route::get('/donasinya', 'HomeController@donasinya')->name('donasinya');
+
 Route::get('/daerah1', 'HomeController@daerah1')->name('daerah1');
 Route::get('/daerah2', 'HomeController@daerah2')->name('daerah2');
 Route::get('/daerah3', 'HomeController@daerah3')->name('daerah3');
@@ -44,6 +44,7 @@ Route::get('/daerah17', 'HomeController@daerah17')->name('daerah17');
 Route::get('/daerah18', 'HomeController@daerah18')->name('daerah18');
 Route::get('/daerah19', 'HomeController@daerah19')->name('daerah19');
 Route::get('/pasien', 'HomeController@pasien')->name('pasien');
+Route::get('/landingpage', 'HomeController@landingpage')->name('landingpage');
 
 // ADMIN
 Route::get('/rumahsakit-admin', 'RumahSakitController@index')->name('rumahsakit');
@@ -65,3 +66,4 @@ Route::get('/penyedia-admin/delete/{id}', 'RumahSakitController@delete3');
 
 Route::get('/donatur-admin/edit/{id}', 'RumahSakitController@edit2');
 Route::put('/donatur-admin/update/{id}', 'RumahSakitController@update2');
+// https://rogerdudler.github.io/git-guide/index.id.html
