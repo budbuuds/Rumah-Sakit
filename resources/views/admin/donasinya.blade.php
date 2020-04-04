@@ -161,6 +161,7 @@
                             <th>Bukti Pemberian</th>
                             <th>Donatur</th>
                             <th>Tujuan</th>
+                            <th>Option</th>
                         </tr>
                       </thead>
                       @foreach($data_donasinya as $donasinya)

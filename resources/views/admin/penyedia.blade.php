@@ -171,6 +171,7 @@
                           <th>Multivitamin</th>
                           <th>Kantong Jenazah</th>
                           <th>Skorlet</th>
+                          <th>Option</th>
                         </tr>
                       </thead>
                       @foreach($data_penyedia as $penyedia)
@@ -191,6 +192,13 @@
                           <td> {{$penyedia -> multivitamin}} </td>
                           <td> {{$penyedia -> kantong_jenazah}} </td>
                           <td> {{$penyedia -> Skorlet}} </td>
+                          <td>
+                            <!--<a href="#" class="btn btn-warning btn-sm" role="button">
+                              <i class="fa fa-pencil-square">Edit</i>
+                            </a>-->
+                            <a href="/penyedia-admin/delete/{{$penyedia->id}}" class="btn btn-danger btn-sm" role="button">
+                              <i class="fa fa-times-circle">Delete</i>
+                            </a>
                         </tr>
                       </tbody>
                       @endforeach

@@ -57,3 +57,11 @@ Route::get('/donasinya-admin', 'RumahSakitController@donasinya')->name('donasiny
 Route::post('/donasinya-admin/create', 'RumahSakitController@create_d');
 Route::get('/pasien-admin', 'RumahSakitController@pasien')->name('pasien');
 Route::post('/pasien-admin/create', 'RumahSakitController@create_d');
+
+//EDIT DELETE
+Route::get('/kebutuhan-admin/delete/{id}', 'RumahSakitController@delete1');
+Route::get('/donatur-admin/delete/{id}', 'RumahSakitController@delete2');
+Route::get('/penyedia-admin/delete/{id}', 'RumahSakitController@delete3');
+
+Route::get('/donatur-admin/edit/{id}', 'RumahSakitController@edit2');
+Route::put('/donatur-admin/update/{id}', 'RumahSakitController@update2');

@@ -172,6 +172,7 @@
                           <th>Multivitamin</th>
                           <th>Kantong Jenazah</th>
                           <th>Skorlet</th>
+                          <th>Option</th>
                         </tr>
                       </thead>
                       @foreach($data_donatur as $donatur)
@@ -193,6 +194,14 @@
                           <td> {{$donatur -> multivitamin}}</td>
                           <td> {{$donatur -> kantong_jenazah}}</td>
                           <td> {{$donatur -> Skorlet}}</td>
+                          <td>
+                            <!--<a href="/donatur-admin/edit/{{$donatur->id}}" class="btn btn-warning btn-sm" role="button" data-toggle="modal" data-target="#exampleModal2">
+                              <i class="fa fa-pencil-square">Edit</i>
+                            </a>-->
+                            <a href="/donatur-admin/delete/{{$donatur->id}}" class="btn btn-danger btn-sm" role="button">
+                              <i class="fa fa-times-circle">Delete</i>
+                            </a>
+                          </td>
                         </tr>
                       </tbody>
                       @endforeach
@@ -385,6 +394,87 @@
         </div>
     </div>
     </div>
+
+  <div class="content">
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Data Kebutuhan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+        <div class="modal-body">
+    <form action="/donatur-admin/update/{{$donatur->id}}" method="POST">
+    <!-- <form action="/lensamasuk/store" method="POST"> -->
+        {{csrf_field()}}
+        {{ method_field('PUT') }}
+<div class="form-group">
+    <label for="exampleFormControlSelect1">Rumah Sakit</label>
+    <select class="form-control m-bot15" name="rs_id">
+      @foreach ($rs_array as $array)
+        <option value="{{$array->id}}">{{$array->nama_rs}}</option>
+      @endforeach
+    </select>
+  </div>
+  <div>
+    <label for="exampleFormControlTextarea1">Nama Donatur</label>
+    <input name="nama_donatur" class="form-control" type="text" placeholder="Default input">
+  </div>
+  <div>
+    <label for="exampleFormControlTextarea1">Tunai</label>
+    <input name="tunai" class="form-control" type="number" placeholder="Default input">
+  </div>
+  <div>
+    <label for="exampleFormControlTextarea1">Masker N95</label>
+    <input name="masker_n95" class="form-control" type="number" placeholder="Default input">
+  </div>
+  <div>
+    <label for="exampleFormControlTextarea1">Masker Surgical</label>
+    <input name="masker_surgical" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
+    <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
+    <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Faceshield</label>
+    <input name="faceshield" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
+    <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
+    <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Handsanitizer</label>
+    <input name="handsanitizer" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Desinfektan</label>
+    <input name="desinfektan" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Multivitamin</label>
+    <input name="multivitamin" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
+    <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input">
+  </div><div>
+    <label for="exampleFormControlTextarea1">Skorlet</label>
+    <input name="Skorlet" class="form-control" type="number" placeholder="Default input">
+  </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+        </div>
+        </div>
+    </div>
+    </div>
+  </div>
 
 <!-- start: Javascript -->
 <script src="{{ url('backend/asset/js/jquery.min.js')}}"></script>

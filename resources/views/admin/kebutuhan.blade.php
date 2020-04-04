@@ -156,6 +156,7 @@
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                       <thead>
                         <tr>
+                          <th rowspan="2">Tanggal</th>
                           <th rowspan="2">Nama Rumah Sakit</th>
                           <th colspan="2">Masker N95</th>
                           <th colspan="2">Masker Surgical</th>
@@ -169,7 +170,7 @@
                           <th colspan="2">Multivitamin</th>
                           <th colspan="2">Kantong Jenazah</th>
                           <th colspan="2">Skorlet</th>
-                          <th rowspan="2">Tanggal</th>
+                          <th colspan="2">Option</th>
                         </tr>
                         <tr>
                           <th>stock</th>
@@ -202,6 +203,7 @@
                       @foreach($data_kebutuhan as $kebutuhan)
                       <tbody>
                       <tr>
+                          <td> {{$kebutuhan -> created_at}}</td>
                           <td> {{$kebutuhan -> rs_1 -> nama_rs}} </td>
                           <td> {{$kebutuhan -> masker_n95}} </td>
                           <td> {{$kebutuhan -> status_masker_n95}} </td>
@@ -227,7 +229,14 @@
                           <td> {{$kebutuhan -> status_kantong_jenazah}} </td>
                           <td> {{$kebutuhan -> Skorlet}} </td>
                           <td> {{$kebutuhan -> status_Skorlet}} </td>
-                          <td> {{$kebutuhan -> created_at}}</td>
+                          <td>
+                            <!--<a href="#" class="btn btn-warning btn-sm" role="button">
+                              <i class="fa fa-pencil-square">Edit</i>
+                            </a>-->
+                            <a href="/kebutuhan-admin/delete/{{$kebutuhan->id}}" class="btn btn-danger btn-sm" role="button">
+                              <i class="fa fa-times-circle">Delete</i>
+                            </a>
+                          </td>
                         </tr>
                       </tbody>
                       @endforeach

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\donatur;
+use App\kebutuhan;
+use App\penyedia;
 use Illuminate\Http\Request;
 
 class RumahSakitController extends Controller
@@ -100,4 +103,53 @@ class RumahSakitController extends Controller
     //     \App\donasinya::create($request->all());
     //     return redirect('/donasinya-admin');
     // }
+
+//EDIT DAN DELETE
+    public function delete1($id)
+    {
+        $data_kebutuhan = kebutuhan::FindOrFail($id);
+        $data_kebutuhan->delete();
+        return redirect('/kebutuhan-admin');
+    }
+    public function delete2($id)
+    {
+        $data_donatur = donatur::FindOrFail($id);
+        $data_donatur->delete();
+        return redirect('/donatur-admin');
+    }
+    public function delete3($id)
+    {
+        $data_penyedia = penyedia::FindOrFail($id);
+        $data_penyedia->delete();
+        return redirect('/penyedia-admin');
+    }
+
+    public function edit2($id)
+    {
+    $data_donatur = donatur::FindOrFail($id);
+    return view('admin.donatur',['data_donatur' => $data_donatur]);
+    }
+
+    public function update2($id, Request $request)
+    {
+        $data_donatur = donatur::FindOrFail($id);
+        $data_donatur->rs_id = $request->rs_id;
+        $data_donatur->nama_donatur = $request->nama_donatur;
+        $data_donatur->tunai = $request->tunai;
+        $data_donatur->masker_n95 = $request->masker_n95;
+        $data_donatur->masker_surgical = $request->masker_surgical;
+        $data_donatur->sarung_tangan = $request->sarung_tangan;
+        $data_donatur->coverall_jumpsuit = $request->coverall_jumpsuit;
+        $data_donatur->faceshield = $request->faceshield;
+        $data_donatur->kacamata_goggles = $request->kacamata_goggles;
+        $data_donatur->boot_and_shoe_cover = $request->boot_and_shoe_cover;
+        $data_donatur->handsanitizer = $request->handsanitizer;
+        $data_donatur->desinfektan = $request->desinfektan;
+        $data_donatur->multivitamin = $request->multivitamin;
+        $data_donatur->kantong_jenazah = $request->kantong_jenazah;
+        $data_donatur->Skorlet= $request->Skorlet;
+        $data_donatur->updated_at= $request->updated_at;
+        $data_donatur->save();
+        return redirect('/donatur-admin');
+    }
 }
