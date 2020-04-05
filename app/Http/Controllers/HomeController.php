@@ -181,4 +181,31 @@ class HomeController extends Controller
         $data_donasinya = \App\donasinya::all();
         return view('donasinya',['data_donasinya' => $data_donasinya]);
     }
+
+//TESTING
+    public function popup1()
+    {
+        $data_rs = \App\rs::all();  
+        return view('popup1');
+    }
+    public function popup2()
+    {
+        $data_rs_1 = \App\rs_1::all();
+        $jumlah = [];
+        foreach($data_rs_1 as $data){
+            //$jumlah[] = $data_rs_1->kebutuhan()->;
+        }
+
+        return view('popup2',['data_rs_1' => $data_rs_1]);
+    }
+    public function popup3()
+    {
+        $data_rs = \App\rs_1::all();  
+        return view('popup3');
+    }
+    public function popup4()
+    {
+        $data_pasien = \App\pasien::all();  
+        return view('popup4');
+    }
 }

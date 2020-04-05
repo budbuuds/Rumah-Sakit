@@ -29,7 +29,7 @@ Route::get('/daerah2', 'HomeController@daerah2')->name('daerah2');
 Route::get('/daerah3', 'HomeController@daerah3')->name('daerah3');
 Route::get('/daerah4', 'HomeController@daerah4')->name('daerah4');
 Route::get('/daerah5', 'HomeController@daerah5')->name('daerah5');
-Route::get('/daerah6', 'HomeController@daerah-6')->name('daerah-6');
+Route::get('/daerah6', 'HomeController@daerah-6')->name('daerah6');
 Route::get('/daerah7', 'HomeController@daerah7')->name('daerah7');
 Route::get('/daerah8', 'HomeController@daerah8')->name('daerah8');
 Route::get('/daerah9', 'HomeController@daerah9')->name('daerah9');
@@ -45,6 +45,14 @@ Route::get('/daerah18', 'HomeController@daerah18')->name('daerah18');
 Route::get('/daerah19', 'HomeController@daerah19')->name('daerah19');
 Route::get('/pasien', 'HomeController@pasien')->name('pasien');
 Route::get('/landingpage', 'HomeController@landingpage')->name('landingpage');
+
+//TESTING
+Route::get('/popup1', 'HomeController@popup1')->name('popup1');
+Route::get('/popup2', 'HomeController@popup2')->name('popup2');
+Route::get('/popup3', 'HomeController@popup3')->name('popup3');
+Route::get('/popup4', 'HomeController@popup4')->name('popup4');
+
+//
 
 // ADMIN
 Route::get('/rumahsakit-admin', 'RumahSakitController@index')->name('rumahsakit');
