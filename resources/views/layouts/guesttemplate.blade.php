@@ -56,10 +56,11 @@
 
       <nav class="main-nav float-right d-none d-lg-block">
         <ul> 
-          <li><a href="#intro">BERANDA</a></li>
-          <li><a href="#donatur">DONATUR</a></li> 
-          <li><a href="#why-us">SUPPLIER</a></li>
-          <li><a href="#">ADMIN</a></li>
+          <li><a href="/">BERANDA</a></li>
+          <li><a href="/#donatur">INFO</a></li> 
+          <li><a href="/#why-us">DAERAH</a></li>
+          <li><a href="donatur">DONATUR</a></li>
+          <li><a href="rumahsakit-admin">ADMIN</a></li>
           <!-- <li><a href="view/register.php">Register</a></li>   -->
         </ul>
       </nav><!-- .main-nav -->
@@ -133,5 +134,6 @@
 <script src="{{url('backend/asset/js/main.js')}}"></script>
 <script type="text/javascript">
 </script>
+
     </body>
 </html>

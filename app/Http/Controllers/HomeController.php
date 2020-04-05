@@ -23,8 +23,9 @@ class HomeController extends Controller
     //  */
     public function index()
     {
-        $data_rs_1 = \App\rs_1::all();
-        return view('welcome',['data_rs_1' => $data_rs_1]);
+        // $data_rs_1 = \App\rs_1::all();
+        // return view('welcome',['data_rs_1' => $data_rs_1]);
+        return view('index');
     }
 
     public function daerah1(Request $request)
@@ -143,8 +144,8 @@ class HomeController extends Controller
 
     public function pasien(Request $request)
     {
-        $data_pasien = \App\pasien::all();
-        return view('pasien',['data_pasien' => $data_pasien]);
+        $data_pasien = \App\pasien::find([2,3,4]);
+        return view('popup4',['data_pasien' => $data_pasien]);
     }
     public function landingpage()
     {
@@ -155,13 +156,47 @@ class HomeController extends Controller
     public function rumahsakit()
     {
         $data_rs_1 = \App\rs_1::all();
-        return view('welcome',['data_rs_1' => $data_rs_1]);
+        return view('popup1',['data_rs_1' => $data_rs_1]);
     }
+
+    // public function kebutuhan()
+    // {
+    //     $data_kebutuhan = \App\kebutuhan::all();
+    //     return view('kebutuhan',['data_kebutuhan' => $data_kebutuhan]);
+    // }
 
     public function kebutuhan()
     {
-        $data_kebutuhan = \App\kebutuhan::all();
-        return view('kebutuhan',['data_kebutuhan' => $data_kebutuhan]);
+        $count1 = \App\kebutuhan::all()->sum('masker_n95');
+        $count2 = \App\kebutuhan::all()->sum('masker_surgical');
+        $count3 = \App\kebutuhan::all()->sum('sarung_tangan');
+        $count4 = \App\kebutuhan::all()->sum('coverall_jumpsuit');
+        $count5 = \App\kebutuhan::all()->sum('faceshield');
+        $count6 = \App\kebutuhan::all()->sum('kacamata_goggles');
+        $count7 = \App\kebutuhan::all()->sum('boot_and_shoe_cover');
+        $count8 = \App\kebutuhan::all()->sum('handsanitizer');
+        $count9 = \App\kebutuhan::all()->sum('desinfektan');
+        $count10 = \App\kebutuhan::all()->sum('multivitamin');
+        $count11 = \App\kebutuhan::all()->sum('kantong_jenazah');
+        $count12 = \App\kebutuhan::all()->sum('Skorlet');
+
+        return view('popup2',
+            [
+                'count1' => $count1,
+                'count2' => $count2,
+                'count3' => $count3,
+                'count4' => $count4,
+                'count5' => $count5,
+                'count6' => $count6,
+                'count7' => $count7,
+                'count8' => $count8,
+                'count9' => $count9,
+                'count10' => $count10,
+                'count11' => $count11,
+                'count12' => $count12
+                
+            ]);
+        // return view('popup3',compact('count1','count2','count3','count4','count5','count6','count7','count8','count9','count10','count11','count12'));
     }
 
     public function donatur()

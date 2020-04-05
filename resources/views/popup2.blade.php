@@ -56,7 +56,7 @@
         },
         series: [{
             name: 'Jumlah Kebutuhan',
-            data: [49, 71, 106, 129, 144, 176, 135, 148, 216, 194, 95, 54]
+            data: [{{$count1}},{{$count2}},{{$count3}},{{$count4}},{{$count5}},{{$count6}},{{$count7}},{{$count8}},{{$count9}},{{$count10}},{{$count11}},{{$count12}}]
 
         }]
     });

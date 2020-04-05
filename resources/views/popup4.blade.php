@@ -50,19 +50,24 @@
                     },
                 }
             },
-            series: [{
-                name: 'ODP',
-                data: [0, 52503]
-            }, {
-                name: 'PDP',
-                data: [0, 24064]
-            }, {
-                name: 'Positif',
-                data: [0, 17722]
-            }, {
-                name: 'Meninggal',
-                data: [0, 0]
-            }],
+            series: [
+                @foreach($data_pasien as $pasien)
+            {
+                name: ' {{$pasien -> kelompok}}',
+                data: [0, {{$pasien -> jumlah}}]
+            },
+            @endforeach
+            // {
+            //     name: 'PDP',
+            //     data: [0, 73]
+            // }, {
+            //     name: 'Positif',
+            //     data: [0, 17]
+            // }, {
+            //     name: 'Meninggal',
+            //     data: [0, 1]
+            // }
+            ],
             responsive: {
                 rules: [{
                     condition: {

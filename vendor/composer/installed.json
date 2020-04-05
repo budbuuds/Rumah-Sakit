@@ -5806,6 +5806,16 @@
             "datatables",
             "jquery",
             "laravel"
+        ],
+        "funding": [
+            {
+                "url": "https://www.paypal.me/yajra",
+                "type": "custom"
+            },
+            {
+                "url": "https://www.patreon.com/yajra",
+                "type": "patreon"
+            }
         ]
     }
 ]

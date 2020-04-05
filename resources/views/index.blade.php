@@ -48,9 +48,11 @@
             <div class="col-lg-4 mb-4">
               <div class="cardnew card wow bounceInUp">
                 <div class="card-body">
-                  <h1 class="card-title">Pasien</h1>
+                  <h1 class="card-title">Data Pasien</h1>
                   <img src="{{ url('backend/asset/img/pict/graph.png') }}">
-                  <button type="button" class="tombol donaturbtn">MORE</button>
+                  <form action="/pasien">
+                    <button type="submit" class="tombol donaturbtn">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -58,9 +60,11 @@
             <div class="col-lg-4 mb-4">
               <div class="cardnew card wow bounceInUp">
                 <div class="card-body">
-                  <h1 class="card-title">APD</h1>
+                  <h1 class="card-title">Permintaan APD</h1>
                   <img src="{{ url('backend/asset/img/pict/graphapd.png') }}">
-                  <button type="button" class="tombol donaturbtn">MORE</button>
+                  <form action="/kebutuhan">
+                    <button type="submit" class="tombol donaturbtn">MORE</button>
+                  </form>
                 </div>
               </div> 
             </div>
@@ -68,9 +72,11 @@
             <div class="col-lg-4 mb-4">
               <div class="cardnew card wow bounceInUp">
                 <div class="card-body">
-                  <h1 class="card-title">Rumah Sakit</h1>
+                  <h1 class="card-title">Data Rumah Sakit</h1>
                   <img src="{{ url('backend/asset/img/pict/hospital.png') }}">
-                  <button type="button" class="tombol donaturbtn">MORE</button>
+                  <form action="rumahsakit">
+                    <button type="submit" class="tombol donaturbtn">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
