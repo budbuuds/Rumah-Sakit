@@ -22,7 +22,7 @@
                 text: 'Jumlah Kebutuhan Daerah'
             },
             subtitle: {
-                text: 'Padang'
+                text: '{{$data_daerah -> kota}}'
             },
             xAxis: {
                 categories: [
@@ -60,11 +60,11 @@
                 }
             },
             series: [
-                
+             
                 {
                 
                 name: 'Kebutuhan',
-                data: [{{$count1}},{{$count2}},{{$count3}},{{$count4}},{{$count5}},{{$count6}},{{$count7}},{{$count8}},{{$count9}},{{$count10}},{{$count11}},{{$count12}}]
+                data: [{{$data_daerah -> r_masker_n95}},{{$data_daerah -> r_masker_surgical}},{{$data_daerah -> r_sarung_tangan}},{{$data_daerah -> r_coverall_jumpsuit}},{{$data_daerah -> r_faceshield}},{{$data_daerah -> r_kacamata_goggles}},{{$data_daerah -> r_boot_and_shoe_cover}},{{$data_daerah -> r_handsanitizer}},{{$data_daerah -> r_desinfektan}},{{$data_daerah -> r_multivitamin}},{{$data_daerah -> r_kantong_jenazah}},{{$data_daerah -> r_Skorlet}}]
               
             }
            
@@ -72,9 +72,11 @@
             
              {
                 name: 'Donasi',
-                data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+                data: [{{$data_daerah -> d_masker_n95}},{{$data_daerah -> d_masker_surgical}},{{$data_daerah -> d_sarung_tangan}},{{$data_daerah -> d_coverall_jumpsuit}},{{$data_daerah -> d_faceshield}},{{$data_daerah -> d_kacamata_goggles}},{{$data_daerah -> d_boot_and_shoe_cover}},{{$data_daerah -> d_handsanitizer}},{{$data_daerah -> d_desinfektan}},{{$data_daerah -> d_multivitamin}},{{$data_daerah -> d_kantong_jenazah}},{{$data_daerah -> d_Skorlet}}]
 
-            }]
+            }
+               
+            ]
         });
     </script>
 </section>

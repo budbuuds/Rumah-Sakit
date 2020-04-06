@@ -104,7 +104,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Agam</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="Agam">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -114,7 +116,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Dharmasraya</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                    <form action="Dharmasraya">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -124,7 +128,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Kep. Mentawai</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                    <form action="KepulauanMentawai">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div> 
@@ -136,7 +142,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Bukittinggi</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="Bukittinggi">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -146,8 +154,10 @@
                 <div class="card-body">
                   <h5 class="card-title">Padang</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
-                </div>
+                  <form action="Padang">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
+                  </div>
               </div>
             </div>
 
@@ -156,7 +166,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Pariaman</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="Pariaman">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>                  
                 </div>
               </div>
             </div>
@@ -168,7 +180,9 @@
                 <div class="card-body">
                   <h5 class="card-title">50 Kota</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="50Kota">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -178,7 +192,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Payakumbuh</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="Payakumbuh">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -188,7 +204,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Sawah Lunto</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="SawahLunto">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -200,7 +218,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Pasaman Barat</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="PasamanBarat">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -210,7 +230,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Padang Panjang</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Googles<br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="PadangPanjang">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -220,7 +242,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Padang Pariaman</h5><br>
                     <p class="card-text">Masker N95 <br>Hansanitizer<br>Googles<br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="PadangPariaman">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -232,7 +256,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Pasaman</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="Pasaman">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -240,9 +266,11 @@
             <div class="col-lg-4 col-md-4 col-sm-4 mb-4">
               <div class="card wow bounceInUp">
                 <div class="card-body">
-                  <h5 class="card-title">Solok</h5><br>
+                  <h5 class="card-title">Kota Solok</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="KotaSolok">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -252,7 +280,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Pesisir Selatan</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="PesisirSelatan">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -264,7 +294,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Sijunjung</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="Sijunjung">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -274,7 +306,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Solok</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="Solok">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -284,7 +318,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Solok Selatan</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="SolokSelatan">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -296,7 +332,9 @@
                 <div class="card-body">
                   <h5 class="card-title">Tanah Datar</h5><br>
                     <p class="card-text">Masker N95 <br>Gloves<br>Hansanitizer<br>Googles <br>. . .</p>
-                  <button type="button" class="tombol">MORE</button>
+                  <form action="TanahDatar">
+                    <button type="submit" class="tombol">MORE</button>
+                  </form>
                 </div>
               </div>
             </div>

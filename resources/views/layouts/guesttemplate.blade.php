@@ -2,8 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="description" content="Miminium Admin Template v.1">
-        <meta name="author" content="Isna Nur Azis">
+        <meta name="description" content="Merupakan sebuah platform digital yang menyatukan dan memanggil Relawan untuk ikut ambil bagian dalam gerakan sosial Sumbar Lawan Covid 19.">
+        <meta name="author" content="IA UKM-ITB dan Neo-Telemetri UNAND">
         <meta name="keyword" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
