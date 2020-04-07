@@ -19,18 +19,25 @@
       <div class="intro-info">
         <h2>Aksitageh<br></h2>
         <p>
-          Merupakan sebuah platform digital yang 
-          menyatukan dan memanggil Relawan untuk ikut 
-          ambil bagian dalam gerakan sosial Sumbar Lawan 
-          Covid 19.
+            Aksitageh adalah gerakan sosial yang 
+            mempersatukan relawan-relawan yang berjuang 
+            untuk menghilangkan Covid di Sumbar dengan 
+            Cepat dan Cerdas. 
         </p>
         <p>
-          Aksitageh diinisiasi oleh rekan-rekan dari IA UKM-ITB 
-          dan Neo-Telemetri UNAND untuk bersatu dan 
-          menjalankan aksi sosial. Selain membuka 
-          kesempatan untuk menjadi relawan, Aksitageh juga 
-          memberikan informasi serta penggalangan dana 
-          dan penyaluran bantuan. 
+            Salah satu layanan yang diberikan adalah dengan 
+            memberikan informasi pada relawan serta donatur 
+            mengenai kebutuhan fasilitas kesehatan untuk 
+            menangani Covid-19.
+        </p>
+        <p>
+            Data kebutuhan dari fasilitas kesehatan ini 
+            bersumber dari kontak person Aksitageh pada 
+            setiap Faskes.
+        </p>
+        <p>
+            Mari manfaatkan data pada Aksitageh untuk 
+            mengetahui kemana bantuan hendak disalurkan. 
         </p>
       </div>
 
@@ -350,6 +357,9 @@
           <img src="{{ url('backend/asset/img/pict/donation.png') }}" class="col-md-8 img-fluid">
            <header class="section-header">
             <h3 style="padding-top: 6%; font-weight: bold; color: #000;">Ayo Donasi Sekarang!</h3>  
+          <form action="/pasien">
+            <!-- <button type="submit" class="tombol donaturbtn">MORE</button>
+          </form> -->
           </header>
         </div>
       </div>

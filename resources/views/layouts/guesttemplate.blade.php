@@ -59,7 +59,7 @@
           <li><a href="/">BERANDA</a></li>
           <li><a href="/#donatur">INFO</a></li> 
           <li><a href="/#why-us">DAERAH</a></li>
-          <li><a href="donatur">DONATUR</a></li>
+          <li><a href="donatur">DONASI</a></li>
           <li><a href="rumahsakit-admin">ADMIN</a></li>
           <!-- <li><a href="view/register.php">Register</a></li>   -->
         </ul>
@@ -93,7 +93,7 @@
 
     <div class="container">
       <div class="copyright">
-        Copyright &copy;<strong>2020</strong> Neo Telemetri x IA UKM ITB
+        Copyright &copy;<strong>2020</strong> Neo Telemetri UNAND x IA UKM ITB
       </div>
     </div>
   </footer><!-- #footer -->
