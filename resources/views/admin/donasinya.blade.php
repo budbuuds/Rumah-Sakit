@@ -18,6 +18,9 @@
         <link rel="stylesheet" type="text/css" href="{{ url('backend/asset/css/plugins/animate.min.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ url('backend/asset/css/plugins/fullcalendar.min.css') }}"/>
         <link href="{{ url('backend/asset/css/style.css') }}" rel="stylesheet">
+        <!-- new plugin -->
+        <link rel="stylesheet" type="text/css" href="{{ url('backend/asset/select2/dist/css/select2.min.css') }}"/>
+        <!-- end new plugin -->
         <!-- end: Css -->
 
         <link rel="shortcut icon" href="{{ url('backend/asset/img/emeral.png') }}">
@@ -248,11 +251,11 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-        <div class="modal-body">
+        <div class="modal-body"> 
     <form action="/donasinya-admin/create" method="POST" enctype="multipart/form-data">
     <!-- <form action="/lensamasuk/store" method="POST"> -->
         {{csrf_field()}}
-<div class="form-group">
+<!-- <div class="form-group">
     <label for="exampleFormControlSelect1">Rumah Sakit Tujuan</label>
     <select class="form-control m-bot15" name="rs_id">
 
@@ -261,7 +264,19 @@
       @endforeach
 
     </select>
+  </div> -->
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1" >Rumah Sakit</label>
+    <select class="select2" name="rs_1_id" multiple="multiple" style="width: 100%">
+
+      @foreach ($rs_array as $array)
+        <option value="{{$array->id}}">{{$array->nama_rs}}</option>
+      @endforeach
+
+    </select>
   </div>
+
   <div>
     <label for="exampleFormControlTextarea1">Tanggal Sampai</label>
     <input name="tanggal" class="form-control" type="date" placeholder="Default input">
@@ -313,6 +328,15 @@
 <script src="{{ url('backend/asset/js/plugins/jquery.datatables.min.js')}}"></script>
 <script src="{{ url('backend/asset/js/plugins/datatables.bootstrap.min.js')}}"></script>
 <script src="{{ url('backend/asset/js/plugins/jquery.nicescroll.js')}}"></script>
+<script src="{{ url('backend/asset/select2/dist/js/select2.min.js')}}"></script>
+<script>
+    $(document).ready(function() {
+        $('.select2').select2({
+          placeholder: 'Search..',
+          tags : true
+        });
+    });
+</script>
 
 
 <!-- custom -->
