@@ -79,7 +79,7 @@ class HomeController extends Controller
     public function daerah9(Request $request)
     {
         $data_daerah = \App\daerah::find(9);
-        return view('SawahLunto',['data_daerah9' => $data_daerah9]);
+        return view('SawahLunto',['data_daerah' => $data_daerah]);
     }
 
     public function daerah10(Request $request)

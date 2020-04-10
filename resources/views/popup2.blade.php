@@ -48,6 +48,9 @@
             shared: true,
             useHTML: true
         },
+        credits: {
+                enabled: false
+        },
         plotOptions: {
             column: {
                 pointPadding: 0.2,

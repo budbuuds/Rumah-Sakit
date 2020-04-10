@@ -81,6 +81,9 @@
                         }
                     }
                 }]
+            },
+            credits: {
+                enabled: false
             }
         });
     </script>
