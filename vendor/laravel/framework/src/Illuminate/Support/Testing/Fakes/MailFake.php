@@ -66,10 +66,8 @@ class MailFake implements Factory, Mailer, MailQueue
      */
     protected function assertSentTimes($mailable, $times = 1)
     {
-        $count = $this->sent($mailable)->count();
-
-        PHPUnit::assertSame(
-            $times, $count,
+        PHPUnit::assertTrue(
+            ($count = $this->sent($mailable)->count()) === $times,
             "The expected [{$mailable}] mailable was sent {$count} times instead of {$times} times."
         );
     }
@@ -83,8 +81,8 @@ class MailFake implements Factory, Mailer, MailQueue
      */
     public function assertNotSent($mailable, $callback = null)
     {
-        PHPUnit::assertCount(
-            0, $this->sent($mailable, $callback),
+        PHPUnit::assertTrue(
+            $this->sent($mailable, $callback)->count() === 0,
             "The unexpected [{$mailable}] mailable was sent."
         );
     }
@@ -131,10 +129,8 @@ class MailFake implements Factory, Mailer, MailQueue
      */
     protected function assertQueuedTimes($mailable, $times = 1)
     {
-        $count = $this->queued($mailable)->count();
-
-        PHPUnit::assertSame(
-            $times, $count,
+        PHPUnit::assertTrue(
+            ($count = $this->queued($mailable)->count()) === $times,
             "The expected [{$mailable}] mailable was queued {$count} times instead of {$times} times."
         );
     }
@@ -148,8 +144,8 @@ class MailFake implements Factory, Mailer, MailQueue
      */
     public function assertNotQueued($mailable, $callback = null)
     {
-        PHPUnit::assertCount(
-            0, $this->queued($mailable, $callback),
+        PHPUnit::assertTrue(
+            $this->queued($mailable, $callback)->count() === 0,
             "The unexpected [{$mailable}] mailable was queued."
         );
     }

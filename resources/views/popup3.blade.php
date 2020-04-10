@@ -26,18 +26,7 @@
             },
             xAxis: {
                 categories: [
-                    'Masker N95',
-                    'Masker Surgical',
-                    'Sarung Tangan',
-                    'Hazmat',
-                    'Faceshield',
-                    'Kacamata Goggles',
-                    'Boot and Shoe Cover',
-                    'Handsanitizer',
-                    'Desinfektan',
-                    'Multivitamin',
-                    'Kantong Jenazah',
-                    'Skorlet'
+                    'ODP','PDP','Positif','Meninggal','Sembuh'
                 ],
                 crosshair: true
             },
@@ -66,18 +55,17 @@
                 
                 {
                 
-                name: 'Kebutuhan',
-                data: [{{$count1}},{{$count2}},{{$count3}},{{$count4}},{{$count5}},{{$count6}},{{$count7}},{{$count8}},{{$count9}},{{$count10}},{{$count11}},{{$count12}}]
+                name: 'Jumlah',
+                data: 
+                [
+                    @foreach($data_pasien as $pasien)
+                    {{$pasien -> jumlah}},
+                    @endforeach
+                    
+                ]
               
             }
-           
-            ,
-            
-             {
-                name: 'Donasi',
-                data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
-
-            }]
+           ]
         });
     </script>
 </section>

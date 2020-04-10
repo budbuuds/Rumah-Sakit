@@ -72,10 +72,8 @@ class EventFake implements Dispatcher
      */
     public function assertDispatchedTimes($event, $times = 1)
     {
-        $count = $this->dispatched($event)->count();
-
-        PHPUnit::assertSame(
-            $times, $count,
+        PHPUnit::assertTrue(
+            ($count = $this->dispatched($event)->count()) === $times,
             "The expected [{$event}] event was dispatched {$count} times instead of {$times} times."
         );
     }
@@ -89,8 +87,8 @@ class EventFake implements Dispatcher
      */
     public function assertNotDispatched($event, $callback = null)
     {
-        PHPUnit::assertCount(
-            0, $this->dispatched($event, $callback),
+        PHPUnit::assertTrue(
+            $this->dispatched($event, $callback)->count() === 0,
             "The unexpected [{$event}] event was dispatched."
         );
     }

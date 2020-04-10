@@ -144,8 +144,8 @@ class HomeController extends Controller
 
     public function pasien(Request $request)
     {
-        $data_pasien = \App\pasien::find([2,3,4]);
-        return view('popup4',['data_pasien' => $data_pasien]);
+        $data_pasien = \App\pasien::all();
+        return view('popup3',['data_pasien' => $data_pasien]);
     }
     public function landingpage()
     {

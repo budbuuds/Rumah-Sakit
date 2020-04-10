@@ -144,7 +144,7 @@
                     </div>
                   @endif
                     <div class="col-md-12">
-                        <h3 class="animated fadeInLeft">Daftar Donatur</h3>
+                        <h3 class="animated fadeInLeft">Data Pasien</h3>
                          <!-- Button trigger modal -->
                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Tambahkan
@@ -161,51 +161,20 @@
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>Tanggal</th>
-                          <th>Nama Rumah Sakit</th>
-                          <th>Nama Donatur</th>
-                          <th>Tunai</th>
-                          <th>Masker N95</th>
-                          <th>Masker Surgical</th>
-                          <th>Sarung Tangan (gloves)</th>
-                          <th>Coverall Jumpsuit (hazmat)</th>
-                          <th>Faceshield</th>
-                          <th>Kacamata Goggles</th>
-                          <th>Boot and Shoe Cover</th>
-                          <th>Handsanitizer</th>
-                          <th>Desinfektan</th>
-                          <th>Multivitamin</th>
-                          <th>Kantong Jenazah</th>
-                          <th>Skorlet</th>
-                          <th>Option</th>
+                          <th>No</th>
+                          <th>Kategori</th>
+                          <th>Jumlah</th>
+                          <th>Opsi</th>
                         </tr>
                       </thead>
-                      @foreach($data_donatur as $donatur)
+                      @foreach($data_pasien as $pasien)
                       <tbody>
                         <tr>
-                          <td> {{$donatur -> created_at}} </td>
-                          <td> {{$donatur -> rs -> nama_rs}} </td>
-                          <td> {{$donatur -> nama_donatur}} </td>
-                          <td> {{$donatur -> tunai}} </td>
-                          <td> {{$donatur -> masker_n95}}</td>
-                          <td> {{$donatur -> masker_surgical}}</td>
-                          <td> {{$donatur -> sarung_tangan}}</td>
-                          <td> {{$donatur -> coverall_jumpsuit}}</td>
-                          <td> {{$donatur -> faceshield}}</td>
-                          <td> {{$donatur -> kacamata_goggles}}</td>
-                          <td> {{$donatur -> boot_and_shoe_cover}}</td>
-                          <td> {{$donatur -> handsanitizer}}</td>
-                          <td> {{$donatur -> desinfektan}}</td>
-                          <td> {{$donatur -> multivitamin}}</td>
-                          <td> {{$donatur -> kantong_jenazah}}</td>
-                          <td> {{$donatur -> Skorlet}}</td>
+                          <td> {{$pasien -> id}} </td>
+                          <td> {{$pasien -> kelompok}} </td>
+                          <td> {{$pasien -> jumlah}} </td>
                           <td>
-                            <!--<a href="/donatur-admin/edit/{{$donatur->id}}" class="btn btn-warning btn-sm" role="button" data-toggle="modal" data-target="#exampleModal2">
-                              <i class="fa fa-pencil-square">Edit</i>
-                            </a>-->
-                            <a href="/donatur-admin/delete/{{$donatur->id}}" class="btn btn-danger btn-sm" role="button">
-                              <i class="fa fa-times-circle">Delete</i>
-                            </a>
+                            <a href="/pasien-admin/{{$pasien->id}}/edit" class="btn btn-warning btn-sm" role="button">Edit</a>
                           </td>
                         </tr>
                       </tbody>
@@ -282,113 +251,17 @@
                     </button>
                 </div>
         <div class="modal-body">
-    <form action="/donatur-admin/create" method="POST">
+    <form action="/pasien-admin/create" method="POST">
     <!-- <form action="/lensamasuk/store" method="POST"> -->
         {{csrf_field()}}
-<div class="form-group">
-    <label for="exampleFormControlSelect1">Rumah Sakit</label>
-
-    <select class="form-control m-bot15" name="rs_id">
-
-      @foreach ($rs_array as $array)
-        <option value="{{$array->id}}">{{$array->nama_rs}}</option>
-      @endforeach
-
-    </select>
-
-    <!-- <select name="rs_id" class="form-control" id="exampleFormControlSelect1">
-    <option value="1">RSU Painan</option>
-      <option value="2">RSU Muara Labuh</option>
-      <option value="3">RSU Prof Dr M A Hanafi</option>
-      <option value="4">RSU Pariaman</option>
-      <option value="5">RSU Lubuk Basung</option>
-      <option value="6">RSU Suliki</option>
-      <option value="7">RSU Lubuk Sikaping</option>
-      <option value="8">RS Islam Ibnu Sina</option>
-      <option value="9">RSU Dr M Jamil</option>
-      <option value="10">RS Dr Reksodiwiryo</option>
-      <option value="11">RS Yos Sudarso</option>
-      <option value="12">RSB An-Nisa</option>
-      <option value="13">RS Islam Ibnu Sina</option>
-      <option value="14">RS Restu Ibu</option>
-      <option value="15">RS Aisyiah Muhammadiyah</option>
-      <option value="16">RS Polda Sumbar</option>
-      <option value="17">RSB Sari</option>
-      <option value="18">RS Jiwa Puti Bungsu</option>
-      <option value="19">RSB Bunda Padang</option>
-      <option value="20">RS Selaguri</option>
-      <option value="21">RS Mata Oculer</option>
-      <option value="22">RS PT Semen Padang</option>
-      <option value="23">RS Jiwa Padang</option>
-      <option value="24">RS Jantung Sumbar</option>
-      <option value="25">RS Mata Perintis</option>
-      <option value="26">RSB Lenggogeni</option>
-      <option value="27">RS Mata Sitawa</option>
-      <option value="28">RSK Bedah Ropanasuri</option>
-      <option value="29">RS Selasih</option>
-      <option value="30">RSU Padang</option>
-      <option value="31">RSB Ananda</option>
-      <option value="32">RSU Asri</option>
-      <option value="33">RSU Solok</option>
-      <option value="34">RSU Sawah Lunto</option>
-      <option value="35">RSU Sungai Dareh</option>
-      <option value="36">RSU Padang Panjang</option>
-      <option value="37">RS Ibnu Sina Pd Panjang</option>
-      <option value="38">RSU Dr Achmad Mochtar</option>
-      <option value="39">RS Rem 032 Bukittinggi</option>
-      <option value="40">RSU Pusat Bukittinggi</option>
-      <option value="41">RS Ibnu Sina Bukittinggi</option>
-      <option value="42">RSU Madina</option>
-      <option value="43">RSU Dr Adnaan WD</option>
-      <option value="44">RSU Ibnu Sina Payakumbuh</option>
-    </select> -->
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Nama Donatur</label>
-    <input name="nama_donatur" class="form-control" type="text" placeholder="Default input">
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Tunai</label>
-    <input name="tunai" class="form-control" type="number" placeholder="Default input" value="0">
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Masker N95</label>
-    <input name="masker_n95" class="form-control" type="number" placeholder="Default input" value="0">
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Masker Surgical</label>
-    <input name="masker_surgical" class="form-control" type="number" placeholder="Default input" value="0">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
-    <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input" value="0">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
-    <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input" value="0">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Faceshield</label>
-    <input name="faceshield" class="form-control" type="number" placeholder="Default input" value="0">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
-    <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input" value="0">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
-    <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input" value="0">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Handsanitizer</label>
-    <input name="handsanitizer" class="form-control" type="number" placeholder="Default input" value="0">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Desinfektan</label>
-    <input name="desinfektan" class="form-control" type="number" placeholder="Default input" value="0">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Multivitamin</label>
-    <input name="multivitamin" class="form-control" type="number" placeholder="Default input" value="0">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
-    <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input" value="0">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Skorlet</label>
-    <input name="Skorlet" class="form-control" type="number" placeholder="Default input" value="0">
-  </div>
+        <div>
+            <label for="exampleFormControlTextarea1">Kelompok</label>
+            <input name="kelompok" class="form-control" type="text" placeholder="Default input">
+        </div>
+        <div>
+            <label for="exampleFormControlTextarea1">Jumlah</label>
+            <input name="jumlah" class="form-control" type="number" placeholder="Default input">
+        </div>
 
         </div>
         <div class="modal-footer">
@@ -411,7 +284,7 @@
                     </button>
                 </div>
         <div class="modal-body">
-    <form action="/donatur-admin/update/{{$donatur->id}}" method="POST">
+    <form action="/donatur-admin/update/{{$pasien->id}}" method="POST">
     <!-- <form action="/lensamasuk/store" method="POST"> -->
         {{csrf_field()}}
         {{ method_field('PUT') }}

@@ -18,9 +18,6 @@
         <link rel="stylesheet" type="text/css" href="{{ url('backend/asset/css/plugins/animate.min.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ url('backend/asset/css/plugins/fullcalendar.min.css') }}"/>
         <link href="{{ url('backend/asset/css/style.css') }}" rel="stylesheet">
-        <!-- new plugin -->
-        <link rel="stylesheet" type="text/css" href="{{ url('backend/asset/select2/dist/css/select2.min.css') }}"/>
-        <!-- end new plugin -->
         <!-- end: Css -->
 
         <link rel="shortcut icon" href="{{ url('backend/asset/img/emeral.png') }}">
@@ -141,56 +138,31 @@
           <div id="content">
                <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
+                  <h1>Edit Data Pasien</h1>
                   @if(session('sukses'))
                     <div class="alert alert-success">
-                      <strong>Sukses!</strong> Data berhasil ditambahkan.
+                      <strong>Sukses!</strong> Data berhasil diupdate.
                     </div>
                   @endif
                     <div class="col-md-12">
-                        <h3 class="animated fadeInLeft">Data Penyaluran Donasi Kebutuhan</h3>
-                         <!-- Button trigger modal -->
-                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Tambahkan
-                            </button>
+                    <form action="/pasien-admin/{{$data_pasien->id}}/update" method="POST">
+                            <!-- <form action="/lensamasuk/store" method="POST"> -->
+                                {{csrf_field()}}
+                                <div>
+                                    <label for="exampleFormControlTextarea1">Jenis</label>
+                                    <input name="kelompok" class="form-control" type="text" placeholder="Default input" value="{{$data_pasien->kelompok}}">
+                                </div>
+                                <div>
+                                    <label for="exampleFormControlTextarea1">Jumlah</label>
+                                    <input name="jumlah" class="form-control" type="number" placeholder="Default input" value="{{$data_pasien->jumlah}}">
+                                </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <input class="btn btn-warning" type="submit" value="Update">
+                        </form>
                     </div>
-                  </div>
-              </div>
-              <div class="col-md-12 top-20 padding-0">
-                <div class="col-md-12">
-                  <div class="panel">
-                    <div class="panel-heading"><h3>Data Tables</h3></div>
-                    <div class="panel-body">
-                      <div class="responsive-table">
-                      <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
-                      <thead>
-                        <tr>
-                            <th>Tanggal</th>
-                            <th>Barang Donasi</th>
-                            <th>Bukti Pemberian</th>
-                            <th>Donatur</th>
-                            <th>Tujuan</th>
-                            <th>Option</th>
-                        </tr>
-                      </thead>
-                      @foreach($data_donasinya as $donasinya)
-                      <tbody>
-                        <tr>
-                            <td> {{$donasinya -> created_at}} </td>
-                            <td> {{$donasinya -> barangnya}} </td>
-                            <td> <img src="{{asset('images/'.$donasinya->file_bukti)}}" alt="file_bukti" width="150px" height="100px"> </td>
-                            <!-- <td> <img width="150px" src="{{ url('/file_gambar/'.$donasinya->file_bukti) }}"> </td> -->
-                            <td> {{$donasinya -> donaturnya}} </td>
-                            <td> {{$donasinya -> rs -> nama_rs}} </td>
-                        </tr>
-                      </tbody>
-                      @endforeach
-                        </table>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>  
+                </div>  
               </div>
             </div>
           <!-- end: content -->
@@ -215,7 +187,6 @@
                         <li><a href="kebutuhan-admin">Data Input Kebutuhan</a></li>
                         <li><a href="donatur-admin">Data Input Donatur</a></li>
                         <li><a href="penyedia-admin">Data Input Penyedia</a></li>
-                        <li><a href="donasinya-admin">Data Donasi Kebutuhan</a></li>
                       </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -256,70 +227,30 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-        <div class="modal-body"> 
-    <form action="/donasinya-admin/create" method="POST" enctype="multipart/form-data">
-    <!-- <form action="/lensamasuk/store" method="POST"> -->
-        {{csrf_field()}}
-<!-- <div class="form-group">
-    <label for="exampleFormControlSelect1">Rumah Sakit Tujuan</label>
-    <select class="form-control m-bot15" name="rs_id">
-
-      @foreach ($rs_array as $array)
-        <option value="{{$array->id}}">{{$array->nama_rs}}</option>
-      @endforeach
-
-    </select>
-  </div> -->
-
-  <div class="form-group">
-    <label for="exampleFormControlSelect1" >Rumah Sakit</label>
-    <select class="select2" name="rs_1_id" multiple="multiple" style="width: 100%">
-
-      @foreach ($rs_array as $array)
-        <option value="{{$array->id}}">{{$array->nama_rs}}</option>
-      @endforeach
-
-    </select>
-  </div>
-
-  <div>
-    <label for="exampleFormControlTextarea1">Tanggal Sampai</label>
-    <input name="tanggal" class="form-control" type="date" placeholder="Default input">
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Nama Donatur</label>
-    <input name="donaturnya" class="form-control" type="text" placeholder="Default input">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Rumah Sakit Tujuan</label>
-    <select name="barangnya" class="form-control" id="exampleFormControlSelect1">
-        <option value="Masker N95">Masker N95</option>
-        <option value="Masker Surgical">Masker Surgical</option>
-        <option value="Sarung Tangan">Sarung Tangan</option>
-        <option value="Coverall Jumpsuit">Coverall Jumpsuit</option>
-        <option value="Faceshield">Faceshield</option>
-        <option value="Kacamata Goggles">Kacamata Goggles</option>
-        <option value="Boot and Shoe Cover">Boot and Shoe Cover</option>
-        <option value="Handsanitizer">Handsanitizer</option>
-        <option value="Desinfektan">Desinfektan</option>
-        <option value="Multivitamin">Multivitamin</option>
-        <option value="Kantong Jenazah">Kantong Jenazah</option>
-        <option value="Skorlet">Skorlet</option>
-        </select>
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Bukti Donasi</label>
-    <input name="file_bukti" class="form-control" type="file" required>
-  </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <input class="btn btn-primary" type="submit" value="Submit">
-</form>
+        <div class="modal-body">
+    
         </div>
         </div>
     </div>
     </div>
+
+  <div class="content">
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Data Kebutuhan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+        <div class="modal-body">
+    
+        </div>
+        </div>
+    </div>
+    </div>
+  </div>
 
 <!-- start: Javascript -->
 <script src="{{ url('backend/asset/js/jquery.min.js')}}"></script>
@@ -333,15 +264,6 @@
 <script src="{{ url('backend/asset/js/plugins/jquery.datatables.min.js')}}"></script>
 <script src="{{ url('backend/asset/js/plugins/datatables.bootstrap.min.js')}}"></script>
 <script src="{{ url('backend/asset/js/plugins/jquery.nicescroll.js')}}"></script>
-<script src="{{ url('backend/asset/select2/dist/js/select2.min.js')}}"></script>
-<script>
-    $(document).ready(function() {
-        $('.select2').select2({
-          placeholder: 'Search..',
-          tags : true
-        });
-    });
-</script>
 
 
 <!-- custom -->

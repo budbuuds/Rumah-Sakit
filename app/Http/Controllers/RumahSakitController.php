@@ -38,6 +38,25 @@ class RumahSakitController extends Controller
         return view('admin.pasien',['data_pasien' => $data_pasien]);
     }
 
+    public function createPasien(Request $request)
+    {    
+        \App\pasien::create($request->all());
+        return redirect('/pasien-admin')->with('sukses','Data berhasil diinput');
+    }
+
+    public function editPasien($id)
+    {
+        $data_pasien = \App\pasien::find($id);
+        return view('admin/editpasien',['data_pasien' => $data_pasien]);
+    }
+
+    public function updatePasien(Request $request,$id)
+    {
+        $data_pasien = \App\pasien::find($id);
+        $data_pasien->update($request->all());
+        return redirect('/pasien-admin')->with('sukses');
+    }
+
     public function kebutuhan(Request $request)
     {
         $data_kebutuhan = \App\kebutuhan::all();
@@ -47,7 +66,7 @@ class RumahSakitController extends Controller
     public function create1(Request $request)
     {    
         \App\kebutuhan::create($request->all());
-        return redirect('/kebutuhan-admin');
+        return redirect('/kebutuhan-admin')->with('sukses','Data berhasil diinput');
     }
 
     public function donatur(Request $request)
@@ -66,7 +85,7 @@ class RumahSakitController extends Controller
     public function create2(Request $request)
     {    
         \App\donatur::create($request->all());
-        return redirect('/donatur-admin');
+        return redirect('/donatur-admin')->with('sukses','Data berhasil diinput');
     }
 
     public function penyedia(Request $request)
@@ -78,7 +97,7 @@ class RumahSakitController extends Controller
     public function create3(Request $request)
     {    
         \App\penyedia::create($request->all());
-        return redirect('/penyedia-admin');
+        return redirect('/penyedia-admin')->with('sukses','Data berhasil diinput');
     }
 
     public function donasinya(Request $request)
@@ -95,7 +114,7 @@ class RumahSakitController extends Controller
             $donasinya->file_bukti = $request->file('file_bukti')->getClientOriginalName();
             $donasinya->save();
         }
-        return redirect('/donasinya-admin');
+        return redirect('/donasinya-admin')->with('sukses','Data berhasil diinput');
     }
 
     // public function create_d(Request $request)

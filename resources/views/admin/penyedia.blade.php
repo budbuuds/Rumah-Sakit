@@ -138,6 +138,11 @@
           <div id="content">
                <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
+                  @if(session('sukses'))
+                    <div class="alert alert-success">
+                      <strong>Sukses!</strong> Data berhasil ditambahkan.
+                    </div>
+                  @endif
                     <div class="col-md-12">
                         <h3 class="animated fadeInLeft">Daftar Penyedia</h3>
                          <!-- Button trigger modal -->
@@ -289,41 +294,41 @@
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Masker N95</label>
-    <input name="masker_n95" class="form-control" type="number" placeholder="Default input">
+    <input name="masker_n95" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Masker Surgical</label>
-    <input name="masker_surgical" class="form-control" type="number" placeholder="Default input">
+    <input name="masker_surgical" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
-    <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input">
+    <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
-    <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input">
+    <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Faceshield</label>
-    <input name="faceshield" class="form-control" type="number" placeholder="Default input">
+    <input name="faceshield" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
-    <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input">
+    <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
-    <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input">
+    <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Handsanitizer</label>
-    <input name="handsanitizer" class="form-control" type="number" placeholder="Default input">
+    <input name="handsanitizer" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Desinfektan</label>
-    <input name="desinfektan" class="form-control" type="number" placeholder="Default input">
+    <input name="desinfektan" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Multivitamin</label>
-    <input name="multivitamin" class="form-control" type="number" placeholder="Default input">
+    <input name="multivitamin" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
-    <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input">
+    <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Skorlet</label>
-    <input name="Skorlet" class="form-control" type="number" placeholder="Default input">
+    <input name="Skorlet" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
 
         </div>
