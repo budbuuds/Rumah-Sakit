@@ -19,10 +19,10 @@
                 type: 'column'
             },
             title: {
-                text: 'Jumlah Kebutuhan Daerah'
+                text: 'Jumlah Data Pasien'
             },
             subtitle: {
-                text: 'Padang'
+                text: 'Sumatera Barat'
             },
             xAxis: {
                 categories: [
