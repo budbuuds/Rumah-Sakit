@@ -1,9 +1,9 @@
-@extends('layouts.guesttemplate')
 
 
-@section('title','Aksitageh')
 
-@section('container')
+<?php $__env->startSection('title','Aksitageh'); ?>
+
+<?php $__env->startSection('container'); ?>
 <section id="intro">
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <div class="container">
@@ -26,9 +26,9 @@
             },
             xAxis: {
                 categories: [
-                    @foreach($data_pasien as $pasien)
-                    '{{$pasien -> kelompok}}',
-                    @endforeach
+                    <?php $__currentLoopData = $data_pasien; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pasien): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    '<?php echo e($pasien -> kelompok); ?>',
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 ],
                 crosshair: true
             },
@@ -60,9 +60,9 @@
                 name: 'Jumlah',
                 data: 
                 [
-                    @foreach($data_pasien as $pasien)
-                    {{$pasien -> jumlah}},
-                    @endforeach
+                    <?php $__currentLoopData = $data_pasien; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pasien): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php echo e($pasien -> jumlah); ?>,
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     
                 ]
               
@@ -71,4 +71,5 @@
         });
     </script>
 </section>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.guesttemplate', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\RS\RS-Sumbar\resources\views/popup3.blade.php ENDPATH**/ ?>
