@@ -1928,3 +1928,169 @@ unomaduro\\collision\\src\\Highlighter.php:71)
 #67 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #68 {main}
 "} 
+[2020-04-15 10:42:58] local.ERROR: Command "make:migrate" is not defined.
+
+Did you mean one of these?
+    make:channel
+    make:command
+    make:component
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"make:migrate\" is not defined.
+
+Did you mean one of these?
+    make:channel
+    make:command
+    make:component
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test at C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\symfony\\console\\Application.php:644)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\symfony\\console\\Application.php(228): Symfony\\Component\\Console\\Application->find('make:migrate')
+#1 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\symfony\\console\\Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2020-04-15 10:49:05] local.ERROR: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'pasien' already exists (SQL: create table `pasien` (`id` int unsigned not null auto_increment primary key, `kelompok` varchar(30) not null, `jumlah` int not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'pasien' already exists (SQL: create table `pasien` (`id` int unsigned not null auto_increment primary key, `kelompok` varchar(30) not null, `jumlah` int not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') at C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:670)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(630): Illuminate\\Database\\Connection->runQueryCallback('create table `p...', Array, Object(Closure))
+#1 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(465): Illuminate\\Database\\Connection->run('create table `p...', Array, Object(Closure))
+#2 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Blueprint.php(101): Illuminate\\Database\\Connection->statement('create table `p...')
+#3 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(290): Illuminate\\Database\\Schema\\Blueprint->build(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#4 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(167): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#5 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(261): Illuminate\\Database\\Schema\\Builder->create('pasien', Object(Closure))
+#6 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\database\\migrations\\2020_04_10_083431_pasien.php(21): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#7 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(392): Pasien->up()
+#8 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(401): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(200): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(Pasien), 'up')
+#10 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(165): Illuminate\\Database\\Migrations\\Migrator->runUp('C:\\\\xampp\\\\htdocs...', 2, false)
+#11 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(110): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#12 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(72): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#13 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(541): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#14 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(81): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#15 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#16 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#17 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#19 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#20 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(592): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#21 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(134): Illuminate\\Container\\Container->call(Array)
+#22 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#23 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\symfony\\console\\Application.php(912): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\symfony\\console\\Application.php(264): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\symfony\\console\\Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 {main}
+
+[previous exception] [object] (PDOException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'pasien' already exists at C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:464)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): PDOStatement->execute()
+#1 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(663): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('create table `p...', Array)
+#2 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(630): Illuminate\\Database\\Connection->runQueryCallback('create table `p...', Array, Object(Closure))
+#3 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(465): Illuminate\\Database\\Connection->run('create table `p...', Array, Object(Closure))
+#4 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Blueprint.php(101): Illuminate\\Database\\Connection->statement('create table `p...')
+#5 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(290): Illuminate\\Database\\Schema\\Blueprint->build(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#6 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(167): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#7 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(261): Illuminate\\Database\\Schema\\Builder->create('pasien', Object(Closure))
+#8 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\database\\migrations\\2020_04_10_083431_pasien.php(21): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#9 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(392): Pasien->up()
+#10 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(401): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#11 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(200): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(Pasien), 'up')
+#12 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(165): Illuminate\\Database\\Migrations\\Migrator->runUp('C:\\\\xampp\\\\htdocs...', 2, false)
+#13 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(110): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#14 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(72): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#15 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(541): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#16 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(81): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#17 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#18 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#19 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#20 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#21 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#22 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(592): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#23 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(134): Illuminate\\Container\\Container->call(Array)
+#24 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#26 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\symfony\\console\\Application.php(912): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\symfony\\console\\Application.php(264): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\symfony\\console\\Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 {main}
+"} 
+[2020-04-15 10:49:05] local.ERROR: Class 'NunoMaduro\Collision\ConsoleColor' not found {"exception":"[object] (Error(code: 0): Class 'NunoMaduro\\Collision\\ConsoleColor' not found at C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\
+unomaduro\\collision\\src\\Highlighter.php:71)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\
+unomaduro\\collision\\src\\Writer.php(105): NunoMaduro\\Collision\\Highlighter->__construct()
+#1 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\
+unomaduro\\collision\\src\\Adapters\\Laravel\\CollisionServiceProvider.php(66): NunoMaduro\\Collision\\Writer->__construct(Object(NunoMaduro\\Collision\\Adapters\\Laravel\\IgnitionSolutionsRepository))
+#2 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(803): NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider->NunoMaduro\\Collision\\Adapters\\Laravel\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#3 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(685): Illuminate\\Container\\Container->build(Object(Closure))
+#4 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(794): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array, true)
+#5 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(633): Illuminate\\Foundation\\Application->resolve('NunoMaduro\\\\Coll...', Array)
+#6 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(779): Illuminate\\Container\\Container->make('NunoMaduro\\\\Coll...', Array)
+#7 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\
+unomaduro\\collision\\src\\Adapters\\Laravel\\ExceptionHandler.php(76): Illuminate\\Foundation\\Application->make('NunoMaduro\\\\Coll...')
+#8 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(378): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->renderForConsole(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(Illuminate\\Database\\QueryException))
+#9 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(133): Illuminate\\Foundation\\Console\\Kernel->renderException(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(Illuminate\\Database\\QueryException))
+#10 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 {main}
+"} 
+[2020-04-15 10:49:05] local.ERROR: Uncaught Error: Class 'NunoMaduro\Collision\ConsoleColor' not found in C:\xampp\htdocs\RS\RS-Sumbar\vendor\nunomaduro\collision\src\Highlighter.php:71
+Stack trace:
+#0 C:\xampp\htdocs\RS\RS-Sumbar\vendor\nunomaduro\collision\src\Writer.php(105): NunoMaduro\Collision\Highlighter->__construct()
+#1 C:\xampp\htdocs\RS\RS-Sumbar\vendor\nunomaduro\collision\src\Adapters\Laravel\CollisionServiceProvider.php(66): NunoMaduro\Collision\Writer->__construct(Object(NunoMaduro\Collision\Adapters\Laravel\IgnitionSolutionsRepository))
+#2 C:\xampp\htdocs\RS\RS-Sumbar\vendor\laravel\framework\src\Illuminate\Container\Container.php(803): NunoMaduro\Collision\Adapters\Laravel\CollisionServiceProvider->NunoMaduro\Collision\Adapters\Laravel\{closure}(Object(Illuminate\Foundation\Application), Array)
+#3 C:\xampp\htdocs\RS\RS-Sumbar\vendor\laravel\framework\src\Illuminate\Container\Container.php(685): Illuminate\Container\Container->build(Object(Closure))
+#4 C:\xampp\htdocs\RS\RS-Sumbar\vendor\laravel\framework\src\Illuminate\Foundat {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught Error: Class 'NunoMaduro\\Collision\\ConsoleColor' not found in C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\
+unomaduro\\collision\\src\\Highlighter.php:71
+Stack trace:
+#0 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\
+unomaduro\\collision\\src\\Writer.php(105): NunoMaduro\\Collision\\Highlighter->__construct()
+#1 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\
+unomaduro\\collision\\src\\Adapters\\Laravel\\CollisionServiceProvider.php(66): NunoMaduro\\Collision\\Writer->__construct(Object(NunoMaduro\\Collision\\Adapters\\Laravel\\IgnitionSolutionsRepository))
+#2 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(803): NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider->NunoMaduro\\Collision\\Adapters\\Laravel\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#3 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(685): Illuminate\\Container\\Container->build(Object(Closure))
+#4 C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\\laravel\\framework\\src\\Illuminate\\Foundat at C:\\xampp\\htdocs\\RS\\RS-Sumbar\\vendor\
+unomaduro\\collision\\src\\Highlighter.php:71)
+[stacktrace]
+#0 {main}
+"} 

@@ -6,7 +6,7 @@
 <?php $__env->startSection('container'); ?>
 <section id="intro">
     <div class="container">
-        <h1>Rumah Sakit</h1>
+        <h1>Kebutuhan Fasilitas Kesehatan</h1>
         <div class="table table-fixed">
         <table id="datatables-example" class="table table-fixed table-bordered">
             <thead class="thead-light">

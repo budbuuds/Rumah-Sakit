@@ -55,7 +55,7 @@
             <div class="col-lg-4 mb-4">
               <div class="cardnew card wow bounceInUp">
                 <div class="card-body">
-                  <h1 class="card-title">Data Pasien</h1>
+                  <h1 class="card-title">Jumlah Pasien Covid-19 Sumatera Barat</h1>
                   <img src="{{ url('backend/asset/img/pict/graph.png') }}">
                   <form action="/pasien">
                     <button type="submit" class="tombol donaturbtn">MORE</button>
@@ -67,7 +67,7 @@
             <div class="col-lg-4 mb-4">
               <div class="cardnew card wow bounceInUp">
                 <div class="card-body">
-                  <h1 class="card-title">Permintaan APD</h1>
+                  <h1 class="card-title">Kebutuhan APD Sumatera Barat</h1>
                   <img src="{{ url('backend/asset/img/pict/graphapd.png') }}">
                   <form action="/kebutuhan">
                     <button type="submit" class="tombol donaturbtn">MORE</button>
@@ -79,7 +79,7 @@
             <div class="col-lg-4 mb-4">
               <div class="cardnew card wow bounceInUp">
                 <div class="card-body">
-                  <h1 class="card-title">Data Rumah Sakit</h1>
+                  <h1 class="card-title">Kebutuhan Fasilitas Kesehatan</h1>
                   <img src="{{ url('backend/asset/img/pict/hospital.png') }}">
                   <form action="rumahsakit">
                     <button type="submit" class="tombol donaturbtn">MORE</button>
