@@ -381,10 +381,6 @@ final class Environment implements ConfigurableEnvironmentInterface
 
         $this->listeners[$eventClass]->add($listener, $priority);
 
-        if (\is_object($listener)) {
-            $this->injectEnvironmentAndConfigurationIfNeeded($listener);
-        }
-
         return $this;
     }
 

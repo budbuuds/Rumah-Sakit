@@ -138,6 +138,11 @@
           <div id="content">
                <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
+                  @if(session('sukses'))
+                    <div class="alert alert-success">
+                      <strong>Sukses!</strong> Data berhasil ditambahkan.
+                    </div>
+                  @endif
                     <div class="col-md-12">
                         <h3 class="animated fadeInLeft">Daftar Donatur</h3>
                          <!-- Button trigger modal -->
@@ -175,30 +180,30 @@
                           <th>Option</th>
                         </tr>
                       </thead>
-                      @foreach($data_donatur as $data_donatur)
+                      @foreach($data_donatur as $donatur)
                       <tbody>
                         <tr>
-                          <td> {{$data_donatur -> created_at}} </td>
-                          <td> {{$data_donatur -> rs -> nama_rs}} </td>
-                          <td> {{$data_donatur -> nama_donatur}} </td>
-                          <td> {{$data_donatur -> tunai}} </td>
-                          <td> {{$data_donatur -> masker_n95}}</td>
-                          <td> {{$data_donatur -> masker_surgical}}</td>
-                          <td> {{$data_donatur -> sarung_tangan}}</td>
-                          <td> {{$data_donatur -> coverall_jumpsuit}}</td>
-                          <td> {{$data_donatur -> faceshield}}</td>
-                          <td> {{$data_donatur -> kacamata_goggles}}</td>
-                          <td> {{$data_donatur -> boot_and_shoe_cover}}</td>
-                          <td> {{$data_donatur -> handsanitizer}}</td>
-                          <td> {{$data_donatur -> desinfektan}}</td>
-                          <td> {{$data_donatur -> multivitamin}}</td>
-                          <td> {{$data_donatur -> kantong_jenazah}}</td>
-                          <td> {{$data_donatur -> Skorlet}}</td>
+                          <td> {{$donatur -> created_at}} </td>
+                          <td> {{$donatur -> rs -> nama_rs}} </td>
+                          <td> {{$donatur -> nama_donatur}} </td>
+                          <td> {{$donatur -> tunai}} </td>
+                          <td> {{$donatur -> masker_n95}}</td>
+                          <td> {{$donatur -> masker_surgical}}</td>
+                          <td> {{$donatur -> sarung_tangan}}</td>
+                          <td> {{$donatur -> coverall_jumpsuit}}</td>
+                          <td> {{$donatur -> faceshield}}</td>
+                          <td> {{$donatur -> kacamata_goggles}}</td>
+                          <td> {{$donatur -> boot_and_shoe_cover}}</td>
+                          <td> {{$donatur -> handsanitizer}}</td>
+                          <td> {{$donatur -> desinfektan}}</td>
+                          <td> {{$donatur -> multivitamin}}</td>
+                          <td> {{$donatur -> kantong_jenazah}}</td>
+                          <td> {{$donatur -> Skorlet}}</td>
                           <td>
-                            <!--<a href="/donatur-admin/edit/{{$data_donatur->id}}" class="btn btn-warning btn-sm" role="button" data-toggle="modal" data-target="#exampleModal2">
+                            <!--<a href="/donatur-admin/edit/{{$donatur->id}}" class="btn btn-warning btn-sm" role="button" data-toggle="modal" data-target="#exampleModal2">
                               <i class="fa fa-pencil-square">Edit</i>
                             </a>-->
-                            <a href="/donatur-admin/delete/{{$data_donatur->id}}" class="btn btn-danger btn-sm" role="button">
+                            <a href="/donatur-admin/delete/{{$donatur->id}}" class="btn btn-danger btn-sm" role="button">
                               <i class="fa fa-times-circle">Delete</i>
                             </a>
                           </td>
@@ -344,45 +349,45 @@
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Tunai</label>
-    <input name="tunai" class="form-control" type="number" placeholder="Default input">
+    <input name="tunai" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Masker N95</label>
-    <input name="masker_n95" class="form-control" type="number" placeholder="Default input">
+    <input name="masker_n95" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Masker Surgical</label>
-    <input name="masker_surgical" class="form-control" type="number" placeholder="Default input">
+    <input name="masker_surgical" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
-    <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input">
+    <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
-    <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input">
+    <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Faceshield</label>
-    <input name="faceshield" class="form-control" type="number" placeholder="Default input">
+    <input name="faceshield" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
-    <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input">
+    <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
-    <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input">
+    <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Handsanitizer</label>
-    <input name="handsanitizer" class="form-control" type="number" placeholder="Default input">
+    <input name="handsanitizer" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Desinfektan</label>
-    <input name="desinfektan" class="form-control" type="number" placeholder="Default input">
+    <input name="desinfektan" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Multivitamin</label>
-    <input name="multivitamin" class="form-control" type="number" placeholder="Default input">
+    <input name="multivitamin" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
-    <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input">
+    <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input" value="0">
   </div><div>
     <label for="exampleFormControlTextarea1">Skorlet</label>
-    <input name="Skorlet" class="form-control" type="number" placeholder="Default input">
+    <input name="Skorlet" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
 
         </div>
@@ -406,7 +411,7 @@
                     </button>
                 </div>
         <div class="modal-body">
-    <form action="/donatur-admin/update/" method="POST">
+    <form action="/donatur-admin/update/{{$donatur->id}}" method="POST">
     <!-- <form action="/lensamasuk/store" method="POST"> -->
         {{csrf_field()}}
         {{ method_field('PUT') }}

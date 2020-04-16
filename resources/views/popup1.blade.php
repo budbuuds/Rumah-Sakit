@@ -6,9 +6,9 @@
 @section('container')
 <section id="intro">
     <div class="container">
-        <h1>Rumah Sakit</h1>
-        <div class="table table-fixed">
-        <table id="datatables-example" class="table table-fixed table-bordered">
+        <h1>Kebutuhan Fasilitas Kesehatan</h1>
+        <div>
+        <table id="datatables-example" class="table table-bordered">
             <thead class="thead-light">
                 <tr>
                     <th scope="col">Kota/Kab</th>

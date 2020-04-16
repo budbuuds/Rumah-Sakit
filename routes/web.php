@@ -65,7 +65,9 @@ Route::post('/penyedia-admin/create', 'RumahSakitController@create3');
 Route::get('/donasinya-admin', 'RumahSakitController@donasinya')->name('donasinya');
 Route::post('/donasinya-admin/create', 'RumahSakitController@create_d');
 Route::get('/pasien-admin', 'RumahSakitController@pasien')->name('pasien');
-Route::post('/pasien-admin/create', 'RumahSakitController@create_d');
+Route::post('/pasien-admin/create', 'RumahSakitController@createPasien');
+Route::get('/pasien-admin/{id}/edit','RumahSakitController@editPasien');
+Route::post('/pasien-admin/{id}/update','RumahSakitController@updatePasien');
 
 //EDIT DELETE
 Route::get('/kebutuhan-admin/delete/{id}', 'RumahSakitController@delete1');

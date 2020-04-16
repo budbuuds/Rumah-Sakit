@@ -142,13 +142,7 @@ if (! function_exists('data_get')) {
 
         $key = is_array($key) ? $key : explode('.', $key);
 
-        foreach ($key as $i => $segment) {
-            unset($key[$i]);
-
-            if (is_null($segment)) {
-                return $target;
-            }
-
+        while (! is_null($segment = array_shift($key))) {
             if ($segment === '*') {
                 if ($target instanceof Collection) {
                     $target = $target->all();

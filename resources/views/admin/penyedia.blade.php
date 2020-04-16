@@ -138,6 +138,11 @@
           <div id="content">
                <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
+                  @if(session('sukses'))
+                    <div class="alert alert-success">
+                      <strong>Sukses!</strong> Data berhasil ditambahkan.
+                    </div>
+                  @endif
                     <div class="col-md-12">
                         <h3 class="animated fadeInLeft">Daftar Penyedia</h3>
                          <!-- Button trigger modal -->
@@ -159,18 +164,10 @@
                           <th>Nama Penyedia</th>
                           <th>Alamat</th>
                           <th>Kontak</th>
-                          <th>Masker N95</th>
-                          <th>Masker Surgical</th>
-                          <th>Sarung Tangan (gloves)</th>
-                          <th>Coverall Jumpsuit (hazmat)</th>
-                          <th>Faceshield</th>
-                          <th>Kacamata Goggles</th>
-                          <th>Boot and Shoe Cover</th>
-                          <th>Handsanitizer</th>
-                          <th>Desinfektan</th>
-                          <th>Multivitamin</th>
-                          <th>Kantong Jenazah</th>
-                          <th>Skorlet</th>
+                          <th>Barang</th>
+                          <th>Harga</th>
+                          <th>Satuan</th>
+                          <th>Status</th>
                           <th>Option</th>
                         </tr>
                       </thead>
@@ -180,18 +177,10 @@
                           <td> {{$penyedia -> nama_penyedia}} </td>
                           <td> {{$penyedia -> alamat_penyedia}} </td>
                           <td> {{$penyedia -> kontak}} </td>
-                          <td> {{$penyedia -> masker_n95}} </td>
-                          <td> {{$penyedia -> masker_surgical}} </td>
-                          <td> {{$penyedia -> sarung_tangan}} </td>
-                          <td> {{$penyedia -> coverall_jumpsuit}} </td>
-                          <td> {{$penyedia -> faceshield}} </td>
-                          <td> {{$penyedia -> kacamata_goggles}} </td>
-                          <td> {{$penyedia -> boot_and_shoe_cover}} </td>
-                          <td> {{$penyedia -> handsanitizer}} </td>
-                          <td> {{$penyedia -> desinfektan}} </td>
-                          <td> {{$penyedia -> multivitamin}} </td>
-                          <td> {{$penyedia -> kantong_jenazah}} </td>
-                          <td> {{$penyedia -> Skorlet}} </td>
+                          <td> {{$penyedia -> barang}} </td>
+                          <td> {{$penyedia -> harga}} </td>
+                          <td> {{$penyedia -> satuan}} </td>
+                          <td> {{$penyedia -> status}} </td>
                           <td>
                             <!--<a href="#" class="btn btn-warning btn-sm" role="button">
                               <i class="fa fa-pencil-square">Edit</i>
@@ -288,42 +277,29 @@
     <input name="kontak" class="form-control" type="text" placeholder="Default input">
   </div>
   <div>
-    <label for="exampleFormControlTextarea1">Masker N95</label>
-    <input name="masker_n95" class="form-control" type="number" placeholder="Default input">
+    <label for="exampleFormControlTextarea1">Barang yang disediakan</label>
+    <input name="barang" class="form-control" type="text" placeholder="Default input">
   </div>
   <div>
-    <label for="exampleFormControlTextarea1">Masker Surgical</label>
-    <input name="masker_surgical" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
-    <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
-    <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Faceshield</label>
-    <input name="faceshield" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
-    <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
-    <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Handsanitizer</label>
-    <input name="handsanitizer" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Desinfektan</label>
-    <input name="desinfektan" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Multivitamin</label>
-    <input name="multivitamin" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
-    <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Skorlet</label>
-    <input name="Skorlet" class="form-control" type="number" placeholder="Default input">
+    <label for="exampleFormControlTextarea1">Harga Barang</label>
+    <input name="harga" class="form-control" type="number" placeholder="Default input">
+  </div>
+  <div class="form-group">
+      <label for="sel1">Satuan Barang</label>
+      <select class="form-control" id="sel1" name="satuan">
+        <option value="box">box</option>
+        <option value="pcs">pcs</option>
+        <option value="lusin">lusin</option>
+        <option value="kodi">kodi</option>
+        <option value="dus">dus</option>
+      </select>
+  </div>
+  <div class="form-group">
+      <label for="sel1">Status Penyedia</label>
+      <select class="form-control" id="sel1" name="status">
+        <option value="verified">verified</option>
+        <option value="non verified">non verified</option>
+      </select>
   </div>
 
         </div>

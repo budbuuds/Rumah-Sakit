@@ -141,6 +141,11 @@
           <div id="content">
                <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
+                  @if(session('sukses'))
+                    <div class="alert alert-success">
+                      <strong>Sukses!</strong> Data berhasil ditambahkan.
+                    </div>
+                  @endif
                     <div class="col-md-12">
                         <h3 class="animated fadeInLeft">Data Penyaluran Donasi Kebutuhan</h3>
                          <!-- Button trigger modal -->
