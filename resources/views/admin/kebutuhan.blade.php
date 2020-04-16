@@ -18,7 +18,7 @@
         <link rel="stylesheet" type="text/css" href="{{ url('backend/asset/css/plugins/animate.min.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ url('backend/asset/css/plugins/fullcalendar.min.css') }}"/>
         <link href="{{ url('backend/asset/css/style.css') }}" rel="stylesheet">
-        <!-- new plugin -->
+        <!-- new plugin select2-->
         <link rel="stylesheet" type="text/css" href="{{ url('backend/asset/select2/dist/css/select2.min.css') }}"/>
         <!-- end new plugin -->
         <!-- end: Css -->
@@ -316,19 +316,8 @@
     <form action="/kebutuhan-admin/create" method="POST">
     <!-- <form action="/lensamasuk/store" method="POST"> -->
         {{csrf_field()}}
-<!-- <div class="form-group">
-    <label for="exampleFormControlSelect1" placeholder="Search..">Rumah Sakit</label><br>
-    <select class="form-control m-bot15" name="rs_1_id" >
-
-      @foreach ($rs_array as $array)
-        <option value="{{$array->id}}">{{$array->nama_rs}}</option>
-      @endforeach
-
-    </select>
-  </div> -->
-
   <div class="form-group">
-    <label for="exampleFormControlSelect1" >Rumah Sakit</label>
+    <label for="rs_1_id">Rumah Sakit</label>
     <select class="select2" name="rs_1_id" multiple="multiple" style="width: 100%">
 
       @foreach ($rs_array as $array)
@@ -337,6 +326,17 @@
 
     </select>
   </div>
+
+  <div class="form-group">
+    <label for="rs_1_id">Rumah Sakit</label>
+    <select class="select2" name="rs_1_id" multiple="multiple" style="width: 100%">
+
+      @foreach ($rs_array as $array)
+        <option value="{{$array->id}}">{{$array->nama_rs}}</option>
+      @endforeach
+
+    </select>
+  </div>  
 
   <div>
     <label for="exampleFormControlTextarea1">Masker N95</label>

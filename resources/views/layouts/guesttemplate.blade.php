@@ -7,6 +7,8 @@
         <meta name="keyword" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+          
      
         <!-- start: Css -->
         <link rel="stylesheet" type="text/css" href=" {{ url('backend/asset/css/bootstrap.min.css') }}">
@@ -30,9 +32,10 @@
         <link rel="stylesheet" type="text/css" href="{{ url('backend/asset/css/plugins/animate.min.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ url('backend/asset/css/plugins/fullcalendar.min.css') }}"/>
         <link href="{{ url('backend/asset/css/style.css') }}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url('backend/asset/swiper-master/package/css/swiper.min.css') }}"/>
         <!-- end: Css -->
 
-        <link rel="shortcut icon" href="{{ url('backend/asset/img/emeral.png') }}">
+        <link rel="shortcut icon" href="{{ url('backend/asset/img/pict/aksitageh.JPEG') }}">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -57,9 +60,10 @@
       <nav class="main-nav float-right d-none d-lg-block">
         <ul> 
           <li><a href="/">BERANDA</a></li>
-          <li><a href="/#donatur">INFO</a></li> 
-          <li><a href="/#why-us">DAERAH</a></li>
-          <li><a href="donatur">DONASI</a></li>
+          <li><a href="/#berita">BERITA</a></li> 
+          <li><a href="/#donatur">DONATUR</a></li> 
+          <li><a href="/#why-us">SUPPLIER</a></li>
+          <li><a href="#">PENYALURAN</a></li>
           <li><a href="rumahsakit-admin">ADMIN</a></li>
           <!-- <li><a href="view/register.php">Register</a></li>   -->
         </ul>
@@ -114,6 +118,7 @@
   <script src="{{ url('backend/asset/css/lib/owlcarousel/owl.carousel.min.js') }}"></script>
   <script src="{{ url('backend/asset/css/lib/isotope/isotope.pkgd.min.js') }}"></script>
   <script src="{{ url('backend/asset/css/lib/lightbox/js/lightbox.min.js') }}"></script>
+  <script src="{{ url('backend/asset/swiper-master/package/js/swiper.min.js') }}"></script>
 
   <!-- Template Main Javascript File -->
   <script src="{{ url('backend/asset/js/main1.js') }}"></script>
@@ -121,7 +126,7 @@
 <!-- start: Javascript -->
 <script src="{{ url('backend/asset/js/jquery.min.js')}}"></script>
 <script src="{{ url('backend/asset/js/jquery.ui.min.js')}}"></script>
-<script src="{{ url('backend/asset/js/bootstrap.min.js')}}"></scri  pt>
+<script src="{{ url('backend/asset/js/bootstrap.min.js')}}"></script>
 
 
 
@@ -132,8 +137,6 @@
 
 
 <script src="{{url('backend/asset/js/main.js')}}"></script>
-<script type="text/javascript">
-</script>
-
+<script type="text/javascript"></script> 
     </body>
 </html>

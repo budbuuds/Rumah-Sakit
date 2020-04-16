@@ -75,3 +75,10 @@ Route::get('/penyedia-admin/delete/{id}', 'RumahSakitController@delete3');
 Route::get('/donatur-admin/edit/{id}', 'RumahSakitController@edit2');
 Route::put('/donatur-admin/update/{id}', 'RumahSakitController@update2');
 // https://rogerdudler.github.io/git-guide/index.id.html
+
+//BERITA
+Route::get('/berkepapd', 'HomeController@apd')->name('berkepapd');
+Route::get('/berdars', 'HomeController@berdars')->name('berdars');
+Route::get('/berdapukes', 'HomeController@berdapukes')->name('berdapukes');
+Route::get('/bercat', 'HomeController@bercat')->name('bercat');
+

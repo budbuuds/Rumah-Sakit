@@ -39,7 +39,7 @@ class HomeController extends Controller
         $data_daerah = \App\daerah::find(2);
         return view('Dharmasraya',['data_daerah' => $data_daerah]);
     }
-
+ 
     public function daerah3(Request $request)
     {
         $data_daerah = \App\daerah::find(3);
@@ -149,7 +149,7 @@ class HomeController extends Controller
     }
     public function landingpage()
     {
-        $data_rs = \App\rs::all();  
+        $data_rs = \App\rs::all();
         return view('index');
     }
 
@@ -242,5 +242,23 @@ class HomeController extends Controller
     {
         $data_pasien = \App\pasien::all();  
         return view('popup4');
+    }
+
+    //berita
+    public function apd()
+    {
+        return view('bka');
+    }
+    public function berdars()
+    {
+        return view('berdars');
+    }
+    public function berdapukes()
+    {
+        return view('berdapukes');
+    }
+    public function bercat()
+    {
+        return view('bercat');
     }
 }

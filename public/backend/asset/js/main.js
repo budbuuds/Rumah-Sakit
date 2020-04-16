@@ -336,3 +336,63 @@
     treeMenu();
     hide();
 })(jQuery);
+
+//  Initialize Swiper 
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      freeMode: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      }
+    });
+
+// var menu = ['Slide 1', 'Slide 2', 'Slide 3']
+// var mySwiper = new Swiper ('.swiper-container', {
+//     // If we need pagination
+//     pagination: {
+//       el: '.swiper-pagination',
+// 			clickable: true,
+//         renderBullet: function (index, className) {
+//           return '<span class="' + className + '">' + (menu[index]) + '</span>';
+//         },
+//     },
+
+//     // Navigation arrows
+//     navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//     },
+//   })
+
+    // var swiper = new Swiper('.swiper-container', {
+    //   slidesPerView: 2,
+    //   spaceBetween: 30,
+    //   pagination: {
+    //     el: '.swiper-pagination',
+    //     clickable: true,
+    //   },
+
+    //   navigation: {
+    //           nextEl: '.swiper-button-next',
+    //           prevEl: '.swiper-button-prev',
+    //         },
+    // });
+
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows : true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
