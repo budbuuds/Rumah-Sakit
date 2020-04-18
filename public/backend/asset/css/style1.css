@@ -1455,6 +1455,11 @@ body {
   }
   
   @media (max-width: 574px) {
+
+    #news.container .image img{
+      width: 100%;
+    }
+
     #intro {
       padding: 100px 0 20px 0;
     }
@@ -1548,9 +1553,8 @@ p{
   height: 452px;
 }
 
-.container .row .image img{
-  /* margin-top: 83px; */
-  width:100%;
+.container .image img{
+  margin-top: 83px; 
 }
 
 .swiper-container {
@@ -1576,9 +1580,38 @@ h1{
 /* news */
 
 #news .par{
-  margin-top: 100px;
+  margin-top:150px;
 }
 
 #news .keterangan{
   font-style: italic;
+}
+
+
+/* table */
+.table-wraper{
+  position: relative;
+}
+
+.tabel{ 
+  width: 100%;
+  overflow-x: scroll;
+  padding-bottom: 5px;
+}
+
+.table-wraper .tabel .namaDaerah{
+  border-left: solid 1px #DDEFEF;
+  border-right: solid 1px #DDEFEF;
+  left: 0;
+  position: relative;
+  top: auto;
+  width: 12px;
+}
+
+.table-wraper .tabel tbody td {
+  border-bottom: solid 1px #DDEFEF;
+  color: #333;
+  padding: 10px;
+  text-shadow: 1px 1px 1px #fff;
+  white-space: nowrap;
 }

@@ -304,18 +304,7 @@
       @endforeach
 
     </select>
-  </div>
-
-  <div class="form-group">
-    <label for="rs_1_id">Rumah Sakit</label>
-    <select class="select2" name="rs_1_id" multiple="multiple" style="width: 100%">
-
-      @foreach ($rs_array as $array)
-        <option value="{{$array->id}}">{{$array->nama_rs}}</option>
-      @endforeach
-
-    </select>
-  </div>  
+  </div> 
 
   <div>
     <label for="exampleFormControlTextarea1">Masker N95</label>
