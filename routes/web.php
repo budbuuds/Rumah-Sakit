@@ -84,3 +84,6 @@ Route::get('/berdars', 'HomeController@berdars')->name('berdars');
 Route::get('/berdapukes', 'HomeController@berdapukes')->name('berdapukes');
 Route::get('/bercat', 'HomeController@bercat')->name('bercat');
 
+//IMPORT EXCEL
+Route::post('/kebutuhan/import_excel', 'RumahSakitController@import_excel_kebutuhan');
+Route::post('/donatur/import_excel', 'RumahSakitController@import_excel_donatur');

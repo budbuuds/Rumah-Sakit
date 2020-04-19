@@ -18,8 +18,8 @@
         <link rel="stylesheet" type="text/css" href="<?php echo e(url('backend/asset/css/plugins/animate.min.css')); ?>"/>
         <link rel="stylesheet" type="text/css" href="<?php echo e(url('backend/asset/css/plugins/fullcalendar.min.css')); ?>"/>
         <link href="<?php echo e(url('backend/asset/css/style.css')); ?>" rel="stylesheet">
-        <!-- new plugin -->
-        <link rel="stylesheet" type="text/css" href="<?php echo e(url('backend/asset/select2/dist/css/select2.min.css')); ?>"/>
+        <!-- new plugin select2-->
+        <link rel="stylesheet" type="text/css" href="<?php echo e(url('backend/asset/select/dist/css/select2.min.css')); ?>"/>
         <!-- end new plugin -->
         <!-- end: Css -->
 
@@ -142,13 +142,52 @@
           <div id="content">
                <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
+                  <?php if(session('sukses')): ?>
+                    <div class="alert alert-success">
+                      <strong>Sukses!</strong> Data berhasil ditambahkan.
+                    </div>
+                  <?php endif; ?>
                     <div class="col-md-12">
                         <h3 class="animated fadeInLeft">Data Input Kebutuhan Rumah Sakit</h3>
                          <!-- Button trigger modal -->
                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Tambahkan
-                            </button>
+                          </button>
+                          <button type="button" class="btn btn-primary mr-5" data-toggle="modal" data-target="#importExcel">
+                            IMPORT EXCEL
+                          </button>
                     </div>
+
+                    
+                
+                    <!-- Import Excel -->
+                    <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <form method="post" action="/kebutuhan/import_excel" enctype="multipart/form-data">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
+                            </div>
+                            <div class="modal-body">
+                
+                              <?php echo e(csrf_field()); ?>
+
+                
+                              <label>Pilih file excel</label>
+                              <div class="form-group">
+                                <input type="file" name="file" required="required">
+                              </div>
+                
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Import</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+
                   </div>
               </div>
               <div class="col-md-12 top-20 padding-0">
@@ -160,49 +199,23 @@
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th rowspan="2">Tanggal</th>
-                          <th rowspan="2">Nama Rumah Sakit</th>
-                          <th colspan="2">Masker N95</th>
-                          <th colspan="2">Masker Surgical</th>
-                          <th colspan="2">Sarung Tangan (gloves)</th>
-                          <th colspan="2">Coverall Jumpsuit (hazmat)</th>
-                          <th colspan="2">Faceshield</th>
-                          <th colspan="2">Kacamata Goggles</th>
-                          <th colspan="2">Boot and Shoe Cover</th>
-                          <th colspan="2">Handsanitizer</th>
-                          <th colspan="2">Desinfektan</th>
-                          <th colspan="2">Multivitamin</th>
-                          <th colspan="2">Kantong Jenazah</th>
-                          <th colspan="2">Skorlet</th>
-                          <th colspan="2">Option</th>
+                          <th>Tanggal</th>
+                          <th>Nama Rumah Sakit</th>
+                          <th>Masker N95</th>
+                          <th>Masker Surgical</th>
+                          <th>Sarung Tangan (gloves)</th>
+                          <th>Coverall Jumpsuit (hazmat)</th>
+                          <th>Faceshield</th>
+                          <th>Kacamata Goggles</th>
+                          <th>Boot and Shoe Cover</th>
+                          <th>Handsanitizer</th>
+                          <th>Desinfektan</th>
+                          <th>Multivitamin</th>
+                          <th>Kantong Jenazah</th>
+                          <th>Skorlet</th>
+                          <th>Option</th>
                         </tr>
-                        <tr>
-                          <th>stock</th>
-                          <th>status</th>
-                          <th>stock</th>
-                          <th>status</th>
-                          <th>stock</th>
-                          <th>status</th>
-                          <th>stock</th>
-                          <th>status</th>
-                          <th>stock</th>
-                          <th>status</th>
-                          <th>stock</th>
-                          <th>status</th>
-                          <th>stock</th>
-                          <th>status</th>
-                          <th>stock</th>
-                          <th>status</th>
-                          <th>stock</th>
-                          <th>status</th>
-                          <th>stock</th>
-                          <th>status</th>
-                          <th>stock</th>
-                          <th>status</th>
-                          <th>stock</th>
-                          <th>status</th>
-                          
-                        </tr>
+                    
                       </tbody>
                       <?php $__currentLoopData = $data_kebutuhan; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kebutuhan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                       <tbody>
@@ -210,29 +223,29 @@
                           <td> <?php echo e($kebutuhan -> created_at); ?></td>
                           <td> <?php echo e($kebutuhan -> rs_1 -> nama_rs); ?> </td>
                           <td> <?php echo e($kebutuhan -> masker_n95); ?> </td>
-                          <td> <?php echo e($kebutuhan -> status_masker_n95); ?> </td>
+                          <!-- <td> <?php echo e($kebutuhan -> status_masker_n95); ?> </td> -->
                           <td> <?php echo e($kebutuhan -> masker_surgical); ?> </td>
-                          <td> <?php echo e($kebutuhan -> status_masker_surgical); ?> </td>
+                          <!-- <td> <?php echo e($kebutuhan -> status_masker_surgical); ?> </td> -->
                           <td> <?php echo e($kebutuhan -> sarung_tangan); ?> </td>
-                          <td> <?php echo e($kebutuhan -> status_sarung_tangan); ?> </td>
+                          <!-- <td> <?php echo e($kebutuhan -> status_sarung_tangan); ?> </td> -->
                           <td> <?php echo e($kebutuhan -> coverall_jumpsuit); ?> </td>
-                          <td> <?php echo e($kebutuhan -> status_coverall_jumpsuit); ?> </td>
+                          <!-- <td> <?php echo e($kebutuhan -> status_coverall_jumpsuit); ?> </td> -->
                           <td> <?php echo e($kebutuhan -> faceshield); ?> </td>
-                          <td> <?php echo e($kebutuhan -> status_faceshield); ?> </td>
+                          <!-- <td> <?php echo e($kebutuhan -> status_faceshield); ?> </td> -->
                           <td> <?php echo e($kebutuhan -> kacamata_goggles); ?> </td>
-                          <td> <?php echo e($kebutuhan -> status_kacamata_goggles); ?> </td>
+                          <!-- <td> <?php echo e($kebutuhan -> status_kacamata_goggles); ?> </td> -->
                           <td> <?php echo e($kebutuhan -> boot_and_shoe_cover); ?> </td>
-                          <td> <?php echo e($kebutuhan -> status_boot_and_shoe_cover); ?> </td>
+                          <!-- <td> <?php echo e($kebutuhan -> status_boot_and_shoe_cover); ?> </td> -->
                           <td> <?php echo e($kebutuhan -> handsanitizer); ?> </td>
-                          <td> <?php echo e($kebutuhan -> status_handsanitizer); ?> </td>
+                          <!-- <td> <?php echo e($kebutuhan -> status_handsanitizer); ?> </td> -->
                           <td> <?php echo e($kebutuhan -> desinfektan); ?> </td>
-                          <td> <?php echo e($kebutuhan -> status_desinfektan); ?> </td>
+                          <!-- <td> <?php echo e($kebutuhan -> status_desinfektan); ?> </td> -->
                           <td> <?php echo e($kebutuhan -> multivitamin); ?> </td>
-                          <td> <?php echo e($kebutuhan -> status_multivitamin); ?> </td>
+                          <!-- <td> <?php echo e($kebutuhan -> status_multivitamin); ?> </td> -->
                           <td> <?php echo e($kebutuhan -> kantong_jenazah); ?> </td>
-                          <td> <?php echo e($kebutuhan -> status_kantong_jenazah); ?> </td>
+                          <!-- <td> <?php echo e($kebutuhan -> status_kantong_jenazah); ?> </td> -->
                           <td> <?php echo e($kebutuhan -> Skorlet); ?> </td>
-                          <td> <?php echo e($kebutuhan -> status_Skorlet); ?> </td>
+                          <!-- <td> <?php echo e($kebutuhan -> status_Skorlet); ?> </td> -->
                           <td>
                             <!--<a href="#" class="btn btn-warning btn-sm" role="button">
                               <i class="fa fa-pencil-square">Edit</i>
@@ -319,19 +332,8 @@
     <!-- <form action="/lensamasuk/store" method="POST"> -->
         <?php echo e(csrf_field()); ?>
 
-<!-- <div class="form-group">
-    <label for="exampleFormControlSelect1" placeholder="Search..">Rumah Sakit</label><br>
-    <select class="form-control m-bot15" name="rs_1_id" >
-
-      <?php $__currentLoopData = $rs_array; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $array): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <option value="<?php echo e($array->id); ?>"><?php echo e($array->nama_rs); ?></option>
-      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-    </select>
-  </div> -->
-
   <div class="form-group">
-    <label for="exampleFormControlSelect1" >Rumah Sakit</label>
+    <label for="rs_1_id">Rumah Sakit</label>
     <select class="select2" name="rs_1_id" multiple="multiple" style="width: 100%">
 
       <?php $__currentLoopData = $rs_array; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $array): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -339,11 +341,11 @@
       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
     </select>
-  </div>
+  </div> 
 
   <div>
     <label for="exampleFormControlTextarea1">Masker N95</label>
-    <input name="masker_n95" class="form-control" type="number" placeholder="Default input">
+    <input name="masker_n95" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Status Masker N95</label>
@@ -355,7 +357,7 @@
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Masker Surgical</label>
-    <input name="masker_surgical" class="form-control" type="number" placeholder="Default input">
+    <input name="masker_surgical" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Status Masker Surgical</label>
@@ -367,7 +369,7 @@
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
-    <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input">
+    <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Status Sarung tangan (gloves)</label>
@@ -379,7 +381,7 @@
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
-    <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input">
+    <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Status Coverall Jumpsuit</label>
@@ -391,7 +393,7 @@
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Faceshield</label>
-    <input name="faceshield" class="form-control" type="number" placeholder="Default input">
+    <input name="faceshield" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Status Faceshield</label>
@@ -403,7 +405,7 @@
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
-    <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input">
+    <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Status Kacamata Goggles</label>
@@ -415,7 +417,7 @@
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
-    <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input">
+    <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Status Boot and Shoe Cover</label>
@@ -427,7 +429,7 @@
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Handsanitizer</label>
-    <input name="handsanitizer" class="form-control" type="number" placeholder="Default input">
+    <input name="handsanitizer" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Status Handsanitizer</label>
@@ -439,7 +441,7 @@
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Desinfektan</label>
-    <input name="desinfektan" class="form-control" type="number" placeholder="Default input">
+    <input name="desinfektan" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Status Desinfektan</label>
@@ -451,7 +453,7 @@
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Multivitamin</label>
-    <input name="multivitamin" class="form-control" type="number" placeholder="Default input">
+    <input name="multivitamin" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Status Multivitamin</label>
@@ -463,7 +465,7 @@
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
-    <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input">
+    <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Status Kantong Jenazah</label>
@@ -475,7 +477,7 @@
   </div>
   <div>
     <label for="exampleFormControlTextarea1">Skorlet</label>
-    <input name="Skorlet" class="form-control" type="number" placeholder="Default input">
+    <input name="Skorlet" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Status Skorlet</label>
@@ -509,7 +511,7 @@
 <script src="<?php echo e(url('backend/asset/js/plugins/jquery.datatables.min.js')); ?>"></script>
 <script src="<?php echo e(url('backend/asset/js/plugins/datatables.bootstrap.min.js')); ?>"></script>
 <script src="<?php echo e(url('backend/asset/js/plugins/jquery.nicescroll.js')); ?>"></script>
-<script src="<?php echo e(url('backend/asset/select2/dist/js/select2.min.js')); ?>"></script>
+<script src="<?php echo e(url('backend/asset/select/dist/js/select2.min.js')); ?>"></script>
 <script>
     $(document).ready(function() {
         $('.select2').select2({

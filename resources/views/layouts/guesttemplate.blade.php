@@ -61,8 +61,10 @@
         <ul> 
           <li><a href="/">BERANDA</a></li>
           <li><a href="/#berita">BERITA</a></li> 
-          <li><a href="/#donatur">DONATUR</a></li> 
-          <li><a href="/#why-us">SUPPLIER</a></li>
+          <li><a href="/#donatur">INFO</a></li> 
+          <li><a href="/#why-us">DAERAH</a></li>
+          <li><a href="#">DONATUR</a></li>
+          <li><a href="#">SUPLIER</a></li>
           <li><a href="#">PENYALURAN</a></li>
           <li><a href="rumahsakit-admin">ADMIN</a></li>
           <!-- <li><a href="view/register.php">Register</a></li>   -->

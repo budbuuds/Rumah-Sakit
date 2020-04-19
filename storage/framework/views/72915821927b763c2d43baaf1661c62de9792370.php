@@ -22,20 +22,14 @@
             Aksitageh adalah gerakan sosial yang 
             mempersatukan relawan-relawan yang berjuang 
             untuk menghilangkan Covid di Sumbar dengan 
-            Cepat dan Cerdas. 
-        </p>
-        <p>
+            Cepat dan Cerdas.  <br> 
             Salah satu layanan yang diberikan adalah dengan 
             memberikan informasi pada relawan serta donatur 
             mengenai kebutuhan fasilitas kesehatan untuk 
-            menangani Covid-19.
-        </p>
-        <p>
+            menangani Covid-19. <br>
             Data kebutuhan dari fasilitas kesehatan ini 
             bersumber dari kontak person Aksitageh pada 
-            setiap Faskes.
-        </p>
-        <p>
+            setiap Faskes. <br>
             Mari manfaatkan data pada Aksitageh untuk 
             mengetahui kemana bantuan hendak disalurkan. 
         </p>
@@ -45,6 +39,68 @@
   </section><!-- #intro -->
 
   <main id="main">
+
+ <!-- Swiper -->
+ <!-- <div class="swiper-container"> 
+    <div class="swiper-wrapper">
+      <div class="swiper-slide swipe"><img src="<?php echo e(url('backend/asset/img/pict/kebutuhan.jpg')); ?>"></div>
+      <div class="swiper-slide swipe"><img src="<?php echo e(url('backend/asset/img/pict/kebutuhan.jpg')); ?>"></div> -->
+      <!-- <div class="swiper-slide swipe"><img src="<?php echo e(url('backend/asset/img/pict/kebutuhan.jpg')); ?>"></div>
+      <div class="swiper-slide swipe"><img src="<?php echo e(url('backend/asset/img/pict/kebutuhan.jpg')); ?>"></div>
+      <div class="swiper-slide swipe"><img src="<?php echo e(url('backend/asset/img/pict/kebutuhan.jpg')); ?>"></div>
+      <div class="swiper-slide swipe"><img src="<?php echo e(url('backend/asset/img/pict/kebutuhan.jpg')); ?>"></div> -->
+    <!-- </div> -->
+    <!-- Add Pagination -->
+    <!-- <div class="swiper-pagination"></div>
+  </div> -->
+
+
+    <!--==========================
+      BERITA
+    ============================-->
+    <section id="berita" class="wow fadeIn">
+      <div class="container swiper-container">
+        <header class="section-header d-flex justify-content-start">
+          <h3>Berita Terbaru</h3>
+          <br>
+        </header> 
+
+        <div class="row mt-4">
+          <div class="beritaBaru swiper-wrapper owl-carousel testimonials-carousel">
+
+          <div>
+            <div class="col-lg-6 mb-4 swiper-slide">
+              <div class="cardBerita card wow bounceInUp">
+                <img src="<?php echo e(url('backend/asset/img/pict/jumfaskes.png')); ?>">
+                <div class="card-body">
+                <h1 class="card-title mb-4">18 KABUPATEN/KOTA SUDAH TERDATA AKSITAGEH</h1>
+                  <p>Aksitageh telah melaksanakan pendataan selama 15 hari sejak tanggal 5
+                   April 2020 terkait kebutuhan faskes terhadap Alat Pelindung Diri untuk satu bulan ke depan.
+                    Saat ini Aksitageh telah .... <a href="/berkepapd">more</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4 swiper-slide">
+              <div class="cardBerita card wow bounceInUp">
+                <img class="aksitageh" src="<?php echo e(url('backend/asset/img/pict/aksitageh.JPEG')); ?>">
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+          </div>                       
+            
+          </div>  
+        </div>
+          <!-- Add Pagination -->
+        <!-- <div class="swiper-pagination"></div>  -->
+          <!-- Navigation Buttons -->
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+        
+      </div>
+    </section>
 
     <!--==========================
       About Us Section
@@ -88,22 +144,22 @@
               </div>
             </div>
 
-          </div> 
         </div> 
       </div>
     </section><!-- #about -->
     
     <!--==========================
-      OUR DIVISIONS
+      KEBUTUHAN PER DAERAH
     ============================-->
+
     <section id="why-us" class="wow fadeIn">
-      <div class="container">
+      <div class="container swiper-container">
         <header class="section-header">
           <h3>Kebutuhan per Daerah</h3>
           <br>
         </header>
         
-        <div class="daerah row row-eq-height justify-content-center owl-carousel testimonials-carousel wow fadeInUp">
+        <div class="daerah swiper-wrapper row row-eq-height justify-content-center owl-carousel testimonials-carousel wow fadeInUp">
           <!-- <img class="bg" src="pict/Path5.png"> -->
           <div>
             <div class="col-lg-4 col-md-4 col-sm-4 mb-4">
@@ -347,7 +403,7 @@
             </div>
           </div>
 
-          </div>
+        </div>
       </div>
     </section>
  
@@ -363,8 +419,7 @@
           </header>
         </div>
       </div>
-    </section><!-- #Regis -->
-
+    </section> 
   </main>
   <?php $__env->stopSection(); ?>
 

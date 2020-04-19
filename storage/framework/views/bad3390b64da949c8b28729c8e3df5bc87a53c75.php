@@ -149,10 +149,42 @@
                          <!-- Button trigger modal -->
                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Tambahkan
-                            </button>
+                         </button>
+                         <button type="button" class="btn btn-primary mr-5" data-toggle="modal" data-target="#importExcel">
+                            IMPORT EXCEL
+                         </button>
                     </div>
                   </div>
               </div>
+  
+        <!-- Import Excel -->
+        <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <form method="post" action="/donatur/import_excel" enctype="multipart/form-data">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
+                </div>
+                <div class="modal-body">
+    
+                  <?php echo e(csrf_field()); ?>
+
+    
+                  <label>Pilih file excel</label>
+                  <div class="form-group">
+                    <input type="file" name="file" required="required">
+                  </div>
+    
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Import</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
               <div class="col-md-12 top-20 padding-0">
                 <div class="col-md-12">
                   <div class="panel">
@@ -414,72 +446,7 @@
                     </button>
                 </div>
         <div class="modal-body">
-    <form action="/donatur-admin/update/<?php echo e($donatur->id); ?>" method="POST">
-    <!-- <form action="/lensamasuk/store" method="POST"> -->
-        <?php echo e(csrf_field()); ?>
-
-        <?php echo e(method_field('PUT')); ?>
-
-<div class="form-group">
-    <label for="exampleFormControlSelect1">Rumah Sakit</label>
-    <select class="form-control m-bot15" name="rs_id">
-      <?php $__currentLoopData = $rs_array; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $array): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <option value="<?php echo e($array->id); ?>"><?php echo e($array->nama_rs); ?></option>
-      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    </select>
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Nama Donatur</label>
-    <input name="nama_donatur" class="form-control" type="text" placeholder="Default input">
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Tunai</label>
-    <input name="tunai" class="form-control" type="number" placeholder="Default input">
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Masker N95</label>
-    <input name="masker_n95" class="form-control" type="number" placeholder="Default input">
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Masker Surgical</label>
-    <input name="masker_surgical" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
-    <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
-    <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Faceshield</label>
-    <input name="faceshield" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
-    <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
-    <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Handsanitizer</label>
-    <input name="handsanitizer" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Desinfektan</label>
-    <input name="desinfektan" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Multivitamin</label>
-    <input name="multivitamin" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
-    <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Skorlet</label>
-    <input name="Skorlet" class="form-control" type="number" placeholder="Default input">
-  </div>
-
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <input class="btn btn-primary" type="submit" value="Submit">
-</form>
+    
         </div>
         </div>
     </div>
