@@ -5,8 +5,8 @@
 
 @section('container')
 <section id="intro">
-    <div class="container">
-        <h1>Rumah Sakit</h1>
+    <div class="container-fluid">
+        <h1><strong>Donasi Kebutuhan</strong></h1>
         <div class="table table-responsive">
         <table id="datatables-example" class="table table-striped table-bordered">
             <thead class="thead-light">
@@ -14,19 +14,18 @@
                 <th>Tanggal</th>
                 <th>Nama Rumah Sakit</th>
                 <th>Nama Donatur</th>
-                <th>Tunai</th>
-                <th>Masker N95</th>
-                <th>Masker Surgical</th>
-                <th>Sarung Tangan (gloves)</th>
-                <th>Coverall Jumpsuit (hazmat)</th>
-                <th>Faceshield</th>
-                <th>Kacamata Goggles</th>
-                <th>Boot and Shoe Cover</th>
-                <th>Handsanitizer</th>
-                <th>Desinfektan</th>
-                <th>Multivitamin</th>
-                <th>Kantong Jenazah</th>
-                <th>Skorlet</th>
+                <th>Tunai (Rp)</th>
+                <th>Masker N95 (Box)</th>
+                <th>Masker Surgical (Box)</th>
+                <th>Sarung Tangan (Gloves)</th>
+                <th>Hazmat (Pcs)</th>
+                <th>Faceshield (Pcs)</th>
+                <th>Kacamata Goggles (Psg)</th>
+                <th>Boot and Shoe Cover (Psg)</th>
+                <th>Handsanitizer (Liter)</th>
+                <th>Desinfektan (Liter)</th>
+                <th>Multivitamin (Paket)</th>
+                <th>Kantong Jenazah (Pcs)</th>
               </tr>
             </thead>
             @foreach($data_donatur as $donatur)
@@ -47,7 +46,6 @@
                           <td> {{$donatur -> desinfektan}}</td>
                           <td> {{$donatur -> multivitamin}}</td>
                           <td> {{$donatur -> kantong_jenazah}}</td>
-                          <td> {{$donatur -> Skorlet}}</td>
                         </tr>
                       </tbody>
                       @endforeach
@@ -55,7 +53,11 @@
         </div>
     </div>
 </section>
-
+<style>
+  thead, tr, th, td{
+    text-align: center;
+  }
+</style>
 <!-- start: Javascript -->
 <script src="{{ url('backend/asset/js/jquery.min.js')}}"></script>
 <script src="{{ url('backend/asset/js/jquery.ui.min.js')}}"></script>
