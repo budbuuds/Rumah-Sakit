@@ -10,7 +10,7 @@
             <h1 class="par">18 KABUPATEN/KOTA SUDAH TERDATA AKSITAGEH</h1>
         </div> 
         <div class="d-flex justify-content-center col-lg-12">
-            <p>Aksitageh telah melaksanakan pendataan selama 15 hari sejak tanggal 5 April 2020
+            <p class="tulisan">Aksitageh telah melaksanakan pendataan selama 15 hari sejak tanggal 5 April 2020
                  terkait kebutuhan faskes terhadap Alat Pelindung Diri untuk satu bulan ke depan.
                  Saat ini Aksitageh telah medapatkan data 18 kabupaten/kota di Sumatera Barat.   
                  Fasilitas yang terdata saat ini diantaranya adalah 46 Rumah Sakit dari total  59 
@@ -222,7 +222,7 @@
                 </div>
             </div><br><br>
             <div class="d-flex justify-content-center col-lg-12">
-                <p>Berdasarkan data yang didapatkan sampai saat diketahui bahwa urutan kebutuhan berdasarkan jumlahnya terbanyak adalah 
+                <p class="tulisan">Berdasarkan data yang didapatkan sampai saat diketahui bahwa urutan kebutuhan berdasarkan jumlahnya terbanyak adalah 
                     multivitamin (177897 paket), sarun tangang (124813 pasang), baju Hazmat (36498 helai), Faceshield (15945 buah), 
                     Handsanitizer (14452 Liter), Desinfektan (14404 Liter), Masker bedah (11984 kotak), sepatu boot (10053  pasang), 
                     kacamata (9886 sepasang), masker N95 (6209 kotak) dan 13 kantong jenazah. Koordinator pengelolaan data ,Muhammad 

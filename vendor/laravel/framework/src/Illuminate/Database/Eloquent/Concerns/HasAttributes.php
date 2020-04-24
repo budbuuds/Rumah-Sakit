@@ -1066,7 +1066,7 @@ trait HasAttributes
 
         $arguments = [];
 
-        if (strpos($castType, ':') !== false) {
+        if (is_string($castType) && strpos($castType, ':') !== false) {
             $segments = explode(':', $castType, 2);
 
             $castType = $segments[0];
@@ -1075,6 +1075,10 @@ trait HasAttributes
 
         if (is_subclass_of($castType, Castable::class)) {
             $castType = $castType::castUsing();
+        }
+
+        if (is_object($castType)) {
+            return $castType;
         }
 
         return new $castType(...$arguments);
@@ -1403,7 +1407,7 @@ trait HasAttributes
         }
 
         // If the attribute exists within the cast array, we will convert it to
-        // an appropriate native PHP type dependant upon the associated value
+        // an appropriate native PHP type dependent upon the associated value
         // given with the key in the pair. Dayle made this comment line up.
         if ($this->hasCast($key)) {
             return $this->castAttribute($key, $value);

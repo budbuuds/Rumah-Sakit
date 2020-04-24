@@ -1555,7 +1555,17 @@ p{
 
 .container .image img{
   margin-top: 83px; 
+  margin-bottom: 60px; 
 }
+
+#news.container .image img{
+  width: 100%;
+}
+
+.tulisan{
+font-size: large;
+}
+ 
 
 .swiper-container {
   width: 100%;
