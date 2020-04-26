@@ -6,11 +6,11 @@
 @section('container')
 <section id="intro">
     <div class="container">
-        <h1>Data Donatur</h1>
+        <h1>Kebutuhan Fasilitas Kesehatan</h1>
         <div>
         <table id="datatables-example" class="table table-bordered">
             <thead class="thead-light">
-                <tr>
+            <tr>
                 <th scope="col">Tanggal</th>
                 <th scope="col">Nama Rumah Sakit</th>
                 <th scope="col">Nama Donatur</th>
@@ -27,11 +27,10 @@
                 <th scope="col">Multivitamin</th>
                 <th scope="col">Kantong Jenazah</th>
                 <th scope="col">Skorlet</th>
-                </tr>
+              </tr>
             </thead>
             <tbody style="overflow: scroll">
             @foreach($data_donatur as $donatur)
-                      
                         <tr>
                           <td> {{$donatur -> created_at}} </td>
                           <td> {{$donatur -> rs -> nama_rs}} </td>
@@ -48,10 +47,9 @@
                           <td> {{$donatur -> desinfektan}}</td>
                           <td> {{$donatur -> multivitamin}}</td>
                           <td> {{$donatur -> kantong_jenazah}}</td>
-                          <td> {{$donatur -> Skorlet}}</td>
+                          <td> {{$donatur -> Skorlet}}</td>                  
                         </tr>
-                      
-                      @endforeach
+                        @endforeach  
             </tbody>
         </table>
         </div>

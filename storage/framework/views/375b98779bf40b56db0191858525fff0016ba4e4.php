@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
     <head>
+        <link rel="shortcut icon" href="<?php echo e(url('backend/asset/img/pict/aksitageh.JPEG')); ?>">
         <meta charset="utf-8">
         <meta name="description" content="Merupakan sebuah platform digital yang menyatukan dan memanggil Relawan untuk ikut ambil bagian dalam gerakan sosial Sumbar Lawan Covid 19.">
         <meta name="author" content="IA UKM-ITB dan Neo-Telemetri UNAND">
@@ -35,7 +36,6 @@
         <link rel="stylesheet" type="text/css" href="<?php echo e(url('backend/asset/swiper-master/package/css/swiper.min.css')); ?>"/>
         <!-- end: Css -->
 
-        <link rel="shortcut icon" href="<?php echo e(url('backend/asset/img/pict/aksitageh.JPEG')); ?>">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

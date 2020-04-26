@@ -254,14 +254,17 @@ class HomeController extends Controller
     {
         return view('bka');
     }
+
     public function berdars()
     {
         return view('berdars');
     }
+
     public function berdapukes()
     {
         return view('berdapukes');
     }
+    
     public function bercat()
     {
         return view('bercat');

@@ -69,6 +69,7 @@
           <div class="beritaBaru swiper-wrapper owl-carousel testimonials-carousel">
 
           <div>
+
             <div class="col-lg-6 mb-4 swiper-slide">
               <div class="cardBerita card wow bounceInUp">
                 <img src="{{ url('backend/asset/img/pict/jumfaskes.png') }}">
@@ -84,11 +85,17 @@
             
             <div class="col-lg-6 mb-4 swiper-slide">
               <div class="cardBerita card wow bounceInUp">
-                <img class="aksitageh" src="{{ url('backend/asset/img/pict/aksitageh.JPEG') }}">
+                <img src="{{ url('backend/asset/img/pict/imgberita2.jpeg') }}">
                 <div class="card-body">
+                <h1 class="card-title mb-4">Gerakan Aksitageh bertukar pikiran dengan Tim Aplikasi Fightcovid19.id</h1>
+                  <p>Usaha bangsa Indonesia dalam menghilangkan Covid-19 terus mendapatkan dukungan dari berbagai kalangan. 
+                  Salah satunya adalah dengan kehadiran dari Tim Rumah Awan yang memperkenalkan aplikasi .... <a href="/berdars">more</a><br>
+                  </p>
                 </div>
               </div>
             </div>
+
+
           </div>                       
             
           </div>  
