@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\donatur;
 use App\kebutuhan;
 use App\penyedia;
+use App\pebanding;
 use Illuminate\Http\Request;
 use App\Imports\KebutuhanImport;
 use App\Imports\DonaturImport;
+use App\Imports\PebandingImport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 
@@ -71,6 +73,18 @@ class RumahSakitController extends Controller
     {    
         \App\kebutuhan::create($request->all());
         return redirect('/kebutuhan-admin')->with('sukses','Data berhasil diinput');
+    }
+
+    public function pebanding(Request $request)
+    {
+        $data_pebanding = \App\pebanding::all();
+        return view('admin.pebanding',['data_pebanding' => $data_pebanding]);
+    }
+
+    public function createPebanding(Request $request)
+    {    
+        \App\pebanding::create($request->all());
+        return redirect('/pebanding-admin')->with('sukses','Data berhasil diinput');
     }
 
     public function donatur(Request $request)
@@ -145,6 +159,12 @@ class RumahSakitController extends Controller
         $data_penyedia = penyedia::FindOrFail($id);
         $data_penyedia->delete();
         return redirect('/penyedia-admin');
+    }
+    public function delete4($id)
+    {
+        $data_pebanding = pebanding::FindOrFail($id);
+        $data_pebanding->delete();
+        return redirect('/pebanding-admin');
     }
 
     public function edit2($id)
@@ -226,5 +246,31 @@ class RumahSakitController extends Controller
      
             // alihkan halaman kembali
             return redirect('/donatur-admin');
-	}
+    }
+    
+    public function import_excel_pebanding(Request $request) 
+	{
+			// validasi
+            $this->validate($request, [
+                'file' => 'required|mimes:csv,xls,xlsx'
+            ]);
+     
+            // menangkap file excel
+            $file = $request->file('file');
+     
+            // membuat nama file unik
+            $nama_file = rand().$file->getClientOriginalName();
+     
+            // upload ke folder file_siswa di dalam folder public
+            $file->move('file_pebanding',$nama_file);
+     
+            // import data
+            Excel::import(new PebandingImport, public_path('/file_pebanding/'.$nama_file));
+     
+            // notifikasi dengan session
+            // Session::flash('sukses','Data donatur Berhasil Diimport!');
+     
+            // alihkan halaman kembali
+            return redirect('/pebanding-admin');
+    }
 }

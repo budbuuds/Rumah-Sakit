@@ -158,6 +158,11 @@ class HomeController extends Controller
         $data_rs_1 = \App\rs_1::all();
         return view('popup1',['data_rs_1' => $data_rs_1]);
     }
+    public function penyaluran()
+    {
+        $data_rs_2 = \App\rs_2::all();
+        return view('popup9',['data_rs_2' => $data_rs_2]);
+    }
 
     // public function kebutuhan()
     // {

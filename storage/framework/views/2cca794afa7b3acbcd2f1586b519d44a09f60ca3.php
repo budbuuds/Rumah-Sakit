@@ -212,7 +212,7 @@
                           <th>Desinfektan</th>
                           <th>Multivitamin</th>
                           <th>Kantong Jenazah</th>
-                          <th>Skorlet</th>
+                          <th>HEPA Filter</th>
                           <th>Option</th>
                         </tr>
                     

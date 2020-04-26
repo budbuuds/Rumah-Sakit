@@ -138,6 +138,7 @@
           <!-- end: Left Menu -->
 
           <!-- start: Content -->
+          <section id="intro">
           <div id="content">
                <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
@@ -147,7 +148,7 @@
                     </div>
                   @endif
                     <div class="col-md-12">
-                        <h3 class="animated fadeInLeft">Data Input Kebutuhan Rumah Sakit</h3>
+                        <h3 class="animated fadeInLeft">Data Input Penyaluran</h3>
                          <!-- Button trigger modal -->
                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Tambahkan
@@ -162,7 +163,7 @@
                     <!-- Import Excel -->
                     <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
-                        <form method="post" action="/kebutuhan/import_excel" enctype="multipart/form-data">
+                        <form method="post" action="/pebanding/import_excel" enctype="multipart/form-data">
                           <div class="modal-content">
                             <div class="modal-header">
                               <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
@@ -194,64 +195,116 @@
                     <div class="panel-heading"><h3>Data Tables</h3></div>
                     <div class="panel-body">
                       <div class="responsive-table">
-                      <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
-                      <thead>
+                      <table id="datatables-example" class="table table-bordered">
+                       <thead class="thead-light">
                         <tr>
-                          <th>Tanggal</th>
-                          <th>Nama Rumah Sakit</th>
-                          <th>Masker N95</th>
-                          <th>Masker Surgical</th>
-                          <th>Sarung Tangan (gloves)</th>
-                          <th>Coverall Jumpsuit (hazmat)</th>
-                          <th>Faceshield</th>
-                          <th>Kacamata Goggles</th>
-                          <th>Boot and Shoe Cover</th>
-                          <th>Handsanitizer</th>
-                          <th>Desinfektan</th>
-                          <th>Multivitamin</th>
-                          <th>Kantong Jenazah</th>
-                          <th>HEPA Filter</th>
-                          <th>Option</th>
+                          <th rowspan="2">Option</th>
+                          <th rowspan="2">Tanggal</th>
+                          <th rowspan="2">Nama Rumah Sakit</th>
+                          <th colspan="3">Masker N95</th>
+                          <th colspan="3">Masker Surgical</th>
+                          <th colspan="3">Sarung Tangan (gloves)</th>
+                          <th colspan="3">Coverall Jumpsuit (hazmat)</th>
+                          <th colspan="3">Faceshield</th>
+                          <th colspan="3">Kacamata Goggles</th>
+                          <th colspan="3">Boot and Shoe Cover</th>
+                          <th colspan="3">Handsanitizer</th>
+                          <th colspan="3">Desinfektan</th>
+                          <th colspan="3">Multivitamin</th>
+                          <th colspan="3">Kantong Jenazah</th>
+                          <th colspan="3">HEPA Filter</th>
+                        </tr>
+                        <tr>
+                            <th>Request</th>
+                            <th>Donasi</th>
+                            <th>Persentase</th>
+                            <th>Request</th>
+                            <th>Donasi</th>
+                            <th>Persentase</th>
+                            <th>Request</th>
+                            <th>Donasi</th>
+                            <th>Persentase</th>
+                            <th>Request</th>
+                            <th>Donasi</th>
+                            <th>Persentase</th>
+                            <th>Request</th>
+                            <th>Donasi</th>
+                            <th>Persentase</th>
+                            <th>Request</th>
+                            <th>Donasi</th>
+                            <th>Persentase</th>
+                            <th>Request</th>
+                            <th>Donasi</th>
+                            <th>Persentase</th>
+                            <th>Request</th>
+                            <th>Donasi</th>
+                            <th>Persentase</th>
+                            <th>Request</th>
+                            <th>Donasi</th>
+                            <th>Persentase</th>
+                            <th>Request</th>
+                            <th>Donasi</th>
+                            <th>Persentase</th>
+                            <th>Request</th>
+                            <th>Donasi</th>
+                            <th>Persentase</th>
+                            <th>Request</th>
+                            <th>Donasi</th>
+                            <th>Persentase</th>
+                            
                         </tr>
                     
-                      </tbody>
-                      @foreach($data_kebutuhan as $kebutuhan)
-                      <tbody>
+                        <tbody style="overflow: scroll">
+                      @foreach($data_pebanding as $pebanding)
+                      
                       <tr>
-                          <td> {{$kebutuhan -> created_at}}</td>
-                          <td> {{$kebutuhan -> rs_1 -> nama_rs}} </td>
-                          <td> {{$kebutuhan -> masker_n95}} </td>
-                          <!-- <td> {{$kebutuhan -> status_masker_n95}} </td> -->
-                          <td> {{$kebutuhan -> masker_surgical}} </td>
-                          <!-- <td> {{$kebutuhan -> status_masker_surgical}} </td> -->
-                          <td> {{$kebutuhan -> sarung_tangan}} </td>
-                          <!-- <td> {{$kebutuhan -> status_sarung_tangan}} </td> -->
-                          <td> {{$kebutuhan -> coverall_jumpsuit}} </td>
-                          <!-- <td> {{$kebutuhan -> status_coverall_jumpsuit}} </td> -->
-                          <td> {{$kebutuhan -> faceshield}} </td>
-                          <!-- <td> {{$kebutuhan -> status_faceshield}} </td> -->
-                          <td> {{$kebutuhan -> kacamata_goggles}} </td>
-                          <!-- <td> {{$kebutuhan -> status_kacamata_goggles}} </td> -->
-                          <td> {{$kebutuhan -> boot_and_shoe_cover}} </td>
-                          <!-- <td> {{$kebutuhan -> status_boot_and_shoe_cover}} </td> -->
-                          <td> {{$kebutuhan -> handsanitizer}} </td>
-                          <!-- <td> {{$kebutuhan -> status_handsanitizer}} </td> -->
-                          <td> {{$kebutuhan -> desinfektan}} </td>
-                          <!-- <td> {{$kebutuhan -> status_desinfektan}} </td> -->
-                          <td> {{$kebutuhan -> multivitamin}} </td>
-                          <!-- <td> {{$kebutuhan -> status_multivitamin}} </td> -->
-                          <td> {{$kebutuhan -> kantong_jenazah}} </td>
-                          <!-- <td> {{$kebutuhan -> status_kantong_jenazah}} </td> -->
-                          <td> {{$kebutuhan -> Skorlet}} </td>
-                          <!-- <td> {{$kebutuhan -> status_Skorlet}} </td> -->
                           <td>
                             <!--<a href="#" class="btn btn-warning btn-sm" role="button">
                               <i class="fa fa-pencil-square">Edit</i>
                             </a>-->
-                            <a href="/kebutuhan-admin/delete/{{$kebutuhan->id}}" class="btn btn-danger btn-sm" role="button">
+                            <a href="/pebanding-admin/delete/{{$pebanding->id}}" class="btn btn-danger btn-sm" role="button">
                               <i class="fa fa-times-circle">Delete</i>
                             </a>
                           </td>
+                          <td> {{$pebanding -> created_at}}</td>
+                          <td> {{$pebanding -> rs_2 -> nama_rs}} </td>
+                          <td> {{$pebanding -> r_masker_n95}} </td>
+                          <td> {{$pebanding -> d_masker_n95}} </td>
+                          <td> {{$pebanding -> p_masker_n95}} % </td>
+                          <td> {{$pebanding -> r_masker_surgical}} </td>
+                          <td> {{$pebanding -> d_masker_surgical}} </td>
+                          <td> {{$pebanding -> p_masker_surgical}} %</td>
+                          <td> {{$pebanding -> r_sarung_tangan}} </td>
+                          <td> {{$pebanding -> d_sarung_tangan}} </td>
+                          <td> {{$pebanding -> p_sarung_tangan}} %</td>
+                          <td> {{$pebanding -> r_coverall_jumpsuit}} </td>
+                          <td> {{$pebanding -> d_coverall_jumpsuit}} </td>
+                          <td> {{$pebanding -> p_coverall_jumpsuit}} %</td>
+                          <td> {{$pebanding -> r_faceshield}} </td>
+                          <td> {{$pebanding -> d_faceshield}} </td>
+                          <td> {{$pebanding -> p_faceshield}} %</td>
+                          <td> {{$pebanding -> r_kacamata_goggles}} </td>
+                          <td> {{$pebanding -> d_kacamata_goggles}} </td>
+                          <td> {{$pebanding -> p_kacamata_goggles}} %</td>
+                          <td> {{$pebanding -> r_boot_and_shoe_cover}} </td>
+                          <td> {{$pebanding -> d_boot_and_shoe_cover}} </td>
+                          <td> {{$pebanding -> p_boot_and_shoe_cover}} %</td>
+                          <td> {{$pebanding -> r_handsanitizer}} </td>
+                          <td> {{$pebanding -> d_handsanitizer}} </td>
+                          <td> {{$pebanding -> p_handsanitizer}} %</td>
+                          <td> {{$pebanding -> r_desinfektan}} </td>
+                          <td> {{$pebanding -> d_desinfektan}} </td>
+                          <td> {{$pebanding -> p_desinfektan}} %</td>
+                          <td> {{$pebanding -> r_multivitamin}} </td>
+                          <td> {{$pebanding -> d_multivitamin}} </td>
+                          <td> {{$pebanding -> p_multivitamin}} %</td>
+                          <td> {{$pebanding -> r_kantong_jenazah}} </td>
+                          <td> {{$pebanding -> d_kantong_jenazah}} </td>
+                          <td> {{$pebanding -> p_kantong_jenazah}} %</td>
+                          <td> {{$pebanding -> r_Skorlet}} </td>
+                          <td> {{$pebanding -> d_Skorlet}} </td>
+                          <td> {{$pebanding -> p_Skorlet}} % </td>
+                          
                         </tr>
                       </tbody>
                       @endforeach
@@ -264,6 +317,8 @@
               </div>  
               </div>
             </div>
+            </section>
+            
           <!-- end: content -->
 
     
@@ -325,7 +380,7 @@
                     </button>
                 </div>
         <div class="modal-body">
-    <form action="/kebutuhan-admin/create" method="POST">
+    <form action="/pebanding-admin/create" method="POST">
     <!-- <form action="/lensamasuk/store" method="POST"> -->
         {{csrf_field()}}
   <div class="form-group">
@@ -341,149 +396,183 @@
 
   <div>
     <label for="exampleFormControlTextarea1">Masker N95</label>
-    <input name="masker_n95" class="form-control" type="number" placeholder="Default input" value="0">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Status Masker N95</label>
-    <select name="status_masker_n95" class="form-control" id="exampleFormControlSelect1">
-      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
-      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
-      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
-    </select>
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Masker Surgical</label>
-    <input name="masker_surgical" class="form-control" type="number" placeholder="Default input" value="0">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Status Masker Surgical</label>
-    <select name="status_masker_surgical" class="form-control" id="exampleFormControlSelect1">
-      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
-      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
-      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
-    </select>
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
-    <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input" value="0">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Status Sarung tangan (gloves)</label>
-    <select name="status_sarung_tangan" class="form-control" id="exampleFormControlSelect1">
-      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
-      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
-      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
-    </select>
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
-    <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input" value="0">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Status Coverall Jumpsuit</label>
-    <select name="status_coverall_jumpsuit" class="form-control" id="exampleFormControlSelect1">
-      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
-      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
-      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
-    </select>
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Faceshield</label>
-    <input name="faceshield" class="form-control" type="number" placeholder="Default input" value="0">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Status Faceshield</label>
-    <select name="status_faceshield" class="form-control" id="exampleFormControlSelect1">
-      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
-      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
-      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
-    </select>
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
-    <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input" value="0">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Status Kacamata Goggles</label>
-    <select name="status_kacamata_goggles" class="form-control" id="exampleFormControlSelect1">
-      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
-      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
-      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
-    </select>
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
-    <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input" value="0">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Status Boot and Shoe Cover</label>
-    <select name="status_boot_and_shoe_cover" class="form-control" id="exampleFormControlSelect1">
-      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
-      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
-      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
-    </select>
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Handsanitizer</label>
-    <input name="handsanitizer" class="form-control" type="number" placeholder="Default input" value="0">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Status Handsanitizer</label>
-    <select name="status_handsanitizer" class="form-control" id="exampleFormControlSelect1">
-      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
-      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
-      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
-    </select>
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Desinfektan</label>
-    <input name="desinfektan" class="form-control" type="number" placeholder="Default input" value="0">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Status Desinfektan</label>
-    <select name="status_desinfektan" class="form-control" id="exampleFormControlSelect1">
-      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
-      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
-      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
-    </select>
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Multivitamin</label>
-    <input name="multivitamin" class="form-control" type="number" placeholder="Default input" value="0">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Status Multivitamin</label>
-    <select name="status_multivitamin" class="form-control" id="exampleFormControlSelect1">
-      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
-      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
-      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
-    </select>
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
-    <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input" value="0">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Status Kantong Jenazah</label>
-    <select name="status_kantong_jenazah" class="form-control" id="exampleFormControlSelect1">
-      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
-      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
-      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
-    </select>
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Skorlet</label>
-    <input name="Skorlet" class="form-control" type="number" placeholder="Default input" value="0">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Status Skorlet</label>
-    <select name="status_Skorlet" class="form-control" id="exampleFormControlSelect1">
-      <option value="Belum Terpenuhi">Belum Terpenuhi</option>
-      <option value="Sedang Terpenuhi">Sedang Terpenuhi</option>
-      <option value="Sudah Terpenuhi">Sudah Terpenuhi</option>
-    </select>
+    <input name="r_masker_n95" class="form-control" type="number" placeholder="Default input" value="0">
   </div>
 
+  <div>
+    <label for="exampleFormControlTextarea1">Masker Surgical</label>
+    <input name="r_masker_surgical" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
+    <input name="r_sarung_tangan" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
+    <input name="r_coverall_jumpsuit" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Faceshield</label>
+    <input name="r_faceshield" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
+    <input name="r_kacamata_goggles" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
+    <input name="r_boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Handsanitizer</label>
+    <input name="r_handsanitizer" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Desinfektan</label>
+    <input name="r_desinfektan" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Multivitamin</label>
+    <input name="r_multivitamin" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
+    <input name="r_kantong_jenazah" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Skorlet</label>
+    <input name="r_Skorlet" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Masker N95</label>
+    <input name="d_masker_n95" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Masker Surgical</label>
+    <input name="d_masker_surgical" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
+    <input name="d_sarung_tangan" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
+    <input name="d_coverall_jumpsuit" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Faceshield</label>
+    <input name="d_faceshield" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
+    <input name="d_kacamata_goggles" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
+    <input name="d_boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Handsanitizer</label>
+    <input name="d_handsanitizer" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Desinfektan</label>
+    <input name="d_desinfektan" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Multivitamin</label>
+    <input name="d_multivitamin" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
+    <input name="d_kantong_jenazah" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Skorlet</label>
+    <input name="d_Skorlet" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Masker N95</label>
+    <input name="p_masker_n95" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Masker Surgical</label>
+    <input name="p_masker_surgical" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
+    <input name="p_sarung_tangan" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
+    <input name="p_coverall_jumpsuit" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Faceshield</label>
+    <input name="p_faceshield" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
+    <input name="p_kacamata_goggles" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
+    <input name="p_boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Handsanitizer</label>
+    <input name="p_handsanitizer" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Desinfektan</label>
+    <input name="p_desinfektan" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Multivitamin</label>
+    <input name="p_multivitamin" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
+    <input name="p_kantong_jenazah" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
+
+  <div>
+    <label for="exampleFormControlTextarea1">Skorlet</label>
+    <input name="p_Skorlet" class="form-control" type="number" placeholder="Default input" value="0">
+  </div>
 
         </div>
         <div class="modal-footer">
@@ -495,34 +584,37 @@
     </div>
     </div>
 
+    <style>
+    .table-fixed { 
+        height: 400px !important;
+        overflow-y: scroll;
+        overflow-x: scroll;
+    }
+    .table-fixed thead{
+        position: sticky;
+        top: 0;
+    }
+</style>
 <!-- start: Javascript -->
 <script src="{{ url('backend/asset/js/jquery.min.js')}}"></script>
 <script src="{{ url('backend/asset/js/jquery.ui.min.js')}}"></script>
 <script src="{{ url('backend/asset/js/bootstrap.min.js')}}"></script>
-
-
-
 <!-- plugins -->
 <script src="{{ url('backend/asset/js/plugins/moment.min.js')}}"></script>
 <script src="{{ url('backend/asset/js/plugins/jquery.datatables.min.js')}}"></script>
 <script src="{{ url('backend/asset/js/plugins/datatables.bootstrap.min.js')}}"></script>
 <script src="{{ url('backend/asset/js/plugins/jquery.nicescroll.js')}}"></script>
-<script src="{{ url('backend/asset/select/dist/js/select2.min.js')}}"></script>
-<script>
-    $(document).ready(function() {
-        $('.select2').select2({
-          placeholder: 'Search..',
-          tags : true
-        });
-    });
-</script>
-
-
-
 <!-- custom -->
 <script src="{{url('backend/asset/js/main.js')}}"></script>
 <script type="text/javascript">
 </script>
-<!-- end: Javascript -->
+<!-- DataTables -->
+<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready( function () {
+        $('#datatables-example').DataTable();
+    } );
+  </script>
+
     </body>
 </html>

@@ -23,6 +23,7 @@ Route::get('/kebutuhan', 'HomeController@kebutuhan')->name('kebutuhan');
 Route::get('/donatur', 'HomeController@donatur')->name('donatur');
 Route::get('/penyedia', 'HomeController@penyedia')->name('penyedia');
 Route::get('/donasinya', 'HomeController@donasinya')->name('donasinya');
+Route::get('/penyaluran', 'HomeController@penyaluran')->name('penyaluran');
 
 Route::get('/Agam', 'HomeController@daerah1')->name('daerah1');
 Route::get('/Dharmasraya', 'HomeController@daerah2')->name('daerah2');
@@ -68,11 +69,14 @@ Route::get('/pasien-admin', 'RumahSakitController@pasien')->name('pasien');
 Route::post('/pasien-admin/create', 'RumahSakitController@createPasien');
 Route::get('/pasien-admin/{id}/edit','RumahSakitController@editPasien');
 Route::post('/pasien-admin/{id}/update','RumahSakitController@updatePasien');
+Route::get('/pebanding-admin', 'RumahSakitController@pebanding')->name('pebanding');
+Route::post('/pebanding-admin/create', 'RumahSakitController@createPebanding');
 
 //EDIT DELETE
 Route::get('/kebutuhan-admin/delete/{id}', 'RumahSakitController@delete1');
 Route::get('/donatur-admin/delete/{id}', 'RumahSakitController@delete2');
 Route::get('/penyedia-admin/delete/{id}', 'RumahSakitController@delete3');
+Route::get('/pebanding-admin/delete/{id}', 'RumahSakitController@delete4');
 
 Route::get('/donatur-admin/edit/{id}', 'RumahSakitController@edit2');
 Route::put('/donatur-admin/update/{id}', 'RumahSakitController@update2');
@@ -87,3 +91,4 @@ Route::get('/bercat', 'HomeController@bercat')->name('bercat');
 //IMPORT EXCEL
 Route::post('/kebutuhan/import_excel', 'RumahSakitController@import_excel_kebutuhan');
 Route::post('/donatur/import_excel', 'RumahSakitController@import_excel_donatur');
+Route::post('/pebanding/import_excel', 'RumahSakitController@import_excel_pebanding');
