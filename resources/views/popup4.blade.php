@@ -51,16 +51,12 @@
                 }
             },
             series: [
-                @foreach($data_pasien as $pasien)
+                
             {
-                name: ' {{$pasien -> kelompok}}',
-                data: [0, {{$pasien -> jumlah}}]
-            },
-            @endforeach
+                name: 'PDP',
+                data: [0, 15, 20, 13, 20]
+            }, 
             // {
-            //     name: 'PDP',
-            //     data: [0, 73]
-            // }, {
             //     name: 'Positif',
             //     data: [0, 17]
             // }, {

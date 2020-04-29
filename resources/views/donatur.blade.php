@@ -6,7 +6,7 @@
 @section('container')
 <section id="intro">
     <div class="container">
-        <h1>Kebutuhan Fasilitas Kesehatan</h1>
+        <h1>Donatur Fasilitas Kesehatan</h1>
         <div>
         <table id="datatables-example" class="table table-bordered">
             <thead class="thead-light">
