@@ -159,7 +159,7 @@
       KEBUTUHAN PER DAERAH
     ============================-->
 
-    <section id="why-us" class="wow fadeIn">
+    <!-- <section id="why-us" class="wow fadeIn">
       <div class="container swiper-container">
         <header class="section-header">
           <h3>Kebutuhan per Daerah</h3>
@@ -167,7 +167,7 @@
         </header>
         
         <div class="daerah swiper-wrapper row row-eq-height justify-content-center owl-carousel testimonials-carousel wow fadeInUp">
-          <!-- <img class="bg" src="pict/Path5.png"> -->
+           <img class="bg" src="pict/Path5.png"> 
           <div>
             <div class="col-lg-4 col-md-4 col-sm-4 mb-4">
               <div class="card wow bounceInUp">
@@ -412,7 +412,7 @@
 
         </div>
       </div>
-    </section>
+    </section> -->
  
     <section id="regis" class="clearfix">
       <div class="container">
