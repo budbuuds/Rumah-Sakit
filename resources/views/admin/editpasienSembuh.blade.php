@@ -138,59 +138,31 @@
           <div id="content">
                <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
+                  <h1>Edit Data Pasien</h1>
                   @if(session('sukses'))
                     <div class="alert alert-success">
-                      <strong>Sukses!</strong> Data berhasil ditambahkan.
+                      <strong>Sukses!</strong> Data berhasil diupdate.
                     </div>
                   @endif
                     <div class="col-md-12">
-                        <h3 class="animated fadeInLeft">Data Pasien</h3>
-                         <!-- Button trigger modal -->
-                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Tambahkan Kategori
-                         </button>
-                         <a href="/pasien-odp" type="button" class="btn btn-primary" data-toggle="modal"> Pasien ODP</a>
-                         <a href="/pasien-pdp" type="button" class="btn btn-primary" data-toggle="modal"> Pasien PDP</a>
-                         <a href="/pasien-positif" type="button" class="btn btn-primary" data-toggle="modal"> Pasien Positif</a>
-                         <a href="/pasien-meninggal" type="button" class="btn btn-primary" data-toggle="modal"> Pasien Meninggal</a>
-                         <a href="/pasien-sembuh" type="button" class="btn btn-primary" data-toggle="modal"> Pasien Sembuh</a>
+                    <form action="/pasien-sembuh/{{$data_pasien->id}}/update" method="POST">
+                            <!-- <form action="/lensamasuk/store" method="POST"> -->
+                                {{csrf_field()}}
+                                <div>
+                                    <label for="exampleFormControlTextarea1">Tanggal</label>
+                                    <input name="kelompok" class="form-control" type="text" placeholder="Default input" value="{{$data_pasien->tanggal}}">
+                                </div>
+                                <div>
+                                    <label for="exampleFormControlTextarea1">Jumlah</label>
+                                    <input name="jumlah" class="form-control" type="number" placeholder="Default input" value="{{$data_pasien->jumlah}}">
+                                </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <input class="btn btn-warning" type="submit" value="Update">
+                        </form>
                     </div>
-                  </div>
-              </div>
-              <div class="col-md-12 top-20 padding-0">
-                <div class="col-md-12">
-                  <div class="panel">
-                    <div class="panel-heading"><h3>Data Tables</h3></div>
-                    <div class="panel-body">
-                      <div class="responsive-table">
-                      <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
-                      <thead>
-                        <tr>
-                          <th>No</th>
-                          <th>Kategori</th>
-                          <th>Jumlah</th>
-                          <th>Opsi</th>
-                        </tr>
-                      </thead>
-                      @foreach($data_pasien as $pasien)
-                      <tbody>
-                        <tr>
-                          <td> {{$pasien -> id}} </td>
-                          <td> {{$pasien -> kelompok}} </td>
-                          <td> {{$pasien -> jumlah}} </td>
-                          <td>
-                            <a href="/pasien-admin/{{$pasien->id}}/edit" class="btn btn-warning btn-sm" role="button">Edit</a>
-                          </td>
-                        </tr>
-                      </tbody>
-                      @endforeach
-                        </table>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>  
+                </div>  
               </div>
             </div>
           <!-- end: content -->
@@ -256,23 +228,7 @@
                     </button>
                 </div>
         <div class="modal-body">
-    <form action="/pasien-admin/create" method="POST">
-    <!-- <form action="/lensamasuk/store" method="POST"> -->
-        {{csrf_field()}}
-        <div>
-            <label for="exampleFormControlTextarea1">Kelompok</label>
-            <input name="kelompok" class="form-control" type="text" placeholder="Default input">
-        </div>
-        <div>
-            <label for="exampleFormControlTextarea1">Jumlah</label>
-            <input name="jumlah" class="form-control" type="number" placeholder="Default input">
-        </div>
-
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <input class="btn btn-primary" type="submit" value="Submit">
-</form>
+    
         </div>
         </div>
     </div>
@@ -289,70 +245,7 @@
                     </button>
                 </div>
         <div class="modal-body">
-    <form action="/donatur-admin/update/{{$pasien->id}}" method="POST">
-    <!-- <form action="/lensamasuk/store" method="POST"> -->
-        {{csrf_field()}}
-        {{ method_field('PUT') }}
-<div class="form-group">
-    <label for="exampleFormControlSelect1">Rumah Sakit</label>
-    <select class="form-control m-bot15" name="rs_id">
-      @foreach ($rs_array as $array)
-        <option value="{{$array->id}}">{{$array->nama_rs}}</option>
-      @endforeach
-    </select>
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Nama Donatur</label>
-    <input name="nama_donatur" class="form-control" type="text" placeholder="Default input">
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Tunai</label>
-    <input name="tunai" class="form-control" type="number" placeholder="Default input">
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Masker N95</label>
-    <input name="masker_n95" class="form-control" type="number" placeholder="Default input">
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Masker Surgical</label>
-    <input name="masker_surgical" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
-    <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
-    <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Faceshield</label>
-    <input name="faceshield" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
-    <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
-    <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Handsanitizer</label>
-    <input name="handsanitizer" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Desinfektan</label>
-    <input name="desinfektan" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Multivitamin</label>
-    <input name="multivitamin" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
-    <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Skorlet</label>
-    <input name="Skorlet" class="form-control" type="number" placeholder="Default input">
-  </div>
-
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <input class="btn btn-primary" type="submit" value="Submit">
-</form>
+    
         </div>
         </div>
     </div>

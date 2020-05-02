@@ -147,7 +147,7 @@
                         <h3 class="animated fadeInLeft">Data Pasien</h3>
                          <!-- Button trigger modal -->
                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Tambahkan Kategori
+                            Tambah
                          </button>
                          <a href="/pasien-odp" type="button" class="btn btn-primary" data-toggle="modal"> Pasien ODP</a>
                          <a href="/pasien-pdp" type="button" class="btn btn-primary" data-toggle="modal"> Pasien PDP</a>
@@ -166,7 +166,7 @@
                       <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>No</th>
+                          <th>Tanggal</th>
                           <th>Kategori</th>
                           <th>Jumlah</th>
                           <th>Opsi</th>
@@ -175,11 +175,14 @@
                       @foreach($data_pasien as $pasien)
                       <tbody>
                         <tr>
-                          <td> {{$pasien -> id}} </td>
-                          <td> {{$pasien -> kelompok}} </td>
+                          <td> {{$pasien -> tanggal}} </td>
+                          <td> {{$pasien -> pasien -> kelompok}} </td>
                           <td> {{$pasien -> jumlah}} </td>
                           <td>
-                            <a href="/pasien-admin/{{$pasien->id}}/edit" class="btn btn-warning btn-sm" role="button">Edit</a>
+                            <a href="/pasien-odp/{{$pasien->id}}/edit" class="btn btn-warning btn-sm" role="button">Edit</a>
+                            <a href="/pasien-odp/delete/{{$pasien->id}}" class="btn btn-danger btn-sm" role="button">
+                              <i class="fa fa-times-circle">Delete</i>
+                            </a>
                           </td>
                         </tr>
                       </tbody>
@@ -256,16 +259,22 @@
                     </button>
                 </div>
         <div class="modal-body">
-    <form action="/pasien-admin/create" method="POST">
+    <form action="/pasien-odp/create" method="POST">
     <!-- <form action="/lensamasuk/store" method="POST"> -->
         {{csrf_field()}}
         <div>
+            <label for="exampleFormControlTextarea1">Tanggal</label>
+            <input name="tanggal" class="form-control" type="number" placeholder="Tanggal hari ini">
+        </div>
+        <div>
             <label for="exampleFormControlTextarea1">Kelompok</label>
-            <input name="kelompok" class="form-control" type="text" placeholder="Default input">
+              <select name="pasien_id" class="form-control" id="exampleFormControlSelect1">
+                <option value="1">ODP</option>
+              </select>
         </div>
         <div>
             <label for="exampleFormControlTextarea1">Jumlah</label>
-            <input name="jumlah" class="form-control" type="number" placeholder="Default input">
+            <input name="jumlah" class="form-control" type="number" placeholder="Jumlah hari ini">
         </div>
 
         </div>

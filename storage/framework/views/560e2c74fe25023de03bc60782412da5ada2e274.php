@@ -148,8 +148,13 @@
                         <h3 class="animated fadeInLeft">Data Pasien</h3>
                          <!-- Button trigger modal -->
                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Tambahkan
-                            </button>
+                            Tambahkan Kategori
+                         </button>
+                         <a href="/pasien-odp" type="button" class="btn btn-primary" data-toggle="modal"> Pasien ODP</a>
+                         <a href="/pasien-pdp" type="button" class="btn btn-primary" data-toggle="modal"> Pasien PDP</a>
+                         <a href="/pasien-positif" type="button" class="btn btn-primary" data-toggle="modal"> Pasien Positif</a>
+                         <a href="/pasien-meninggal" type="button" class="btn btn-primary" data-toggle="modal"> Pasien Meninggal</a>
+                         <a href="/pasien-sembuh" type="button" class="btn btn-primary" data-toggle="modal"> Pasien Sembuh</a>
                     </div>
                   </div>
               </div>
@@ -262,7 +267,7 @@
             <input name="kelompok" class="form-control" type="text" placeholder="Default input">
         </div>
         <div>
-            <label for="exampleFormControlTextarea1">Kelompok</label>
+            <label for="exampleFormControlTextarea1">Jumlah</label>
             <input name="jumlah" class="form-control" type="number" placeholder="Default input">
         </div>
 

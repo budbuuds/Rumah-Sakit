@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
     <head>
-        <link rel="shortcut icon" href="<?php echo e(url('backend/asset/img/pict/aksitageh.JPEG')); ?>">
+        <link rel="shortcut icon" href="<?php echo e(url('backend/asset/img/pict/aksitageh.jpeg')); ?>">
         <meta charset="utf-8">
         <meta name="description" content="Merupakan sebuah platform digital yang menyatukan dan memanggil Relawan untuk ikut ambil bagian dalam gerakan sosial Sumbar Lawan Covid 19.">
         <meta name="author" content="IA UKM-ITB dan Neo-Telemetri UNAND">

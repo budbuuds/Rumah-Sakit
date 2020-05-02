@@ -79,7 +79,7 @@
                 }]
             },
             credits: {
-                enabled: false
+                enabled: true
             }
         });
     </script>

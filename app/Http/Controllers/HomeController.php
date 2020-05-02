@@ -147,6 +147,25 @@ class HomeController extends Controller
         $data_pasien = \App\pasien::all();
         return view('popup3',['data_pasien' => $data_pasien]);
     }
+
+    public function pasien_covid19(Request $request)
+    {
+        $data_pasien_positif = \App\pasien_positif::all();
+        $data_pasien_odp = \App\pasien_odp::all();
+        $data_pasien_pdp = \App\pasien_pdp::all();
+        $data_pasien_meninggal = \App\pasien_meninggal::all();
+        $data_pasien_sembuh = \App\pasien_sembuh::all();
+
+        return view('line',
+        [
+            'data_pasien_positif' => $data_pasien_positif,
+            'data_pasien_odp' => $data_pasien_odp,
+            'data_pasien_pdp' => $data_pasien_pdp,
+            'data_pasien_meninggal' => $data_pasien_meninggal,
+            'data_pasien_sembuh' => $data_pasien_sembuh
+        ]);
+    }
+
     public function landingpage()
     {
         $data_rs = \App\rs::all();
@@ -248,6 +267,12 @@ class HomeController extends Controller
         $data_pasien = \App\pasien::all();  
         return view('popup4');
     }
+
+    // public function line()
+    // {
+    //     $data_pasien = \App\pasien::all();  
+    //     return view('line');
+    // }
 
     //berita
     public function apd()

@@ -19,7 +19,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo e(url('backend/asset/css/plugins/fullcalendar.min.css')); ?>"/>
         <link href="<?php echo e(url('backend/asset/css/style.css')); ?>" rel="stylesheet">
         <!-- new plugin select2-->
-        <link rel="stylesheet" type="text/css" href="<?php echo e(url('backend/asset/select/dist/css/select2.min.css')); ?>"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo e(url('backend/asset/select2css/select2.min.css')); ?>"/>
         <!-- end new plugin -->
         <!-- end: Css -->
 
@@ -511,7 +511,7 @@
 <script src="<?php echo e(url('backend/asset/js/plugins/jquery.datatables.min.js')); ?>"></script>
 <script src="<?php echo e(url('backend/asset/js/plugins/datatables.bootstrap.min.js')); ?>"></script>
 <script src="<?php echo e(url('backend/asset/js/plugins/jquery.nicescroll.js')); ?>"></script>
-<script src="<?php echo e(url('backend/asset/select/dist/js/select2.min.js')); ?>"></script>
+<script src="<?php echo e(url('backend/asset/select2js/select2.min.js')); ?>"></script>
 <script>
     $(document).ready(function() {
         $('.select2').select2({

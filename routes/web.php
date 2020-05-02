@@ -52,6 +52,8 @@ Route::get('/popup1', 'HomeController@popup1')->name('popup1');
 Route::get('/popup2', 'HomeController@popup2')->name('popup2');
 Route::get('/popup3', 'HomeController@popup3')->name('popup3');
 Route::get('/popup4', 'HomeController@popup4')->name('popup4');
+Route::get('/line', 'HomeController@line')->name('line');
+Route::get('/pasien_covid19', 'HomeController@pasien_covid19')->name('pasien_covid19');
 
 //
 
@@ -65,10 +67,6 @@ Route::get('/penyedia-admin', 'RumahSakitController@penyedia')->name('penyedia')
 Route::post('/penyedia-admin/create', 'RumahSakitController@create3');
 Route::get('/donasinya-admin', 'RumahSakitController@donasinya')->name('donasinya');
 Route::post('/donasinya-admin/create', 'RumahSakitController@create_d');
-Route::get('/pasien-admin', 'RumahSakitController@pasien')->name('pasien');
-Route::post('/pasien-admin/create', 'RumahSakitController@createPasien');
-Route::get('/pasien-admin/{id}/edit','RumahSakitController@editPasien');
-Route::post('/pasien-admin/{id}/update','RumahSakitController@updatePasien');
 Route::get('/pebanding-admin', 'RumahSakitController@pebanding')->name('pebanding');
 Route::post('/pebanding-admin/create', 'RumahSakitController@createPebanding');
 
@@ -92,3 +90,39 @@ Route::get('/bercat', 'HomeController@bercat')->name('bercat');
 Route::post('/kebutuhan/import_excel', 'RumahSakitController@import_excel_kebutuhan');
 Route::post('/donatur/import_excel', 'RumahSakitController@import_excel_donatur');
 Route::post('/pebanding/import_excel', 'RumahSakitController@import_excel_pebanding');
+
+//Pasien
+Route::get('/pasien-admin', 'RumahSakitController@pasien')->name('pasien');
+Route::post('/pasien-admin/create', 'RumahSakitController@createPasien');
+Route::get('/pasien-admin/{id}/edit','RumahSakitController@editPasien');
+Route::post('/pasien-admin/{id}/update','RumahSakitController@updatePasien');
+
+Route::get('/pasien-odp', 'RumahSakitController@pasienOdp')->name('pasienOdp');
+Route::post('/pasien-odp/create', 'RumahSakitController@createPasienOdp');
+Route::get('/pasien-odp/{id}/edit','RumahSakitController@editPasienOdp');
+Route::post('/pasien-odp/{id}/update','RumahSakitController@updatePasienOdp');
+Route::get('/pasien-odp/delete/{id}', 'RumahSakitController@deleteOdp');
+
+Route::get('/pasien-pdp', 'RumahSakitController@pasienPdp')->name('pasienPdp');
+Route::post('/pasien-pdp/create', 'RumahSakitController@createPasienPdp');
+Route::get('/pasien-pdp/{id}/edit','RumahSakitController@editPasienPdp');
+Route::post('/pasien-pdp/{id}/update','RumahSakitController@updatePasienPdp');
+Route::get('/pasien-pdp/delete/{id}', 'RumahSakitController@deletePdp');
+
+Route::get('/pasien-positif', 'RumahSakitController@pasienPositif')->name('pasienPositif');
+Route::post('/pasien-positif/create', 'RumahSakitController@createPasienPositif');
+Route::get('/pasien-positif/{id}/edit','RumahSakitController@editPasienPositif');
+Route::post('/pasien-positif/{id}/update','RumahSakitController@updatePasienPositif');
+Route::get('/pasien-positif/delete/{id}', 'RumahSakitController@deletePositif');
+
+Route::get('/pasien-meninggal', 'RumahSakitController@pasienMeninggal')->name('pasienMeninggal');
+Route::post('/pasien-meninggal/create', 'RumahSakitController@createPasienMeninggal');
+Route::get('/pasien-meninggal/{id}/edit','RumahSakitController@editPasienMeninggal');
+Route::post('/pasien-meninggal/{id}/update','RumahSakitController@updatePasienMeninggal');
+Route::get('/pasien-meninggal/delete/{id}', 'RumahSakitController@deleteMeninggal');
+
+Route::get('/pasien-sembuh', 'RumahSakitController@pasienSembuh')->name('pasienSembuh');
+Route::post('/pasien-sembuh/create', 'RumahSakitController@createPasienSembuh');
+Route::get('/pasien-sembuh/{id}/edit','RumahSakitController@editPasienSembuh');
+Route::post('/pasien-sembuh/{id}/update','RumahSakitController@updatePasienSembuh');
+Route::get('/pasien-sembuh/delete/{id}', 'RumahSakitController@deleteSembuh');

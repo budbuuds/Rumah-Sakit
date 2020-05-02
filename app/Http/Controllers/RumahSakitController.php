@@ -6,6 +6,11 @@ use App\donatur;
 use App\kebutuhan;
 use App\penyedia;
 use App\pebanding;
+use App\pasien_odp;
+use App\pasien_pdp;
+use App\pasien_positif;
+use App\pasien_meninggal;
+use App\pasien_sembuh;
 use Illuminate\Http\Request;
 use App\Imports\KebutuhanImport;
 use App\Imports\DonaturImport;
@@ -61,6 +66,166 @@ class RumahSakitController extends Controller
         $data_pasien = \App\pasien::find($id);
         $data_pasien->update($request->all());
         return redirect('/pasien-admin')->with('sukses');
+    }
+
+    public function pasienOdp(Request $request)
+    {
+        $data_pasien = \App\pasien_odp::all();
+        return view('admin.pasienOdp',['data_pasien' => $data_pasien]);
+    }
+
+    public function createPasienOdp(Request $request)
+    {    
+        \App\pasien_odp::create($request->all());
+        return redirect('/pasien-odp')->with('sukses','Data berhasil diinput');
+    }
+
+    public function editPasienOdp($id)
+    {
+        $data_pasien = \App\pasien_odp  ::find($id);
+        return view('admin/editpasienOdp',['data_pasien' => $data_pasien]);
+    }
+
+    public function updatePasienOdp(Request $request,$id)
+    {
+        $data_pasien = \App\pasien_odp::find($id);
+        $data_pasien->update($request->all());
+        return redirect('/pasien-odp')->with('sukses');
+    }
+
+    public function deleteOdp($id)
+    {
+        $data_pasien = pasien_odp::FindOrFail($id);
+        $data_pasien->delete();
+        return redirect('/pasien-odp');
+    }
+
+    public function pasienPdp(Request $request)
+    {
+        $data_pasien = \App\pasien_pdp::all();
+        return view('admin.pasienPdp',['data_pasien' => $data_pasien]);
+    }
+
+    public function createPasienPdp(Request $request)
+    {    
+        \App\pasien_pdp::create($request->all());
+        return redirect('/pasien-pdp')->with('sukses','Data berhasil diinput');
+    }
+
+    public function editPasienPdp($id)
+    {
+        $data_pasien = \App\pasien_pdp  ::find($id);
+        return view('admin/editpasienPdp',['data_pasien' => $data_pasien]);
+    }
+
+    public function updatePasienPdp(Request $request,$id)
+    {
+        $data_pasien = \App\pasien_pdp::find($id);
+        $data_pasien->update($request->all());
+        return redirect('/pasien-pdp')->with('sukses');
+    }
+
+    public function deletePdp($id)
+    {
+        $data_pasien = pasien_pdp::FindOrFail($id);
+        $data_pasien->delete();
+        return redirect('/pasien-pdp');
+    }
+
+    public function pasienPositif(Request $request)
+    {
+        $data_pasien = \App\pasien_positif::all();
+        return view('admin.pasienPositif',['data_pasien' => $data_pasien]);
+    }
+
+    public function createPasienPositif(Request $request)
+    {    
+        \App\pasien_positif::create($request->all());
+        return redirect('/pasien-positif')->with('sukses','Data berhasil diinput');
+    }
+
+    public function editPasienPositif($id)
+    {
+        $data_pasien = \App\pasien_positif  ::find($id);
+        return view('admin/editpasienPositif',['data_pasien' => $data_pasien]);
+    }
+
+    public function updatePasienPositif(Request $request,$id)
+    {
+        $data_pasien = \App\pasien_positif::find($id);
+        $data_pasien->update($request->all());
+        return redirect('/pasien-positif')->with('sukses');
+    }
+
+    public function deletepositif($id)
+    {
+        $data_pasien = pasien_positif::FindOrFail($id);
+        $data_pasien->delete();
+        return redirect('/pasien-positif');
+    }
+
+    public function pasienMeninggal(Request $request)
+    {
+        $data_pasien = \App\pasien_meninggal::all();
+        return view('admin.pasienMeninggal',['data_pasien' => $data_pasien]);
+    }
+
+    public function createPasienMeninggal(Request $request)
+    {    
+        \App\pasien_meninggal::create($request->all());
+        return redirect('/pasien-meninggal')->with('sukses','Data berhasil diinput');
+    }
+
+    public function editPasienMeninggal($id)
+    {
+        $data_pasien = \App\pasien_meninggal  ::find($id);
+        return view('admin/editpasienMeninggal',['data_pasien' => $data_pasien]);
+    }
+
+    public function updatePasienMeninggal(Request $request,$id)
+    {
+        $data_pasien = \App\pasien_meninggal::find($id);
+        $data_pasien->update($request->all());
+        return redirect('/pasien-meninggal')->with('sukses');
+    }
+
+    public function deleteMeninggal($id)
+    {
+        $data_pasien = pasien_meninggal::FindOrFail($id);
+        $data_pasien->delete();
+        return redirect('/pasien-meninggal');
+    }
+
+    public function pasienSembuh(Request $request)
+    {
+        $data_pasien = \App\pasien_sembuh::all();
+        return view('admin.pasienSembuh',['data_pasien' => $data_pasien]);
+    }
+
+    public function createPasienSembuh(Request $request)
+    {    
+        \App\pasien_sembuh::create($request->all());
+        return redirect('/pasien-sembuh')->with('sukses','Data berhasil diinput');
+    }
+
+    public function editPasienSembuh($id)
+    {
+        $data_pasien = \App\pasien_sembuh  ::find($id);
+        return view('admin/editpasienSembuh',['data_pasien' => $data_pasien]);
+    }
+
+    public function updatePasienSembuh(Request $request,$id)
+    {
+        $data_pasien = \App\pasien_sembuh::find($id);
+        $data_pasien->update($request->all());
+        return redirect('/pasien-sembuh')->with('sukses');
+    }
+
+    public function deleteSembuh($id)
+    {
+        $data_pasien = pasien_sembuh::FindOrFail($id);
+        $data_pasien->delete();
+        return redirect('/pasien-sembuh');
     }
 
     public function kebutuhan(Request $request)

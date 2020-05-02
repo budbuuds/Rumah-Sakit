@@ -120,7 +120,7 @@
                 <div class="card-body">
                   <h1 class="card-title">Jumlah Pasien Covid-19 Sumatera Barat</h1>
                   <img src="<?php echo e(url('backend/asset/img/pict/graph.png')); ?>">
-                  <form action="/pasien">
+                  <form action="/pasien_covid19">
                     <button type="submit" class="tombol donaturbtn">MORE</button>
                   </form>
                 </div>
