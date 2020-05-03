@@ -90,6 +90,12 @@ Route::get('/bercat', 'HomeController@bercat')->name('bercat');
 Route::post('/kebutuhan/import_excel', 'RumahSakitController@import_excel_kebutuhan');
 Route::post('/donatur/import_excel', 'RumahSakitController@import_excel_donatur');
 Route::post('/pebanding/import_excel', 'RumahSakitController@import_excel_pebanding');
+Route::post('/pasien_odp/import_excel', 'RumahSakitController@import_excel_pasien_odp');
+Route::post('/pasien_pdp/import_excel', 'RumahSakitController@import_excel_pasien_pdp');
+Route::post('/pasien_positif/import_excel', 'RumahSakitController@import_excel_pasien_positif');
+Route::post('/pasien_meninggal/import_excel', 'RumahSakitController@import_excel_pasien_meninggal');
+Route::post('/pasien_sembuh/import_excel', 'RumahSakitController@import_excel_pasien_sembuh');
+
 
 //Pasien
 Route::get('/pasien-admin', 'RumahSakitController@pasien')->name('pasien');

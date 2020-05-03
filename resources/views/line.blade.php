@@ -54,7 +54,7 @@ var chart = new CanvasJS.Chart("pasien", {
 		name: "ODP",
 		dataPoints: [
 			@foreach($data_pasien_odp as $pasien_odp)		
-			{ label :"Tanggal {{$pasien_odp -> tanggal}}" , y: {{$pasien_odp -> jumlah}} },
+			{ x: new Date({{$pasien_odp -> tanggal}}) , y: {{$pasien_odp -> jumlah}} },
             @endforeach
 		]
 	},
@@ -67,7 +67,7 @@ var chart = new CanvasJS.Chart("pasien", {
 		name: "PDP",
 		dataPoints: [
 			@foreach($data_pasien_pdp as $pasien_pdp)		
-			{ label :"Tanggal {{$pasien_pdp -> tanggal}}" , y: {{$pasien_pdp -> jumlah}} },
+			{ x: new Date({{$pasien_pdp -> tanggal}}) , y: {{$pasien_pdp -> jumlah}} },
             @endforeach
 		]
 	},
@@ -79,7 +79,7 @@ var chart = new CanvasJS.Chart("pasien", {
 		name: "Positif",
 		dataPoints: [
 			@foreach($data_pasien_positif as $pasien_positif)		
-			{ label :"Tanggal {{$pasien_positif -> tanggal}}" , y: {{$pasien_positif -> jumlah}} },
+			{ x: new Date({{$pasien_positif -> tanggal}}) , y: {{$pasien_positif -> jumlah}} },
             @endforeach
 		]
 	},
@@ -91,7 +91,7 @@ var chart = new CanvasJS.Chart("pasien", {
 		name: "Meninggal",
 		dataPoints: [
 			@foreach($data_pasien_meninggal as $pasien_meninggal)		
-			{ label :"Tanggal {{$pasien_meninggal -> tanggal}}" , y: {{$pasien_meninggal -> jumlah}} },
+			{ x: new Date({{$pasien_meninggal -> tanggal}}) , y: {{$pasien_meninggal -> jumlah}} },
             @endforeach
 		]
 	},
@@ -102,7 +102,7 @@ var chart = new CanvasJS.Chart("pasien", {
 		name: "Sembuh",
 		dataPoints: [
 			@foreach($data_pasien_sembuh as $pasien_sembuh)		
-			{ label :"Tanggal {{$pasien_sembuh -> tanggal}}" , y: {{$pasien_sembuh -> jumlah}} },
+			{ x: new Date({{$pasien_sembuh -> tanggal}}) , y: {{$pasien_sembuh -> jumlah}} },
             @endforeach
 		]
 	},

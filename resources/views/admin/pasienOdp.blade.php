@@ -149,6 +149,9 @@
                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Tambah
                          </button>
+                         <button type="button" class="btn btn-primary mr-5" data-toggle="modal" data-target="#importExcel">
+                            IMPORT EXCEL
+                          </button>
                          <a href="/pasien-odp" type="button" class="btn btn-primary" data-toggle="modal"> Pasien ODP</a>
                          <a href="/pasien-pdp" type="button" class="btn btn-primary" data-toggle="modal"> Pasien PDP</a>
                          <a href="/pasien-positif" type="button" class="btn btn-primary" data-toggle="modal"> Pasien Positif</a>
@@ -157,6 +160,34 @@
                     </div>
                   </div>
               </div>
+
+              <!-- Import Excel -->
+              <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <form method="post" action="/pasien_odp/import_excel" enctype="multipart/form-data">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
+                            </div>
+                            <div class="modal-body">
+                
+                              {{ csrf_field() }}
+                
+                              <label>Pilih file excel</label>
+                              <div class="form-group">
+                                <input type="file" name="file" required="required">
+                              </div>
+                
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Import</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+
               <div class="col-md-12 top-20 padding-0">
                 <div class="col-md-12">
                   <div class="panel">
@@ -264,7 +295,7 @@
         {{csrf_field()}}
         <div>
             <label for="exampleFormControlTextarea1">Tanggal</label>
-            <input name="tanggal" class="form-control" type="number" placeholder="Tanggal hari ini">
+            <input name="tanggal" class="form-control" type="text" placeholder="Tanggal hari ini">
         </div>
         <div>
             <label for="exampleFormControlTextarea1">Kelompok</label>
