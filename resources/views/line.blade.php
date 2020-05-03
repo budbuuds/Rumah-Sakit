@@ -11,15 +11,7 @@
 
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"><img src="{{ url('backend/asset/img/pict/corona.png') }}" width="200px"></div>
-            </div>
+            
         </div>
     </div> 
 
@@ -123,6 +115,14 @@ function toggleDataSeries(e) {
 </script>
 </head>
 <body>
+<div class="row">
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"><img src="{{ url('backend/asset/img/pict/corona.png') }}" width="200px"></div>
+            </div>
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>

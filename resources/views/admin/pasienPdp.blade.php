@@ -330,70 +330,7 @@
                     </button>
                 </div>
         <div class="modal-body">
-    <form action="/donatur-admin/update/{{$pasien->id}}" method="POST">
-    <!-- <form action="/lensamasuk/store" method="POST"> -->
-        {{csrf_field()}}
-        {{ method_field('PUT') }}
-<div class="form-group">
-    <label for="exampleFormControlSelect1">Rumah Sakit</label>
-    <select class="form-control m-bot15" name="rs_id">
-      @foreach ($rs_array as $array)
-        <option value="{{$array->id}}">{{$array->nama_rs}}</option>
-      @endforeach
-    </select>
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Nama Donatur</label>
-    <input name="nama_donatur" class="form-control" type="text" placeholder="Default input">
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Tunai</label>
-    <input name="tunai" class="form-control" type="number" placeholder="Default input">
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Masker N95</label>
-    <input name="masker_n95" class="form-control" type="number" placeholder="Default input">
-  </div>
-  <div>
-    <label for="exampleFormControlTextarea1">Masker Surgical</label>
-    <input name="masker_surgical" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Sarung tangan (gloves)</label>
-    <input name="sarung_tangan" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Coverall Jumpsuit (hazmat)</label>
-    <input name="coverall_jumpsuit" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Faceshield</label>
-    <input name="faceshield" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Kacamata Goggles</label>
-    <input name="kacamata_goggles" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Boot and Shoe Cover</label>
-    <input name="boot_and_shoe_cover" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Handsanitizer</label>
-    <input name="handsanitizer" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Desinfektan</label>
-    <input name="desinfektan" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Multivitamin</label>
-    <input name="multivitamin" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Kantong Jenazah</label>
-    <input name="kantong_jenazah" class="form-control" type="number" placeholder="Default input">
-  </div><div>
-    <label for="exampleFormControlTextarea1">Skorlet</label>
-    <input name="Skorlet" class="form-control" type="number" placeholder="Default input">
-  </div>
 
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <input class="btn btn-primary" type="submit" value="Submit">
-</form>
         </div>
         </div>
     </div>
