@@ -57,11 +57,18 @@
                 borderWidth: 0
             }
         },
-        series: [{
-            name: 'Jumlah Kebutuhan',
+        series: [
+        {
+            name: 'Kebutuhan',
             data: [{{$count1}},{{$count2}},{{$count3}},{{$count4}},{{$count5}},{{$count6}},{{$count7}},{{$count8}},{{$count9}},{{$count10}},{{$count11}},{{$count12}}]
 
-        }]
+        },
+        {
+            name: 'Donasi',
+            data: [{{$countd1}},{{$countd2}},{{$countd3}},{{$countd4}},{{$countd5}},{{$countd6}},{{$countd7}},{{$countd8}},{{$countd9}},{{$countd10}},{{$countd11}},{{$countd12}}]
+
+        }
+        ]
     });
 </script>
 </section>

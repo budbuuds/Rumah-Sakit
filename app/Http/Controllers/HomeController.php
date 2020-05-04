@@ -204,6 +204,19 @@ class HomeController extends Controller
         $count11 = \App\kebutuhan::all()->sum('kantong_jenazah');
         $count12 = \App\kebutuhan::all()->sum('Skorlet');
 
+        $countd1 = \App\donatur::all()->sum('masker_n95');
+        $countd2 = \App\donatur::all()->sum('masker_surgical');
+        $countd3 = \App\donatur::all()->sum('sarung_tangan');
+        $countd4 = \App\donatur::all()->sum('coverall_jumpsuit');
+        $countd5 = \App\donatur::all()->sum('faceshield');
+        $countd6 = \App\donatur::all()->sum('kacamata_goggles');
+        $countd7 = \App\donatur::all()->sum('boot_and_shoe_cover');
+        $countd8 = \App\donatur::all()->sum('handsanitizer');
+        $countd9 = \App\donatur::all()->sum('desinfektan');
+        $countd10 = \App\donatur::all()->sum('multivitamin');
+        $countd11 = \App\donatur::all()->sum('kantong_jenazah');
+        $countd12 = \App\donatur::all()->sum('Skorlet');
+
         return view('popup2',
             [
                 'count1' => $count1,
@@ -217,7 +230,20 @@ class HomeController extends Controller
                 'count9' => $count9,
                 'count10' => $count10,
                 'count11' => $count11,
-                'count12' => $count12
+                'count12' => $count12,
+
+                'countd1' => $countd1,
+                'countd2' => $countd2,
+                'countd3' => $countd3,
+                'countd4' => $countd4,
+                'countd5' => $countd5,
+                'countd6' => $countd6,
+                'countd7' => $countd7,
+                'countd8' => $countd8,
+                'countd9' => $countd9,
+                'countd10' => $countd10,
+                'countd11' => $countd11,
+                'countd12' => $countd12
                 
             ]);
         // return view('popup3',compact('count1','count2','count3','count4','count5','count6','count7','count8','count9','count10','count11','count12'));

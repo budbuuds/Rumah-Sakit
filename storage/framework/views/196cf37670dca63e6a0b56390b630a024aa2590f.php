@@ -57,11 +57,18 @@
                 borderWidth: 0
             }
         },
-        series: [{
-            name: 'Jumlah Kebutuhan',
+        series: [
+        {
+            name: 'Kebutuhan',
             data: [<?php echo e($count1); ?>,<?php echo e($count2); ?>,<?php echo e($count3); ?>,<?php echo e($count4); ?>,<?php echo e($count5); ?>,<?php echo e($count6); ?>,<?php echo e($count7); ?>,<?php echo e($count8); ?>,<?php echo e($count9); ?>,<?php echo e($count10); ?>,<?php echo e($count11); ?>,<?php echo e($count12); ?>]
 
-        }]
+        },
+        {
+            name: 'Donasi',
+            data: [<?php echo e($countd1); ?>,<?php echo e($countd2); ?>,<?php echo e($countd3); ?>,<?php echo e($countd4); ?>,<?php echo e($countd5); ?>,<?php echo e($countd6); ?>,<?php echo e($countd7); ?>,<?php echo e($countd8); ?>,<?php echo e($countd9); ?>,<?php echo e($countd10); ?>,<?php echo e($countd11); ?>,<?php echo e($countd12); ?>]
+
+        }
+        ]
     });
 </script>
 </section>
