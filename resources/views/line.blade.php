@@ -23,7 +23,7 @@ var chart = new CanvasJS.Chart("pasien", {
 	theme:"light2",
 	animationEnabled: true,
 	title:{
-		text: "Data Pasien Bulan Mei"
+		text: "Data Pasien Sumatera Barat"
 	},
 	axisY :{
 		includeZero: false,
