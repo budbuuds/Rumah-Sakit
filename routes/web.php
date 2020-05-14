@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
-
+ 
 // GUEST
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/rumahsakit', 'HomeController@rumahsakit')->name('rumahsakit');
@@ -23,6 +23,7 @@ Route::get('/kebutuhan', 'HomeController@kebutuhan')->name('kebutuhan');
 Route::get('/donatur', 'HomeController@donatur')->name('donatur');
 Route::get('/penyedia', 'HomeController@penyedia')->name('penyedia');
 Route::get('/donasinya', 'HomeController@donasinya')->name('donasinya');
+Route::get('/penyaluran', 'HomeController@penyaluran')->name('penyaluran');
 
 Route::get('/Agam', 'HomeController@daerah1')->name('daerah1');
 Route::get('/Dharmasraya', 'HomeController@daerah2')->name('daerah2');
@@ -51,6 +52,9 @@ Route::get('/popup1', 'HomeController@popup1')->name('popup1');
 Route::get('/popup2', 'HomeController@popup2')->name('popup2');
 Route::get('/popup3', 'HomeController@popup3')->name('popup3');
 Route::get('/popup4', 'HomeController@popup4')->name('popup4');
+Route::get('/line', 'HomeController@line')->name('line');
+Route::get('/pasien_covid19', 'HomeController@pasien_covid19')->name('pasien_covid19');
+Route::get('/about', 'HomeController@about')->name('about');
 
 //
 

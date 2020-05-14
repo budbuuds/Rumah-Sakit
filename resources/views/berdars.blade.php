@@ -26,7 +26,7 @@
         </div>
         <div class="image d-flex justify-content-center col-lg-12">
             <p class="tulisan">
-                Diskusi secara online dilaksanakan mulai pukul 13.00 WIB, tanggal 24 April 2020. Diskusi diikuti oleh berbagai elemen masyarakat dan 
+                Diskusi secara online dilaksanakan mulai pukul 13.00 WIB, tanggal 22 April 2020. Diskusi diikuti oleh berbagai elemen masyarakat dan 
                 pemerintahan seperti 
                 Walikota Payakumbuh yang langsung dihadiri oleh Bapak Riza Falepi, perwakilan Pemprov Jawa Tengah, Diskominfo Kota Semarang, 
                 Perwakilan masyarakat Balikpapan, Kepala Badan Keuangan Daerah Kabupaten Agam, Hendri G, Prof. Reni Mayerni dari Lemhanas, Dr. Eng. Muhammad 

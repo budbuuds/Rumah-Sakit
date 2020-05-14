@@ -3,13 +3,15 @@
 
 @section('title','Aksitageh')
 
-@section('container')
-<section id="intro">
+@section('container') 
+<div id="supplier">
     <div class="container">
-        <h1>Penyedia Fasilitas Kesehatan</h1>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <h1>Supplier</h1>
+      </div>
         <div class="table table-fixed">
         <table class="table table-fixed table-bordered">
-            <thead class="thead-light">
+            <thead class="thead">
                 <tr>
                     <th>Nama Penyedia</th>
                     <th>Alamat</th>
@@ -35,8 +37,8 @@
             </tbody>
         </table>
         </div>
-    </div>
-</section>
+    </div> 
+</div> 
 <style>
     .table-fixed { 
         height: 400px !important;
