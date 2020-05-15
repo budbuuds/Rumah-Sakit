@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\pebanding;
+use App\pasien_odp;
+use App\pasien_pdp;
+use App\pasien_positif;
+use App\pasien_meninggal;
+use App\pasien_sembuh;
 
 class HomeController extends Controller
 {
@@ -25,7 +31,35 @@ class HomeController extends Controller
     {
         // $data_rs_1 = \App\rs_1::all();
         // return view('welcome',['data_rs_1' => $data_rs_1]);
-        return view('index');
+
+        $odp = \App\pasien::find(1);
+        $pdp = \App\pasien::find(2);
+        $positif = \App\pasien::find(3);
+        $meninggal = \App\pasien::find(4);
+        $sembuh = \App\pasien::find(5);
+
+        // $pasien_odp = \App\donatur::all()->sum('tunai');
+        // $pasien_pdp = \App\pasien_pdp::all();
+        // $pasien_positif = \App\pasien_positif::all();
+        // $pasien_sembuh = \App\pasien_sembuh::all();
+        // $pasien_meninggal = \App\pasien_meninggal::all();
+
+
+
+        return view('newindex',[
+            'odp' => $odp,
+            'pdp' => $pdp,
+            'positif' => $positif,
+            'meninggal' => $meninggal,
+            'sembuh' => $sembuh,
+
+            // 'pasien_odp' => $pasien_odp,
+            // 'pasien_pdp' => $pasien_pdp,
+            // 'pasien_positif' => $pasien_positif,
+            // 'pasien_sembuh' => $pasien_sembuh,
+            // 'pasien_meninggal' => $pasien_meninggal
+            
+            ]);
     }
 
     public function daerah1(Request $request)
@@ -201,8 +235,41 @@ class HomeController extends Controller
         $count8 = \App\kebutuhan::all()->sum('handsanitizer');
         $count9 = \App\kebutuhan::all()->sum('desinfektan');
         $count10 = \App\kebutuhan::all()->sum('multivitamin');
-        $count11 = \App\kebutuhan::all()->sum('kantong_jenazah');
-        $count12 = \App\kebutuhan::all()->sum('Skorlet');
+
+        $countd1 = \App\donatur::all()->sum('masker_n95');
+        $countd2 = \App\donatur::all()->sum('masker_surgical');
+        $countd3 = \App\donatur::all()->sum('sarung_tangan');
+        $countd4 = \App\donatur::all()->sum('coverall_jumpsuit');
+        $countd5 = \App\donatur::all()->sum('faceshield');
+        $countd6 = \App\donatur::all()->sum('kacamata_goggles');
+        $countd7 = \App\donatur::all()->sum('boot_and_shoe_cover');
+        $countd8 = \App\donatur::all()->sum('handsanitizer');
+        $countd9 = \App\donatur::all()->sum('desinfektan');
+        $countd10 = \App\donatur::all()->sum('multivitamin');
+
+        $data_daerah = \App\daerah::find(1);
+        $data_daerah2 = \App\daerah::find(2);
+        $data_daerah3 = \App\daerah::find(3);
+        $data_daerah4 = \App\daerah::find(4);
+        $data_daerah5 = \App\daerah::find(5);
+        $data_daerah6 = \App\daerah::find(6);
+        $data_daerah7 = \App\daerah::find(7);
+        $data_daerah8 = \App\daerah::find(8);
+        $data_daerah9 = \App\daerah::find(9);
+        $data_daerah10 = \App\daerah::find(10);
+        $data_daerah11 = \App\daerah::find(11);
+        $data_daerah12 = \App\daerah::find(12);
+        $data_daerah13 = \App\daerah::find(13);
+        $data_daerah14 = \App\daerah::find(14);
+        $data_daerah15 = \App\daerah::find(15);
+        $data_daerah16 = \App\daerah::find(16);
+        $data_daerah17 = \App\daerah::find(17);
+        $data_daerah18 = \App\daerah::find(18);
+        $data_daerah19 = \App\daerah::find(19);
+
+        $data_rs_2 = \App\rs_2::all();
+
+
 
         $countd1 = \App\donatur::all()->sum('masker_n95');
         $countd2 = \App\donatur::all()->sum('masker_surgical');
@@ -229,8 +296,6 @@ class HomeController extends Controller
                 'count8' => $count8,
                 'count9' => $count9,
                 'count10' => $count10,
-                'count11' => $count11,
-                'count12' => $count12,
 
                 'countd1' => $countd1,
                 'countd2' => $countd2,
@@ -242,9 +307,29 @@ class HomeController extends Controller
                 'countd8' => $countd8,
                 'countd9' => $countd9,
                 'countd10' => $countd10,
-                'countd11' => $countd11,
-                'countd12' => $countd12
-                
+
+                'data_daerah' => $data_daerah,
+                'data_daerah2' => $data_daerah2,
+                'data_daerah3' => $data_daerah3,
+                'data_daerah4' => $data_daerah4,
+                'data_daerah5' => $data_daerah5,
+                'data_daerah6' => $data_daerah6,
+                'data_daerah7' => $data_daerah7,
+                'data_daerah8' => $data_daerah8,
+                'data_daerah9' => $data_daerah9,
+                'data_daerah10' => $data_daerah10,
+                'data_daerah11' => $data_daerah11,
+                'data_daerah12' => $data_daerah12,
+                'data_daerah13' => $data_daerah13,
+                'data_daerah14' => $data_daerah14,
+                'data_daerah15' => $data_daerah15,
+                'data_daerah16' => $data_daerah16,
+                'data_daerah17' => $data_daerah17,
+                'data_daerah18' => $data_daerah18,
+                'data_daerah19' => $data_daerah19,
+
+                'data_rs_2' => $data_rs_2
+
             ]);
         // return view('popup3',compact('count1','count2','count3','count4','count5','count6','count7','count8','count9','count10','count11','count12'));
     }
@@ -292,6 +377,10 @@ class HomeController extends Controller
     {
         $data_pasien = \App\pasien::all();  
         return view('popup4');
+    }
+    public function about()
+    { 
+        return view('popupabout');
     }
 
     // public function line()

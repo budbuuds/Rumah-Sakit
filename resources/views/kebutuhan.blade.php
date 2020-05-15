@@ -157,9 +157,7 @@
                           <th colspan="2">Boot and Shoe Cover</th>
                           <th colspan="2">Handsanitizer</th>
                           <th colspan="2">Desinfektan</th>
-                          <th colspan="2">Multivitamin</th>
-                          <th colspan="2">Kantong Jenazah</th>
-                          <th colspan="2">Skorlet</th>
+                          <th colspan="2">Multivitamin</th> 
                           <th rowspan="2">Tanggal</th>
                         </tr>
                         <tr>
@@ -182,11 +180,7 @@
                           <th>stock</th>
                           <th>status</th>
                           <th>stock</th>
-                          <th>status</th>
-                          <th>stock</th>
-                          <th>status</th>
-                          <th>stock</th>
-                          <th>status</th>
+                          <th>status</th> 
                           
                         </tr>
                       </thead>
@@ -213,11 +207,7 @@
                           <td> {{$kebutuhan -> desinfektan}} </td>
                           <td> {{$kebutuhan -> status_desinfektan}} </td>
                           <td> {{$kebutuhan -> multivitamin}} </td>
-                          <td> {{$kebutuhan -> status_multivitamin}} </td>
-                          <td> {{$kebutuhan -> kantong_jenazah}} </td>
-                          <td> {{$kebutuhan -> status_kantong_jenazah}} </td>
-                          <td> {{$kebutuhan -> Skorlet}} </td>
-                          <td> {{$kebutuhan -> status_Skorlet}} </td>
+                          <td> {{$kebutuhan -> status_multivitamin}} </td> 
                           <td> {{$kebutuhan -> created_at}}</td>
                         </tr>
                       </tbody>

@@ -17,6 +17,7 @@
         <!-- Bootstrap CSS File -->
         <link href="{{ url('backend/asset/css/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <!-- Libraries CSS Files -->
         <link href="{{ url('backend/asset/css/lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
         <link href="{{ url('backend/asset/css/lib/animate/animate.min.css') }}" rel="stylesheet">
@@ -53,26 +54,29 @@
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
-        <a href="#intro" class="scrollto"><img src="pict/neo.png" alt="" class="img-fluid"></a>
-        <a href="#intro" class="scrollto"><img src="pict/logo1.png" alt="" class="img-fluid"></a>
+        <a href="#intro" class="scrollto"><img src="{{ url('backend/asset/img/pict/logoaksitageh.png') }}" alt="" class="img-fluid"></a>
+        <a href="#intro" class="scrollto"><img src="{{ url('backend/asset/img/pict/logounand.png') }}" alt="" class="img-fluid"></a>
       </div>
 
       <nav class="main-nav float-right d-none d-lg-block">
         <ul> 
           <li><a href="/">BERANDA</a></li>
-          <li><a href="/#berita">BERITA</a></li> 
+          <li><a href="donatur">DONATUR</a></li>
+          <li><a href="penyedia">SUPPLIER</a></li>
+          <li><a href="kebutuhan">PENYALURAN</a></li>
+          <li><a href="about">ABOUT</a></li>
+          <li><a href="rumahsakit-admin" class="login">LOG IN</a></li>
+          <!-- <li><a href="/#berita">BERITA</a></li> 
           <li><a href="/#donatur">INFO</a></li> 
-          <li><a href="/#why-us">DAERAH</a></li>
-          <li><a href="/donatur">DONATUR</a></li>
-          <li><a href="#">SUPLIER</a></li>
-          <li><a href="/penyaluran">PENYALURAN</a></li>
-          <li><a href="rumahsakit-admin">ADMIN</a></li>
+          <li><a href="/#why-us">DAERAH</a></li> -->
           <!-- <li><a href="view/register.php">Register</a></li>   -->
         </ul>
       </nav><!-- .main-nav -->
       
     </div>
   </header><!-- #header -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
 
   @yield('container')
 
@@ -80,26 +84,28 @@
     Footer
   ============================-->
   <footer id="footer">
-    <!-- <div class="footer-top">
+    <div class="footer-top">
       <div class="container">
-        <div class="row justify-content-center ">   
-          <div class="col-lg-12 col-md-12 col-s footer-contact justify-content-center"> 
-
-            <div class="col-lg-12 col-md-12 social-links justify-content-center"  style="display: flex;"> 
-                <a href="https://twitter.com/neotelemetri" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
-                <a href="https://www.facebook.com/neotelemetri" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
-                <a href="https://www.instagram.com/neotelemetri/" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
-                <a href="https://www.youtube.com/user/neotelemetri" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a> 
-            </div>
-
-          </div> 
+        <div class="row">   
+          <div class="col-lg-4 col-md-4 social-links"> 
+            <a href="https://www.instagram.com/kkntematik_aksitageh/?hl=id" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
+            <span>@kkntematik_aksitageh</span>
+          </div>
+          <div class="col-lg-4 col-md-4 social-links"> 
+            <a href="https://www.instagram.com/neotelemetri/?hl=id" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
+            <span>@neotelemetri</span>
+          </div>
+          <div class="col-lg-4 col-md-4 social-links"> 
+            <a href="https://www.instagram.com/aksitageh/?hl=id" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
+            <span>@aksitageh</span>
+          </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
     <div class="container">
       <div class="copyright">
-        Copyright &copy;<strong>2020</strong> Neo Telemetri UNAND x IA UKM ITB
+        Copyright &copy;<strong>2020</strong> Neo Telemetri UNAND x IA UKM-ITB
       </div>
     </div>
   </footer><!-- #footer -->
@@ -136,6 +142,8 @@
 <script src="{{ url('backend/asset/js/plugins/jquery.datatables.min.js')}}"></script>
 <script src="{{ url('backend/asset/js/plugins/datatables.bootstrap.min.js')}}"></script>
 <script src="{{ url('backend/asset/js/plugins/jquery.nicescroll.js')}}"></script>
+<script src="{{ url('backend/asset/js/plugins/Chart.js')}}"></script>
+
 
 
 <script src="{{url('backend/asset/js/main.js')}}"></script>

@@ -3,15 +3,14 @@
 
 @section('title','Aksitageh')
 
-@section('container')
-<section id="intro">
+@section('container') 
     <div class="container">
         <h1>Kebutuhan Fasilitas Kesehatan</h1>
         <div>
         <table id="datatables-example" class="table table-bordered">
             <thead class="thead-light">
                 <tr>
-                    <th scope="col">Kota/Kab</th>
+                    <th scope="col">Kota/Kab</th> 
                     <th scope="col">Nama</th>
                     <th scope="col">Alamat</th>
                     <th scope="col">Masker N95</th>
@@ -24,8 +23,6 @@
                     <th scope="col">Handsanitizer</th>
                     <th scope="col">Desinfektan</th>
                     <th scope="col">Multivitamin</th>
-                    <th scope="col">Kantong Jenazah</th>
-                    <th scope="col">Skorlet</th>
                 </tr>
             </thead>
             <tbody style="overflow: scroll">
@@ -44,16 +41,14 @@
                           <td> {{$rs -> r_boot_and_shoe_cover}} </td>                        
                           <td> {{$rs -> r_handsanitizer}} </td>                        
                           <td> {{$rs -> r_desinfektan}} </td>                         
-                          <td> {{$rs -> r_multivitamin}} </td>                       
-                          <td> {{$rs -> r_kantong_jenazah}} </td>                        
-                          <td> {{$rs -> r_Skorlet}} </td>                     
+                          <td> {{$rs -> r_multivitamin}} </td>              
                         </tr>
                         @endforeach  
             </tbody>
         </table>
         </div>
-    </div>
-</section>
+    </div> 
+
 <style>
     .table-fixed { 
         height: 400px !important;

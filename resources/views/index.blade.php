@@ -165,7 +165,7 @@
           <h3>Kebutuhan per Daerah</h3>
           <br>
         </header>
-        
+
         <div class="daerah swiper-wrapper row row-eq-height justify-content-center owl-carousel testimonials-carousel wow fadeInUp">
            <img class="bg" src="pict/Path5.png"> 
           <div>
