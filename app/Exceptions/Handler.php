@@ -34,11 +34,10 @@ class Handler extends ExceptionHandler
      *
      * @throws \Exception
      */
-    public function report(Throwable $exception);
-    // {
-    //     parent::report($exception);
-    // }
-    public function shouldReport(Throwable $exception);
+    public function report(Throwable $exception)
+    {
+        parent::report($exception);
+    }
 
     /**
      * Render an exception into an HTTP response.
@@ -49,9 +48,8 @@ class Handler extends ExceptionHandler
      *
      * @throws \Throwable
      */
-    public function render($request, Throwable $exception);
-    // {
-    //     return parent::render($request, $exception);
-    // }
-    public function renderForConsole($output, Throwable $exception);
+    public function render($request, Throwable $exception)
+    {
+        return parent::render($request, $exception);
+    }
 }
