@@ -66,7 +66,7 @@
 				visible: true,
 				showInLegend: true,
 				yValueFormatString: "## orang",
-				name: "Positif",
+				name: "Positif Kumulatif",
 				dataPoints: [
 					@foreach($data_pasien_positif as $pasien_positif)		
 					{ x: new Date({{$pasien_positif -> tanggal}}) , y: {{$pasien_positif -> jumlah}} },
@@ -96,6 +96,17 @@
 					@endforeach
 				]
 			},
+			// {
+			// 	type: "spline", 
+			// 	showInLegend: true,
+			// 	yValueFormatString: "## orang",
+			// 	name: "Positif Aktif",
+			// 	dataPoints: [					
+			// 		@foreach($data_pasien_pdp as $pasien_pdp)
+			// 		{ x: new Date({{$pasien_pdp -> tanggal}}) , y: {{$pasien_positif -> jumlah}}-{{$pasien_meninggal -> jumlah}}-{{$pasien_sembuh -> jumlah}} },
+			// 		@endforeach
+			// 	]
+			// },
 			]
 		});
 		chart.render();

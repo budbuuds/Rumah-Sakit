@@ -295,7 +295,7 @@
         {{csrf_field()}}
         <div>
             <label for="exampleFormControlTextarea1">Tanggal</label>
-            <input name="tanggal" class="form-control" type="number" placeholder="Tanggal hari ini">
+            <input name="tanggal" class="form-control" type="text" placeholder="Tanggal hari ini">
         </div>
         <div>
             <label for="exampleFormControlTextarea1">Kelompok</label>
