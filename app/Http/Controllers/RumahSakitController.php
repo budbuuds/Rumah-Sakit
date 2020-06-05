@@ -11,6 +11,7 @@ use App\pasien_pdp;
 use App\pasien_positif;
 use App\pasien_meninggal;
 use App\pasien_sembuh;
+use App\pasien_aktif;
 use Illuminate\Http\Request;
 use App\Imports\KebutuhanImport;
 use App\Imports\DonaturImport;
@@ -20,6 +21,7 @@ use App\Imports\PasienPdpImport;
 use App\Imports\PasienPositifImport;
 use App\Imports\PasienMeninggalImport;
 use App\Imports\PasienSembuhImport;
+use App\Imports\PasienAktifImport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 
@@ -231,6 +233,38 @@ class RumahSakitController extends Controller
         $data_pasien = pasien_sembuh::FindOrFail($id);
         $data_pasien->delete();
         return redirect('/pasien-sembuh');
+    }
+
+    public function pasienAktif(Request $request)
+    {
+        $data_pasien = \App\pasien_aktif::all();
+        return view('admin.pasienAktif',['data_pasien' => $data_pasien]);
+    }
+
+    public function createPasienAktif(Request $request)
+    {    
+        \App\pasien_aktif::create($request->all());
+        return redirect('/pasien-aktif')->with('sukses','Data berhasil diinput');
+    }
+
+    public function editPasienAktif($id)
+    {
+        $data_pasien = \App\pasien_aktif  ::find($id);
+        return view('admin/editpasienAktif',['data_pasien' => $data_pasien]);
+    }
+
+    public function updatePasienAktif(Request $request,$id)
+    {
+        $data_pasien = \App\pasien_aktif::find($id);
+        $data_pasien->update($request->all());
+        return redirect('/pasien-aktif')->with('sukses');
+    }
+
+    public function deleteAktif($id)
+    {
+        $data_pasien = pasien_aktif::FindOrFail($id);
+        $data_pasien->delete();
+        return redirect('/pasien-aktif');
     }
 
     public function kebutuhan(Request $request)
@@ -572,6 +606,32 @@ class RumahSakitController extends Controller
      
             // alihkan halaman kembali
             return redirect('/pasien-sembuh');
+    }
+
+    public function import_excel_pasien_aktif(Request $request) 
+	{
+			// validasi
+            $this->validate($request, [
+                'file' => 'required|mimes:csv,xls,xlsx'
+            ]);
+     
+            // menangkap file excel
+            $file = $request->file('file');
+     
+            // membuat nama file unik
+            $nama_file = rand().$file->getClientOriginalName();
+     
+            // upload ke folder file_siswa di dalam folder public
+            $file->move('file_pasien_aktif',$nama_file);
+     
+            // import data
+            Excel::import(new PasienAktifImport, public_path('/file_pasien_aktif/'.$nama_file));
+     
+            // notifikasi dengan session
+            // Session::flash('sukses','Data donatur Berhasil Diimport!');
+     
+            // alihkan halaman kembali
+            return redirect('/pasien-aktif');
     }
 
 }

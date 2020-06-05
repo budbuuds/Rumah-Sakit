@@ -96,6 +96,18 @@
 					@endforeach
 				]
 			},
+
+			{
+				type: "spline", 
+				showInLegend: true,
+				yValueFormatString: "## orang",
+				name: "Positif Aktif",
+				dataPoints: [
+					@foreach($data_pasien_aktif as $pasien_aktif)		
+					{ x: new Date({{$pasien_aktif -> tanggal}}) , y: {{$pasien_aktif -> jumlah}} },
+					@endforeach
+				]
+			},
 			// {
 			// 	type: "spline", 
 			// 	showInLegend: true,

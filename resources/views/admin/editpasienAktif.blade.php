@@ -138,95 +138,31 @@
           <div id="content">
                <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
+                  <h1>Edit Data Pasien</h1>
                   @if(session('sukses'))
                     <div class="alert alert-success">
-                      <strong>Sukses!</strong> Data berhasil ditambahkan.
+                      <strong>Sukses!</strong> Data berhasil diupdate.
                     </div>
                   @endif
                     <div class="col-md-12">
-                        <h3 class="animated fadeInLeft">Data Pasien</h3>
-                         <!-- Button trigger modal -->
-                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Tambah
-                         </button>
-                         <button type="button" class="btn btn-primary mr-5" data-toggle="modal" data-target="#importExcel">
-                            IMPORT EXCEL
-                          </button>
-                         <a href="/pasien-odp" type="button" class="btn btn-primary" data-toggle="modal"> Pasien ODP</a>
-                         <a href="/pasien-pdp" type="button" class="btn btn-primary" data-toggle="modal"> Pasien PDP</a>
-                         <a href="/pasien-positif" type="button" class="btn btn-primary" data-toggle="modal"> Pasien Positif</a>
-                         <a href="/pasien-meninggal" type="button" class="btn btn-primary" data-toggle="modal"> Pasien Meninggal</a>
-                         <a href="/pasien-sembuh" type="button" class="btn btn-primary" data-toggle="modal"> Pasien Sembuh</a>
-                         <a href="/pasien-aktif" type="button" class="btn btn-primary" data-toggle="modal"> Pasien Aktif</a>
-                    </div>
-                  </div>
-              </div>
+                    <form action="/pasien-aktif/{{$data_pasien->id}}/update" method="POST">
+                            <!-- <form action="/lensamasuk/store" method="POST"> -->
+                                {{csrf_field()}}
+                                <div>
+                                    <label for="exampleFormControlTextarea1">Tanggal</label>
+                                    <input name="kelompok" class="form-control" type="text" placeholder="Default input" value="{{$data_pasien->tanggal}}">
+                                </div>
+                                <div>
+                                    <label for="exampleFormControlTextarea1">Jumlah</label>
+                                    <input name="jumlah" class="form-control" type="number" placeholder="Default input" value="{{$data_pasien->jumlah}}">
+                                </div>
 
-               <!-- Import Excel -->
-               <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog" role="document">
-                        <form method="post" action="/pasien_meninggal/import_excel" enctype="multipart/form-data">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
-                            </div>
-                            <div class="modal-body">
-                
-                              {{ csrf_field() }}
-                
-                              <label>Pilih file excel</label>
-                              <div class="form-group">
-                                <input type="file" name="file" required="required">
-                              </div>
-                
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                              <button type="submit" class="btn btn-primary">Import</button>
-                            </div>
-                          </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <input class="btn btn-warning" type="submit" value="Update">
                         </form>
-                      </div>
                     </div>
-
-
-              <div class="col-md-12 top-20 padding-0">
-                <div class="col-md-12">
-                  <div class="panel">
-                    <div class="panel-heading"><h3>Data Tables</h3></div>
-                    <div class="panel-body">
-                      <div class="responsive-table">
-                      <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
-                      <thead>
-                        <tr>
-                          <th>Tanggal</th>
-                          <th>Kategori</th>
-                          <th>Jumlah</th>
-                          <th>Opsi</th>
-                        </tr>
-                      </thead>
-                      @foreach($data_pasien as $pasien)
-                      <tbody>
-                        <tr>
-                          <td> {{$pasien -> tanggal}} </td>
-                          <td> {{$pasien -> pasien -> kelompok}} </td>
-                          <td> {{$pasien -> jumlah}} </td>
-                          <td>
-                            <a href="/pasien-meninggal/{{$pasien->id}}/edit" class="btn btn-warning btn-sm" role="button">Edit</a>
-                            <a href="/pasien-meninggal/delete/{{$pasien->id}}" class="btn btn-danger btn-sm" role="button">
-                              <i class="fa fa-times-circle">Delete</i>
-                            </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                      @endforeach
-                        </table>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>  
+                </div>  
               </div>
             </div>
           <!-- end: content -->
@@ -292,29 +228,7 @@
                     </button>
                 </div>
         <div class="modal-body">
-    <form action="/pasien-meninggal/create" method="POST">
-    <!-- <form action="/lensamasuk/store" method="POST"> -->
-        {{csrf_field()}}
-        <div>
-            <label for="exampleFormControlTextarea1">Tanggal</label>
-            <input name="tanggal" class="form-control" type="text" placeholder="Tanggal hari ini">
-        </div>
-        <div>
-            <label for="exampleFormControlTextarea1">Kelompok</label>
-              <select name="pasien_id" class="form-control" id="exampleFormControlSelect1">
-                <option value="4">Meninggal</option>
-              </select>
-        </div>
-        <div>
-            <label for="exampleFormControlTextarea1">Jumlah</label>
-            <input name="jumlah" class="form-control" type="number" placeholder="Jumlah hari ini">
-        </div>
-
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <input class="btn btn-primary" type="submit" value="Submit">
-</form>
+    
         </div>
         </div>
     </div>
@@ -331,7 +245,7 @@
                     </button>
                 </div>
         <div class="modal-body">
-   
+    
         </div>
         </div>
     </div>

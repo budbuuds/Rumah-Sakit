@@ -165,7 +165,7 @@
                <!-- Import Excel -->
                <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
-                        <form method="post" action="/pasien_meninggal/import_excel" enctype="multipart/form-data">
+                        <form method="post" action="/pasien_aktif/import_excel" enctype="multipart/form-data">
                           <div class="modal-content">
                             <div class="modal-header">
                               <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
@@ -212,8 +212,8 @@
                           <td> {{$pasien -> pasien -> kelompok}} </td>
                           <td> {{$pasien -> jumlah}} </td>
                           <td>
-                            <a href="/pasien-meninggal/{{$pasien->id}}/edit" class="btn btn-warning btn-sm" role="button">Edit</a>
-                            <a href="/pasien-meninggal/delete/{{$pasien->id}}" class="btn btn-danger btn-sm" role="button">
+                            <a href="/pasien-aktif/{{$pasien->id}}/edit" class="btn btn-warning btn-sm" role="button">Edit</a>
+                            <a href="/pasien-aktif/delete/{{$pasien->id}}" class="btn btn-danger btn-sm" role="button">
                               <i class="fa fa-times-circle">Delete</i>
                             </a>
                           </td>
@@ -292,7 +292,7 @@
                     </button>
                 </div>
         <div class="modal-body">
-    <form action="/pasien-meninggal/create" method="POST">
+    <form action="/pasien-aktif/create" method="POST">
     <!-- <form action="/lensamasuk/store" method="POST"> -->
         {{csrf_field()}}
         <div>
@@ -302,7 +302,7 @@
         <div>
             <label for="exampleFormControlTextarea1">Kelompok</label>
               <select name="pasien_id" class="form-control" id="exampleFormControlSelect1">
-                <option value="4">Meninggal</option>
+                <option value="6">Aktif</option>
               </select>
         </div>
         <div>
@@ -331,7 +331,7 @@
                     </button>
                 </div>
         <div class="modal-body">
-   
+
         </div>
         </div>
     </div>

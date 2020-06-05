@@ -34,14 +34,14 @@
                   <div class="col-lg-4 col-md-4 col-sm-4 mb-5 "> 
                     <div class="card wow bounceInUp">
                       <div class="card-body">
-                        <h2 class="card-title d-flex justify-content-center">Positif</h2>
+                        <h2 class="card-title d-flex justify-content-center">Positif Kumulatif</h2>
                         <h1 class="d-flex justify-content-center">{{$positif -> jumlah}}</h1>
                       </div>
                     </div>        
                   </div>
                   
-                  <div class="col-lg-2 col-md-2 col-sm-2 mb-5 "> 
-                  </div>
+                  {{-- <div class="col-lg-2 col-md-2 col-sm-2 mb-5 "> 
+                  </div> --}}
                   
                   <div class="col-lg-4 col-md-4 col-sm-4 mb-5 "> 
                     <div class="card wow bounceInUp">
@@ -57,6 +57,15 @@
                       <div class="card-body">
                         <h2 class="card-title d-flex justify-content-center">Meninggal</h2>
                         <h1 class="d-flex justify-content-center">{{$meninggal -> jumlah}}</h1>
+                      </div>
+                    </div>        
+                  </div>
+
+                  <div class="col-lg-4 col-md-4 col-sm-4 mb-5 "> 
+                    <div class="card wow bounceInUp">
+                      <div class="card-body">
+                        <h2 class="card-title d-flex justify-content-center">Positif Aktif</h2>
+                        <h1 class="d-flex justify-content-center">{{$aktif -> jumlah}}</h1>
                       </div>
                     </div>        
                   </div>

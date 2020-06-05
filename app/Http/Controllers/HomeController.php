@@ -9,6 +9,7 @@ use App\pasien_pdp;
 use App\pasien_positif;
 use App\pasien_meninggal;
 use App\pasien_sembuh;
+use App\pasien_aktif;
 
 class HomeController extends Controller
 {
@@ -37,6 +38,7 @@ class HomeController extends Controller
         $positif = \App\pasien::find(3);
         $meninggal = \App\pasien::find(4);
         $sembuh = \App\pasien::find(5);
+        $aktif = \App\pasien::find(6);
 
         // $pasien_odp = \App\donatur::all()->sum('tunai');
         // $pasien_pdp = \App\pasien_pdp::all();
@@ -52,6 +54,7 @@ class HomeController extends Controller
             'positif' => $positif,
             'meninggal' => $meninggal,
             'sembuh' => $sembuh,
+            'aktif' => $aktif,
 
             // 'pasien_odp' => $pasien_odp,
             // 'pasien_pdp' => $pasien_pdp,
@@ -189,6 +192,7 @@ class HomeController extends Controller
         $data_pasien_pdp = \App\pasien_pdp::all();
         $data_pasien_meninggal = \App\pasien_meninggal::all();
         $data_pasien_sembuh = \App\pasien_sembuh::all();
+        $data_pasien_aktif = \App\pasien_aktif::all();
 
         return view('line',
         [
@@ -196,7 +200,8 @@ class HomeController extends Controller
             'data_pasien_odp' => $data_pasien_odp,
             'data_pasien_pdp' => $data_pasien_pdp,
             'data_pasien_meninggal' => $data_pasien_meninggal,
-            'data_pasien_sembuh' => $data_pasien_sembuh
+            'data_pasien_sembuh' => $data_pasien_sembuh,
+            'data_pasien_aktif' => $data_pasien_aktif
         ]);
     }
 

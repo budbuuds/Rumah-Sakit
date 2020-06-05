@@ -154,6 +154,7 @@
                          <a href="/pasien-positif" type="button" class="btn btn-primary" data-toggle="modal"> Pasien Positif</a>
                          <a href="/pasien-meninggal" type="button" class="btn btn-primary" data-toggle="modal"> Pasien Meninggal</a>
                          <a href="/pasien-sembuh" type="button" class="btn btn-primary" data-toggle="modal"> Pasien Sembuh</a>
+                         <a href="/pasien-aktif" type="button" class="btn btn-primary" data-toggle="modal"> Pasien Aktif</a>
                     </div>
                   </div>
               </div>

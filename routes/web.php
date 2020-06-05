@@ -96,6 +96,7 @@ Route::post('/pasien_pdp/import_excel', 'RumahSakitController@import_excel_pasie
 Route::post('/pasien_positif/import_excel', 'RumahSakitController@import_excel_pasien_positif');
 Route::post('/pasien_meninggal/import_excel', 'RumahSakitController@import_excel_pasien_meninggal');
 Route::post('/pasien_sembuh/import_excel', 'RumahSakitController@import_excel_pasien_sembuh');
+Route::post('/pasien_aktif/import_excel', 'RumahSakitController@import_excel_pasien_aktif');
 
 
 //Pasien
@@ -133,3 +134,9 @@ Route::post('/pasien-sembuh/create', 'RumahSakitController@createPasienSembuh');
 Route::get('/pasien-sembuh/{id}/edit','RumahSakitController@editPasienSembuh');
 Route::post('/pasien-sembuh/{id}/update','RumahSakitController@updatePasienSembuh');
 Route::get('/pasien-sembuh/delete/{id}', 'RumahSakitController@deleteSembuh');
+
+Route::get('/pasien-aktif', 'RumahSakitController@pasienAktif')->name('pasienAktif');
+Route::post('/pasien-aktif/create', 'RumahSakitController@createPasienAktif');
+Route::get('/pasien-aktif/{id}/edit','RumahSakitController@editPasienAktif');
+Route::post('/pasien-aktif/{id}/update','RumahSakitController@updatePasienAktif');
+Route::get('/pasien-aktif/delete/{id}', 'RumahSakitController@deleteAktif');
