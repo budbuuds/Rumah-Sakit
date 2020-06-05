@@ -62,7 +62,7 @@
         <ul> 
           <li><a href="/">BERANDA</a></li>
           <li><a href="donatur">DONATUR</a></li>
-          <li><a href="penyedia">SUPPLIER</a></li>
+          {{-- <li><a href="penyedia">SUPPLIER</a></li> --}}
           <li><a href="kebutuhan">PENYALURAN</a></li>
           <li><a href="about">ABOUT</a></li>
           <li><a href="rumahsakit-admin" class="login">LOG IN</a></li>
