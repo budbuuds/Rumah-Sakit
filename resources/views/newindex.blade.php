@@ -162,67 +162,35 @@
     <!--==========================
       Document section
     ============================-->
-    <!-- <section id="dokumen" class="wow fadeIn">
+    <section id="dokumen" class="wow fadeIn">
       <div class="container">
         <header class="section-header d-flex justify-content-center">
           <h3 class="dok">Dok</h3><h3 class="umen">umen</h3>
         </header>
         <div class="row">
+          @foreach ($dokumen as $dok)
+          
           <div class="col-lg-6 col-md-6 col-sm-6"> 
             <div class="card wow bounceInUp">
               <div class="card-body">
                 <div class="d-flex justify-content-center">
                   <img src="{{ url('backend/asset/img/pict/file.png') }}" alt="">
                   <div class="ket">
-                    <h2 class="card-title">TABEL KEBUTUHAN FASKES SUMBAR MEI 2020</h2>
-                    <h2 class="card-title download-text">DOWNLOAD DOKUMEN</h2>
+                    <h1 class="card-title">{{$dok -> barangnya}}</h1>
+                    <h2 class="card-title download-text">{{$dok -> tanggal}}</h2>
+                    <h2>
+                      <a href="{{$dok -> donaturnya}}" class="card-title download-text">download</a><br>
+                    </h2>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-6"> 
-            <div class="card wow bounceInUp">
-              <div class="card-body">
-                <div class="d-flex justify-content-center">
-                  <img src="{{ url('backend/asset/img/pict/file.png') }}" alt="">
-                  <div class="ket">
-                    <h2 class="card-title">TABEL KEBUTUHAN FASKES SUMBAR MEI 2020</h2>
-                    <h2 class="card-title download-text">DOWNLOAD DOKUMEN</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6"> 
-            <div class="card wow bounceInUp">
-              <div class="card-body">
-                <div class="d-flex justify-content-center">
-                  <img src="{{ url('backend/asset/img/pict/file.png') }}" alt="">
-                  <div class="ket">
-                    <h2 class="card-title">TABEL KEBUTUHAN FASKES SUMBAR MEI 2020</h2>
-                    <h2 class="card-title download-text">DOWNLOAD DOKUMEN</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6"> 
-            <div class="card wow bounceInUp">
-              <div class="card-body">
-                <div class="d-flex justify-content-center">
-                  <img src="{{ url('backend/asset/img/pict/file.png') }}" alt="">
-                  <div class="ket">
-                    <h2 class="card-title">TABEL KEBUTUHAN FASKES SUMBAR MEI 2020</h2>
-                    <h2 class="card-title download-text">DOWNLOAD DOKUMEN</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
+          @endforeach
         </div>
       </div>
-    </section> -->
+    </section>
     
     <!--==========================
       about covid

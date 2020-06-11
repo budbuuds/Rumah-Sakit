@@ -39,6 +39,8 @@ class HomeController extends Controller
         $meninggal = \App\pasien::find(4);
         $sembuh = \App\pasien::find(5);
         $aktif = \App\pasien::find(6);
+        $dokumen = \App\donasinya::all();
+        
 
         // $pasien_odp = \App\donatur::all()->sum('tunai');
         // $pasien_pdp = \App\pasien_pdp::all();
@@ -55,6 +57,7 @@ class HomeController extends Controller
             'meninggal' => $meninggal,
             'sembuh' => $sembuh,
             'aktif' => $aktif,
+            'dokumen' => $dokumen,
 
             // 'pasien_odp' => $pasien_odp,
             // 'pasien_pdp' => $pasien_pdp,

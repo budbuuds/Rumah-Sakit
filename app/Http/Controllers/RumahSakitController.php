@@ -107,6 +107,26 @@ class RumahSakitController extends Controller
         return redirect('/pasien-odp');
     }
 
+    public function editDonasinya($id)
+    {
+        $donasinya = \App\donasinya  ::find($id);
+        return view('admin/editdonasinya',['donasinya' => $donasinya]);
+    }
+
+    public function updateDonasinya(Request $request,$id)
+    {
+        $donasinya = \App\donasinya::find($id);
+        $donasinya->update($request->all());
+        return redirect('/donasinya-admin')->with('sukses');
+    }
+
+    public function deleteDonasinya($id)
+    {
+        $donasinya = donasinya::FindOrFail($id);
+        $donasinya->delete();
+        return redirect('/donasinya-admin');
+    }
+
     public function pasienPdp(Request $request)
     {
         $data_pasien = \App\pasien_pdp::all();
