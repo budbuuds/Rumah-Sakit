@@ -4,9 +4,9 @@
 @section('title','Aksitageh')
 
 @section('container')  
-	<div id="korban">
-		<div class="container">
-			<div id="pasien">
+<div id="korban">
+	<div class="container">
+		<div id="pasien">
 
 			</div>
 			<br> 
@@ -21,7 +21,8 @@
 			theme:"light2",
 			animationEnabled: true,
 			title:{
-				text: "Data Pasien Sumatera Barat"
+				text: 
+					"Data Pasien Sumatera Barat"
 			},
 			axisY :{
 				includeZero: false,
@@ -41,7 +42,7 @@
 				showInLegend: true,
 				visible: false,
 				yValueFormatString: "## orang",
-				name: "ODP",
+				name: "Spesimen",
 				dataPoints: [
 					@foreach($data_pasien_odp as $pasien_odp)		
 					{ x: new Date({{$pasien_odp -> tanggal}}) , y: {{$pasien_odp -> jumlah}} },
@@ -54,7 +55,7 @@
 				showInLegend: true,
 				visible: false,
 				yValueFormatString: "## orang",
-				name: "PDP",
+				name: "Kasus Suspect",
 				dataPoints: [
 					@foreach($data_pasien_pdp as $pasien_pdp)		
 					{ x: new Date({{$pasien_pdp -> tanggal}}) , y: {{$pasien_pdp -> jumlah}} },
@@ -135,5 +136,7 @@
 		}
 	</script>  
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> 
-
+<header class="section-header d-flex justify-content-center">
+	<h4 class="dok">Sumber : https://corona.sumbarprov.go.id/</h4>
+  </header>
 @endsection
