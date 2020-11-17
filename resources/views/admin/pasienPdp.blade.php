@@ -307,7 +307,7 @@
         </div>
         <div>
             <label for="exampleFormControlTextarea1">Jumlah</label>
-            <input name="jumlah" class="form-control" type="number" placeholder="Jumlah hari ini">
+            <input name="jumlah" class="form-control" type="text" placeholder="Jumlah hari ini">
         </div>
 
         </div>

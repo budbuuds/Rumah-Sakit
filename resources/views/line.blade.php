@@ -54,8 +54,8 @@
 				type: "spline", 
 				showInLegend: true,
 				visible: false,
-				yValueFormatString: "## orang",
-				name: "Kasus Suspect",
+				yValueFormatString: "## persen",
+				name: "Positif Rate",
 				dataPoints: [
 					@foreach($data_pasien_pdp as $pasien_pdp)		
 					{ x: new Date({{$pasien_pdp -> tanggal}}) , y: {{$pasien_pdp -> jumlah}} },

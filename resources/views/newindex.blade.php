@@ -25,8 +25,8 @@
                   <div class="col-lg-4 col-md-4 col-sm-4 mb-5 "> 
                     <div class="card wow bounceInUp">
                       <div class="card-body">
-                        <h2 class="card-title d-flex justify-content-center">Kasus Suspect</h2>
-                        <h1 class="d-flex justify-content-center">{{$pdp -> jumlah}}</h1>
+                        <h2 class="card-title d-flex justify-content-center">Positif Rate</h2>
+                        <h1 class="d-flex justify-content-center">{{$pdp -> jumlah}} %</h1>
                       </div>
                     </div>        
                   </div>
